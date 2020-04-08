@@ -1,0 +1,8 @@
+patch:
+  "menu/page_size": 9
+  "switches/@0/reset": 1
+  "switcher/hotkeys":
+    - "Control+grave"  # 你看寫法並不是 Ctrl+` 而是與 IBus 一致的表示法
+  schema_list:
+    - schema: quick5               # 速成
+    - schema: jyut6ping3             # 粵拼

@@ -1,0 +1,11 @@
+---
+name: quick5.extended
+version: "02.06.2019"
+sort: by_weight
+use_preset_vocabulary: true
+import_tables:
+  - quick5
+  - cangjie3
+  - jyut6ping3.phrase
+  - jyut6ping3.words
+...

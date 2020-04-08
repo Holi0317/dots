@@ -1,0 +1,25 @@
+# Patches for jyut6ping3 schema
+# This files is user configuration. Backup this and do not delete
+
+patch:
+  # Enable user dictionary
+  "translator/enable_user_dict": true
+  "translator/user_dict": "custom_phrase"
+
+  # Fuzzy matchings
+  "speller/algebra/+":
+    # 支援疑影不分
+    - derive/^ng([aeiou])/$1/
+    - derive/^([aeiou])/ng$1/
+
+    # 支援 n- 併入 l- ，如「你」讀若「理」
+    - derive/^n/l/
+
+    # 支援 gw-、kw- 併入 g-、k- ，如「國」讀若「各」、「廓」讀若「確」
+    - derive/^(g|k)w/$1/
+
+    # 支援獨立鼻音韻 ng 併入 m，如「吳」讀若「唔」
+    - derive/^ng$/m/
+
+    # 支援聲母簡拼
+    - abbrev/^(gw|kw|ng).+$/$1/
