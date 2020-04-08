@@ -61,3 +61,16 @@ package manager. In arch, install with `pacman`.
 # Custom phrases
 
 Append custom phrases to bottom of file `custom_phrase.dict.yaml`. Then re-deploy
+
+# Sync preference between computers
+
+Edit `installation.yaml` after it generates under this directory. Append this line:
+
+```yaml
+sync_dir: "/home/user/....."
+```
+
+Where the path points to a directory that will get sync between computers using syncthing or dropbox.
+
+Each machine will get a unique UUID under the folder. When rime deploy, all input behaviors between
+machines will get merged.
