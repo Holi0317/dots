@@ -8,7 +8,7 @@ My dotfiles
 | ---------- | --------------------- | ------------------------------------------- |
 | /rime      | `~/.config/ibus/rime` | [rime]: Input method                        |
 | /mpd       | `~/.config/mpd`       | [mpd]: Music player daemon                  |
-| /ncmpcpp   | `~/.ncmpcpp`          | [ncmpcpp]: Console cient for [mpd]          |
+| /ncmpcpp   | `~/.ncmpcpp`          | [ncmpcpp]: Console client for [mpd]          |
 | /mpDris2   | `~/.config/mpDris2`   | [mpDris2]: Bridge between [mpd] and MPRIS 2 |
 | zshrc      | `~/.zshrc`            | [zsh]: Shell. With [oh-my-zsh]              |
 | /alacritty | `~/.config/alacritty` | [alacritty]: Terminal emulator              |
