@@ -50,7 +50,7 @@ export FZF_BASE=/usr/bin/fzf
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting fzf)
+plugins=(zsh-syntax-highlighting fzf pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
