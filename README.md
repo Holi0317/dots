@@ -14,6 +14,7 @@ My dotfiles
 | /alacritty       | `~/.config/alacritty`     | [alacritty]: Terminal emulator              |
 | /starship.toml   | `~/.config/starship.toml` | [starship]: Shell prompt                    |
 | /tmux.conf.local | `~/.tmux.conf.local`      | [.tmux]: Tmux configuration                 |
+| /nvim            | `~/.config/nvim`          | [nvim]: Neovim configuration                |
 
 [rime]: https://rime.im/
 [ncmpcpp]: https://rybczak.net/ncmpcpp/
@@ -24,3 +25,4 @@ My dotfiles
 [alacritty]: https://github.com/alacritty/alacritty
 [starship]: https://starship.rs/
 [.tmux]: https://github.com/gpakosz/.tmux
+[nvim]: https://neovim.io/

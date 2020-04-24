@@ -1,0 +1,22 @@
+" Disable several buildin bindings
+map m <Nop>
+map t <Nop>
+map B <Nop>
+map C <Nop>
+map E <Nop>
+map H <Nop>
+map L <Nop>
+map M <Nop>
+map P <Nop>
+map Q <Nop>
+map S <Nop>
+map T <Nop>
+map Y <Nop>
+map Z <Nop>
+map & <Nop>
+map - <Nop>
+map _ <Nop>
+map + <Nop>
+map ; <Nop>
+map ' <Nop>
+map ` <Nop>

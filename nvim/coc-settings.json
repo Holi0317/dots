@@ -1,0 +1,73 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "javascript",
+    "json",
+    "html",
+    "jinja.html",
+    "scss"
+  ],
+  "list.source.lists.defaultOptions": ["--normal"],
+  "diagnostic.virtualText": true,
+  "diagnostic.infoSign": "",
+
+  "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "rnix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    }
+  },
+
+  "git.addGBlameToBufferVar": true,
+  "git.changedDecorator": "⚡",
+  "git.stagedDecorator": "",
+
+  "cSpell.showStatus": true,
+
+  "emmet.includeLanguages": {
+    "jinja.html": "html",
+    "vue-html": "html",
+    "javascript": "javascriptreact",
+    "typescript": "javascriptreact",
+    "typescriptreact": "javascriptreact"
+  },
+
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "eslint.codeAction.showDocumentation": { "enable": false },
+
+  "vetur.dev.vlsPath": "/home/holi/.config/yarn/global/node_modules/vue-language-server",
+  "vetur.useWorkspaceDependencies": true,
+
+  "prettier.disableLanguages": [],
+
+  // Disable stylelint until stylelint-vscode updates
+  "stylelint.enable": false,
+
+  "python.jediEnabled": false,
+  "python.formatting.provider": "yapf",
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.venvFolders": ["envs", ".pyenv", ".direnv", "env"],
+
+  "xml.java.home": "/usr/lib/jvm/default",
+  "cSpell.userWords": [
+    "alacritty",
+    "gobuffalo",
+    "postgres",
+    "postgresql",
+    "yeung"
+  ]
+}
