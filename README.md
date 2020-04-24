@@ -15,6 +15,7 @@ My dotfiles
 | /starship.toml   | `~/.config/starship.toml` | [starship]: Shell prompt                    |
 | /tmux.conf.local | `~/.tmux.conf.local`      | [.tmux]: Tmux configuration                 |
 | /nvim            | `~/.config/nvim`          | [nvim]: Neovim configuration                |
+| /fontconfig      | `~/.config/fontconfig`    | fontconfig: Fonts rendering configuration   |
 
 [rime]: https://rime.im/
 [ncmpcpp]: https://rybczak.net/ncmpcpp/
