@@ -50,7 +50,7 @@ export FZF_BASE=/usr/bin/fzf
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting fzf pyenv nvm direnv)
+plugins=(zsh-syntax-highlighting fzf pyenv nvm direnv gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -64,12 +64,6 @@ alias vi="nvim"
 alias l="exa -alh"
 alias xclip="xclip -selection clipboard"
 alias tree="exa --tree"
-
-# PGP as SSH agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
 
 # Set up pipx completion
 autoload -U bashcompinit
