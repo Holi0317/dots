@@ -50,7 +50,7 @@ export FZF_BASE=/usr/bin/fzf
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting fzf pyenv)
+plugins=(zsh-syntax-highlighting fzf pyenv nvm direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,14 +71,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
-# Load nvm, Node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 # Set up pipx completion
 autoload -U bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete pipx)"
-
-# direnv hooks
-eval "$(direnv hook zsh)"
