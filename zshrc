@@ -52,6 +52,13 @@ export FZF_BASE=/usr/bin/fzf
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-syntax-highlighting fzf pyenv nvm direnv gpg-agent)
 
+# Add user completions
+# Instructions:
+# Some tools (eg rustup, poetry) is installed to user.
+# Add those completion files to ~/.zfunc
+# Then delete ~/.zcompdump* and start new shell to regenerate completion cache
+fpath=(~/.zfunc $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # export configurations
