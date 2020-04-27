@@ -64,6 +64,8 @@
 
   "xml.java.home": "/usr/lib/jvm/default",
   "cSpell.userWords": [
+    "Vuetify",
+    "Vuex",
     "alacritty",
     "gobuffalo",
     "postgres",
