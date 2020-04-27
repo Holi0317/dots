@@ -66,6 +66,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'kana/vim-textobj-line'
   " Python class (ac, ic), function (af, if)
   Plug 'bps/vim-textobj-python', { 'for': ['python'] }
+  " HTML/XML attributes (ax, ix)
+  Plug 'whatyouhide/vim-textobj-xmlattr'
 
   " Syntax/language plugins
   Plug 'chemzqm/vim-jsx-improve', { 'for': ['javascript', 'javascript.jsx', 'typescript', 'typescript.jsx'] }
