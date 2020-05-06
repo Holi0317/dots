@@ -75,6 +75,10 @@ elseif g:colors_name == "PaperColor"
   hi! link CocWarningVirtualText VirtualText
   hi! link CocInfoVirtualText VirtualText
   hi! link CocHintVirtualText VirtualText
+
+  " todo.txt highlighting
+  hi! link TodoContext Identifier
+  hi! link TodoProject Number
 endif
 
 " Use F10 for getting syntax highlight group
