@@ -52,6 +52,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'Asheq/close-buffers.vim'
   " Emmet for HTML editing
   Plug 'mattn/emmet-vim'
+  " todo.txt support
+  Plug 'freitass/todo.txt-vim'
 
   " Text object extensions
   " Extension dependencies
