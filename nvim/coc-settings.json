@@ -62,6 +62,9 @@
   "python.linting.pylintEnabled": false,
   "python.venvFolders": ["envs", ".pyenv", ".direnv", "env"],
 
+  "clangd.semanticHighlighting": true,
+  "clangd.arguments": ["--clang-tidy"],
+
   "xml.java.home": "/usr/lib/jvm/default",
   "cSpell.userWords": [
     "Vuetify",

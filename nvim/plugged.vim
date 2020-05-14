@@ -93,6 +93,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'cespare/vim-toml', { 'for': ['toml'] }
   Plug 'LnL7/vim-nix', { 'for': ['nix'] }
   Plug 'fatih/vim-go', { 'for': ['go'] }
+  Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['cpp', 'c'] }
 
 call plug#end()
 
