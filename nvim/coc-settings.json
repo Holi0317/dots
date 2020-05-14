@@ -57,7 +57,7 @@
   "stylelint.enable": false,
 
   "python.jediEnabled": false,
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": false,
   "python.venvFolders": ["envs", ".pyenv", ".direnv", "env"],
