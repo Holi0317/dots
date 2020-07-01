@@ -129,8 +129,6 @@ augroup end
 
 " Organize import when saving go files
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-" Sort import when saving python files
-autocmd BufWritePre *.py :call CocAction('runCommand', 'python.sortImports')
 
 " Remap for do codeAction of selected region, ex: `;aap` for current paragraph
 xmap ;a  <Plug>(coc-codeaction-selected)
