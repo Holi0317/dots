@@ -114,10 +114,14 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap ;rn <Plug>(coc-rename)
+nmap ;rf <Plug>(coc-refactor)
 
 " Remap for format document
 nmap ;f <Plug>(coc-format)
 vmap ;f <Plug>(coc-format-selected)
+
+" Remap <c-s> for searching symbols
+nnoremap <silent> <c-s> :CocList symbols<CR>
 
 augroup mygroup
   autocmd!
