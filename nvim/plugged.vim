@@ -94,6 +94,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'LnL7/vim-nix', { 'for': ['nix'] }
   Plug 'fatih/vim-go', { 'for': ['go'] }
   Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['cpp', 'c'] }
+  Plug 'chrisbra/csv.vim', { 'for': ['csv'] }
 
 call plug#end()
 
