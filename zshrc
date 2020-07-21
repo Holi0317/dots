@@ -65,6 +65,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export PAGER="less"
 export CHROME_BIN=/usr/bin/google-chrome-stable
+export LESS='-SFXR'
 
 # Aliases
 alias vi="nvim"
