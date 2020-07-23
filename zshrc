@@ -72,6 +72,7 @@ alias vi="nvim"
 alias l="exa -alh"
 alias xclip="xclip -selection clipboard"
 alias tree="exa --tree"
+alias s3="aws s3"
 
 # Set up pipx completion
 autoload -U bashcompinit
