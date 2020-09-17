@@ -5,7 +5,6 @@ let g:coc_global_extensions = [
 \ 'coc-git',
 \ 'coc-emoji',
 \ 'coc-lists',
-\ 'coc-post',
 \ 'coc-syntax',
 \ 'coc-word',
 \ 'coc-dictionary',
@@ -24,6 +23,7 @@ let g:coc_global_extensions = [
 \ 'coc-go',
 \ 'coc-clangd',
 \ 'coc-xml',
+\ 'coc-java',
 \
 \ 'coc-rls',
 \ 'coc-vimlsp',
