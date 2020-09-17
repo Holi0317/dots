@@ -69,12 +69,14 @@ export LESS='-SFXR'
 
 # Aliases
 alias vi="nvim"
-alias l="exa -alh"
+alias l="exa -alh --icons"
 alias xclip="xclip -selection clipboard"
-alias tree="exa --tree"
+alias tree="exa --tree --icons"
 alias s3="aws s3"
 
 # Set up pipx completion
 autoload -U bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete pipx)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
