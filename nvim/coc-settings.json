@@ -12,19 +12,6 @@
   "diagnostic.virtualText": true,
   "diagnostic.infoSign": "",
 
-  "languageserver": {
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
-    },
-    "rnix": {
-      "command": "rnix-lsp",
-      "filetypes": ["nix"]
-    }
-  },
-
   "git.addGBlameToBufferVar": true,
   "git.changedDecorator": "⚡",
   "git.stagedDecorator": "",
