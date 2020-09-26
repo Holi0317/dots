@@ -50,7 +50,11 @@ export FZF_BASE=/usr/bin/fzf
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting fzf pyenv nvm direnv gpg-agent)
+plugins=(fzf pyenv nvm direnv gpg-agent)
+
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+fi
 
 # Add user completions
 # Instructions:
@@ -78,5 +82,3 @@ alias s3="aws s3"
 autoload -U bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete pipx)"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
