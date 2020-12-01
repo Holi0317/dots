@@ -23,3 +23,6 @@ patch:
 
     # 支援聲母簡拼
     - abbrev/^(gw|kw|ng).+$/$1/
+
+    # Official: s/aa$/a. We want to include all `aa` sound
+    - derive/aa/a/
