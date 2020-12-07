@@ -54,6 +54,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'mattn/emmet-vim'
   " todo.txt support
   Plug 'freitass/todo.txt-vim'
+  " gS and gJ to join and split better!
+  Plug 'AndrewRadev/splitjoin.vim'
 
   " Text object extensions
   " Extension dependencies
