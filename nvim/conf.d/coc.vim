@@ -117,7 +117,7 @@ nmap ;rn <Plug>(coc-rename)
 nmap ;rf <Plug>(coc-refactor)
 
 " Remap for format document
-nmap ;f <Plug>(coc-format)
+nmap <silent> ;f :call CocAction('format')<CR>:CocCommand editor.action.organizeImport<CR>
 vmap ;f <Plug>(coc-format-selected)
 
 " Remap <c-s> for searching symbols
