@@ -26,13 +26,6 @@
     "typescriptreact": "javascriptreact"
   },
 
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue"
-  ],
   "eslint.codeAction.showDocumentation": { "enable": false },
 
   "vetur.dev.vlsPath": "/home/holi/.config/yarn/global/node_modules/vue-language-server",
