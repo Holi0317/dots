@@ -17,7 +17,7 @@ let g:coc_global_extensions = [
 \ 'coc-eslint',
 \ 'coc-tsserver',
 \ 'coc-json',
-\ 'coc-python',
+\ 'coc-pyright',
 \ 'coc-stylelint',
 \ 'coc-vetur',
 \ 'coc-go',

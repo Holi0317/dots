@@ -43,11 +43,11 @@
   // Disable stylelint until stylelint-vscode updates
   "stylelint.enable": false,
 
-  "python.jediEnabled": false,
   "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
   "python.linting.mypyEnabled": false,
   "python.linting.pylintEnabled": false,
-  "python.venvFolders": ["envs", ".pyenv", ".direnv", "env", "venv"],
+  "python.venvPath": "venv",
 
   "clangd.semanticHighlighting": true,
   "clangd.arguments": ["--clang-tidy"],
