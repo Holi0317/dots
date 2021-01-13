@@ -56,6 +56,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'freitass/todo.txt-vim'
   " gS and gJ to join and split better!
   Plug 'AndrewRadev/splitjoin.vim'
+  " Debugger for vim
+  Plug 'puremourning/vimspector'
 
   " Text object extensions
   " Extension dependencies
