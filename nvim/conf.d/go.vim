@@ -8,12 +8,6 @@ let g:go_textobj_enabled = 0
 let g:go_gopls_enabled = 0
 let g:go_template_autocreate = 0
 
-" Use golangci-lint for linting
-let g:go_metalinter_enabled = []
-let g:go_metalinter_autosave_enabled = []
-let g:go_metalinter_command = "golangci-lint"
-let g:go_metalinter_autosave = 1
-
 " Enable more syntax highlighting
 let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1

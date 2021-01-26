@@ -24,6 +24,7 @@ let g:coc_global_extensions = [
 \ 'coc-clangd',
 \ 'coc-xml',
 \ 'coc-java',
+\ 'coc-diagnostic',
 \
 \ 'coc-rls',
 \ 'coc-vimlsp',

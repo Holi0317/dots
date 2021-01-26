@@ -54,5 +54,9 @@
     "postgres",
     "postgresql",
     "yeung"
-  ]
+  ],
+
+  "diagnostic-languageserver.filetypes": {
+    "go": ["golangci-lint"]
+  }
 }
