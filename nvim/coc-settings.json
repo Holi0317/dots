@@ -1,13 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "Markdown",
-    "javascript",
-    "json",
-    "html",
-    "jinja.html",
-    "scss"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": [],
   "list.source.lists.defaultOptions": ["--normal"],
   "diagnostic.virtualText": true,
   "diagnostic.infoSign": "",
