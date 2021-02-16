@@ -31,6 +31,7 @@ let g:coc_global_extensions = [
 \ 'coc-lua',
 \ 'coc-yaml',
 \ 'coc-texlab',
+\ 'coc-flutter',
 \]
 
 let g:coc_filetype_map = {
