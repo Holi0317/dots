@@ -8,6 +8,15 @@
   "git.changedDecorator": "⚡",
   "git.stagedDecorator": "",
 
+  // These two root patterns must be in sync
+  "project.rootPatterns": [".envrc", "pyproject.toml", "package.json", ".git"],
+  "coc.preferences.rootPatterns": [
+    ".envrc",
+    "pyproject.toml",
+    "package.json",
+    ".git"
+  ],
+
   "cSpell.showStatus": true,
 
   "emmet.includeLanguages": {
