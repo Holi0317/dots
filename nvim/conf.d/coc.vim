@@ -13,6 +13,7 @@ let g:coc_global_extensions = [
 \
 \ 'coc-html',
 \ 'coc-css',
+\ 'coc-emmet',
 \ 'coc-prettier',
 \ 'coc-eslint',
 \ 'coc-tsserver',
