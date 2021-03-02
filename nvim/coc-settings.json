@@ -1,5 +1,14 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown",
+    "c",
+    "cpp",
+    "go"
+  ],
   "list.source.lists.defaultOptions": ["--normal"],
   "diagnostic.virtualText": true,
   "diagnostic.infoSign": "",
