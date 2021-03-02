@@ -18,12 +18,19 @@
   "git.stagedDecorator": "",
 
   // These two root patterns must be in sync
-  "project.rootPatterns": [".envrc", "pyproject.toml", "package.json", ".git"],
-  "coc.preferences.rootPatterns": [
+  "project.rootPatterns": [
+    ".git",
     ".envrc",
     "pyproject.toml",
     "package.json",
-    ".git"
+    "CMakeLists.txt"
+  ],
+  "coc.preferences.rootPatterns": [
+    ".git",
+    ".envrc",
+    "pyproject.toml",
+    "package.json",
+    "CMakeLists.txt"
   ],
 
   "cSpell.showStatus": true,
