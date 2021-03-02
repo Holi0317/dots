@@ -22,6 +22,7 @@ let g:coc_global_extensions = [
 \ 'coc-vetur',
 \ 'coc-go',
 \ 'coc-clangd',
+\ 'coc-cmake',
 \ 'coc-xml',
 \ 'coc-java',
 \ 'coc-diagnostic',

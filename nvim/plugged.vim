@@ -100,6 +100,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['cpp', 'c'] }
   Plug 'chrisbra/csv.vim', { 'for': ['csv'] }
   Plug 'peterhoeg/vim-qml', { 'for': ['qml'] }
+  Plug 'vhdirk/vim-cmake'
 
 call plug#end()
 
