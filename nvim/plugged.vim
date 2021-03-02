@@ -42,18 +42,12 @@ call plug#begin('~/.nvim/plugged')
   Plug 'luochen1990/rainbow'
   " Print doc in status bar
   Plug 'Shougo/echodoc.vim'
-  " Rest client in vim
-  Plug 'diepm/vim-rest-console'
   " Repeat after me
   Plug 'kana/vim-repeat'
   " Documentation generator
   Plug 'kkoomen/vim-doge'
   " Helps to delete buffers
   Plug 'Asheq/close-buffers.vim'
-  " Emmet for HTML editing
-  Plug 'mattn/emmet-vim'
-  " todo.txt support
-  Plug 'freitass/todo.txt-vim'
   " gS and gJ to join and split better!
   Plug 'AndrewRadev/splitjoin.vim'
   " Debugger for vim
