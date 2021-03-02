@@ -95,6 +95,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'chrisbra/csv.vim', { 'for': ['csv'] }
   Plug 'peterhoeg/vim-qml', { 'for': ['qml'] }
   Plug 'vhdirk/vim-cmake'
+  Plug 'pboettch/vim-cmake-syntax', { 'for': ['cmake'] }
 
 call plug#end()
 
