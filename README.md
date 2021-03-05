@@ -17,6 +17,8 @@ My dotfiles
 | /nvim                   | `~/.config/nvim`                   | [nvim]: Neovim configuration                |
 | /fontconfig             | `~/.config/fontconfig`             | fontconfig: Fonts rendering configuration   |
 | /libinput-gestures.conf | `~/.config/libinput-gestures.conf` | [libinput-gestures]: Touchpad gestures      |
+| /rofi                   | `~/.config/rofi`                   | [rofi]: Application launcher for xorg       |
+| /rofi-pass              | `~/.config/rofi-pass`              | [rofi-pass]: [pass] frontend with [rofi]    |
 
 [rime]: https://rime.im/
 [ncmpcpp]: https://rybczak.net/ncmpcpp/
@@ -29,3 +31,6 @@ My dotfiles
 [.tmux]: https://github.com/gpakosz/.tmux
 [nvim]: https://neovim.io/
 [libinput-gestures]: https://github.com/bulletmark/libinput-gestures
+[rofi]: https://github.com/davatorium/rofi
+[rofi-pass]: https://github.com/carnager/rofi-pass
+[pass]: https://www.passwordstore.org/
