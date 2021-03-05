@@ -19,6 +19,7 @@ My dotfiles
 | /libinput-gestures.conf | `~/.config/libinput-gestures.conf` | [libinput-gestures]: Touchpad gestures      |
 | /rofi                   | `~/.config/rofi`                   | [rofi]: Application launcher for xorg       |
 | /rofi-pass              | `~/.config/rofi-pass`              | [rofi-pass]: [pass] frontend with [rofi]    |
+| /mpv                    | `~/.config/mpv`                    | [mpv]: Video player                         |
 
 [rime]: https://rime.im/
 [ncmpcpp]: https://rybczak.net/ncmpcpp/
@@ -34,3 +35,4 @@ My dotfiles
 [rofi]: https://github.com/davatorium/rofi
 [rofi-pass]: https://github.com/carnager/rofi-pass
 [pass]: https://www.passwordstore.org/
+[mpv]: https://mpv.io/
