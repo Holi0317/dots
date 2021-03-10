@@ -53,6 +53,10 @@
   // Disable stylelint until stylelint-vscode updates
   "stylelint.enable": false,
 
+  // Disable TS/JS formatting as we are using prettier
+  "typescript.format.enabled": false,
+  "javascript.format.enabled": false,
+
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.mypyEnabled": false,
