@@ -6,7 +6,7 @@ My dotfiles
 
 | Directory               | Link to                            | Description                                 |
 | ----------------------- | ---------------------------------- | ------------------------------------------- |
-| /rime                   | `~/.config/ibus/rime`              | [rime]: Input method                        |
+| /rime                   | `~/.local/share/fcitx5/rime`       | [rime]: Input method                        |
 | /mpd                    | `~/.config/mpd`                    | [mpd]: Music player daemon                  |
 | /ncmpcpp                | `~/.ncmpcpp`                       | [ncmpcpp]: Console client for [mpd]         |
 | /mpDris2                | `~/.config/mpDris2`                | [mpDris2]: Bridge between [mpd] and MPRIS 2 |
