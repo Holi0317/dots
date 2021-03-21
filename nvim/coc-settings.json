@@ -64,7 +64,7 @@
   "python.venvPath": "venv",
 
   "clangd.semanticHighlighting": true,
-  "clangd.arguments": ["--clang-tidy"],
+  "clangd.arguments": ["--clang-tidy", "--cross-file-rename"],
 
   "xml.java.home": "/usr/lib/jvm/default",
   "cSpell.userWords": [
