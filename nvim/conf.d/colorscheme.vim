@@ -21,7 +21,7 @@ let g:PaperColor_Theme_Options = {
 set background=dark
 
 " Available: gruvbox, gruvbox-material, PaperColor
-colorscheme PaperColor
+colorscheme gruvbox
 
 " Enable terminal gui colors
 if (has("termguicolors"))
