@@ -7,6 +7,9 @@ let g:gruvbox_contrast_dark = "hard"
 
 " Gruvbox material settings
 let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_sign_column_background = 'none'
+let g:gruvbox_material_better_performance = 1
 
 " PaperColor settings
 let g:PaperColor_Theme_Options = {
@@ -21,7 +24,7 @@ let g:PaperColor_Theme_Options = {
 set background=dark
 
 " Available: gruvbox, gruvbox-material, PaperColor
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " Enable terminal gui colors
 if (has("termguicolors"))
