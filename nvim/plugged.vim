@@ -36,8 +36,6 @@ call plug#begin('~/.nvim/plugged')
   " Fuzzy file searcher
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
-  " Scrolling with better animation
-  Plug 'yuttie/comfortable-motion.vim'
   " Parentheses highlighting
   Plug 'luochen1990/rainbow'
   " Print doc in status bar
