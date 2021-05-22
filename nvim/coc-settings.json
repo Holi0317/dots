@@ -72,5 +72,7 @@
 
   "diagnostic-languageserver.filetypes": {
     "go": ["golangci-lint"]
-  }
+  },
+
+  "yaml.customTags": ["!vault"]
 }
