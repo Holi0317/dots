@@ -34,6 +34,7 @@ let g:coc_global_extensions = [
 \ 'coc-yaml',
 \ 'coc-texlab',
 \ 'coc-flutter',
+\ '@yaegassy/coc-nginx',
 \]
 
 let g:coc_filetype_map = {
