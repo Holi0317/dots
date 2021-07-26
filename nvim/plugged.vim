@@ -50,6 +50,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'AndrewRadev/splitjoin.vim'
   " Debugger for vim
   Plug 'puremourning/vimspector'
+  " Edit gpg files
+  Plug 'jamessan/vim-gnupg'
 
   " Text object extensions
   " Extension dependencies
