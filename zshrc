@@ -52,8 +52,13 @@ export FZF_BASE=/usr/bin/fzf
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(fzf pyenv nvm direnv gpg-agent)
 
+# For linux
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+fi
+# For macos
+if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # Add user completions
