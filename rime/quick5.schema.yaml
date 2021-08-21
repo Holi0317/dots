@@ -1,12 +1,5 @@
 # Rime schema settings
 # encoding: utf-8
-# Derived from rime/rime-quick with various edits
-# Mostly because patch file is way too annoying
-#
-# Patches:
-# 1. Enable opencc translation. Default to HK words
-# 2. Reverse lookup from jyut6ping3. Start lookup by `Z`
-# 3. Emoji opencc suggestion. But it seems broken
 
 schema:
   schema_id: quick5
@@ -14,29 +7,23 @@ schema:
   version: "0.20"
   author:
     - 佛振 <chen.sst@gmail.com>
-
   description: |
     速成、倉頡詞句連打
     碼表源自倉頡之友發佈的《五倉世紀版》
     www.chinesecj.com
-
-  "dependencies":
-    - "jyut6ping3"
+  dependencies:
+    - luna_quanpin
 
 switches:
-  - name: "ascii_mode"
+  - name: ascii_mode
     reset: 0
-    states: ["中文", "西文"]
+    states: [ 中文, 西文 ]
   - name: full_shape
-    states: ["半角", "全角"]
-  - options: ["noop", "trad_hk", "simp_cn"]
-    reset: 1
-    states: ["不轉換", "香港繁體", "大陆简体"]
-  - name: "ascii_punct"
-    states: ["。，", "．，"]
-  - name: "emoji_suggestion"
-    reset: 1
-    states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
 
 engine:
   processors:
@@ -51,32 +38,26 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - affix_segmentor@jyut6ping3
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
     - script_translator
-    - table_translator@jyut6ping3
+    - reverse_lookup_translator
   filters:
-    - "simplifier@trad_hk"
-    - "simplifier@simp_cn"
-    - "simplifier@emoji_suggestion"
-    - "uniquifier"
-    - "reverse_lookup_filter@reverse_lookup"
+    - simplifier
+    - uniquifier
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " ;'"
   algebra:
-    - 'derive/^([^z])\w+(\w)$/$1$2/' # 取倉頡首尾二碼爲速成碼
+    - 'derive/^([^z])\w+(\w)$/$1$2/'  # 取倉頡首尾二碼爲速成碼
 
 translator:
-  dictionary: quick5.extended
+  dictionary: quick5
   prism: quick5
-  enable_user_dict: true
-  user_dict: "custom_phrase"
   preedit_format:
     - "xlit|abcdefghijklmnopqrstuvwxyz;'|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符··|"
   comment_format:
@@ -85,19 +66,22 @@ translator:
     - "^z.*$"
     - "^yyy.*$"
 
-jyut6ping3:
-  tag: jyut6ping3
-  dictionary: jyut6ping3
-  prefix: "Z"
-  suffix: ";"
-  tips: 〔粵拼〕
+abc_segmentor:
+  extra_tags:
+    - reverse_lookup
 
 reverse_lookup:
-  tags: [jyut6ping3]
-  overwrite_comment: false
-  dictionary: quick5
+  dictionary: luna_pinyin
+  prism: luna_quanpin
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
   comment_format:
-    - "xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符～|"
+    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
 
 punctuator:
   import_preset: default
@@ -108,18 +92,4 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    punct: "^/([0-9]0?|[a-z]+)$"
-    jyut6ping3: "Z[a-z]*;?$"
-
-trad_hk:
-  option_name: "trad_hk"
-  opencc_config: "t2hk.json"
-
-simp_cn:
-  option_name: "simp_cn"
-  opencc_config: "t2s.json"
-
-emoji_suggestion:
-  opencc_config: "emoji.json"
-  option_name: "emoji_suggestion"
-  tips: "all"
+    reverse_lookup: "`[a-z]*'?$"
