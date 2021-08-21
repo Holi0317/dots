@@ -16,13 +16,37 @@ I assume you know Chinese if you're planning to read this document
 - Rime
 - Frontend for rime depending on your system. Such as ibus
 
-Following schemas （配方/輸入方案） are also required. May installed with [plum] or system
-package manager. In arch, install with `pacman`.
+# Rime input schemas and plum
 
-[plum]: https://github.com/rime/plum
+We have bundled [plum] and required schemas in this repository.
+Plum is installed via git submodule while the schemas are checked in.
 
-- [rime-cantonese](https://github.com/rime/rime-cantonese)
-- [rime-emoji](https://github.com/rime/rime-emoji)
+We also requires git-lfs installed on the host as schema dictionaries are
+checked into lfs.
+
+## Installed schemas
+
+- [prelude](https://github.com/rime/rime-prelude)
+- [essay](https://github.com/rime/rime-essay)
+- [quick](https://github.com/rime/rime-quick)
+- [cantonese](https://github.com/rime/rime-cantonese)
+
+## Upgrade plum
+
+```bash
+cd rime/plum
+git pull
+cd ..
+git add plum
+git commit
+```
+
+## Upgrade schemas
+
+```bash
+cd rime/plum
+bash rime-install <SCHEMA_NAMES>
+```
 
 # Features (Compare to official schemas)
 
