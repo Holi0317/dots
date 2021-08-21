@@ -28,6 +28,7 @@ checked into lfs.
 
 - [prelude](https://github.com/rime/rime-prelude)
 - [essay](https://github.com/rime/rime-essay)
+- [emoji](https://github.com/rime/rime-emoji)
 - [quick](https://github.com/rime/rime-quick)
 - [cantonese](https://github.com/rime/rime-cantonese)
 
