@@ -1,0 +1,3 @@
+[submodule "rime/plum"]
+	path = rime/plum
+	url = https://github.com/rime/plum.git
