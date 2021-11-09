@@ -83,7 +83,10 @@ alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
 
-# Set up pipx completion
-autoload -U bashcompinit
-bashcompinit
-eval "$(register-python-argcomplete pipx)"
+
+if [ -x "$(command -v register-python-argcomplete)" ]; then
+  # Set up pipx completion
+  autoload -U bashcompinit
+  bashcompinit
+  eval "$(register-python-argcomplete pipx)"
+fi
