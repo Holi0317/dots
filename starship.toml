@@ -5,3 +5,8 @@ error_symbol = "➜"
 [status]
 disabled = false
 symbol = " "
+
+[python]
+python_binary = ["py"]
+# The following isn't necessary, but convenient.
+detect_folders = [".venv"]
