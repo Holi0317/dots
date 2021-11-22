@@ -71,13 +71,15 @@ fpath=(~/.zfunc $fpath)
 source $ZSH/oh-my-zsh.sh
 
 # export configurations
-export EDITOR="nvim"
+export EDITOR="lvim"
 export PAGER="less"
 export CHROME_BIN=/usr/bin/google-chrome-stable
 export LESS='-SFXR'
 
 # Aliases
-alias vi="nvim"
+alias vi="lvim"
+alias vim="lvim"
+alias nvim="lvim"
 alias l="exa -alh --icons"
 alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
