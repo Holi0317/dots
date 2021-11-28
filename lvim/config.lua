@@ -361,6 +361,11 @@ vim.list_extend(lvim.plugins, {
 })
 table.insert(lvim.builtin.cmp.sources, { name = "cmp_pandoc" })
 
+-- ==== Language-specific: go ====
+lvim.autocommands.goimports = {
+	{ "BufWritePre", "*.go", "lua require('h4s.go').goimports(1000)" },
+}
+
 -- ==== Neorg ====
 table.insert(lvim.plugins, {
 	"nvim-neorg/neorg",
