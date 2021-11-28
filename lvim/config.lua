@@ -115,9 +115,6 @@ local lsp_keybinds = {
 deferwk.register(lsp_keybinds, { prefix = ";" })
 lvim.builtin.which_key.mappings.l = lsp_keybinds
 
--- ==== Keybindings: Telescope projects ====
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-
 -- ==== Git ====
 table.insert(lvim.plugins, {
 	"tpope/vim-fugitive",
@@ -174,6 +171,12 @@ vim.cmd("source ~/.config/lvim/redact.vim")
 
 -- ==== Telescope (Fuzzy searcher) ====
 lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
+-- Show hidden file in find_files picker
+lvim.builtin.telescope.pickers = {
+	find_files = {
+		find_command = { "fd", "--type=file", "--hidden", "-E", ".git" },
+	},
+}
 
 -- ==== Surround ====
 table.insert(lvim.plugins, { "tpope/vim-surround" })
