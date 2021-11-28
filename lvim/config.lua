@@ -357,3 +357,44 @@ vim.list_extend(lvim.plugins, {
 	{ "jbyuki/nabla.nvim" },
 })
 table.insert(lvim.builtin.cmp.sources, { name = "cmp_pandoc" })
+
+-- ==== Neorg ====
+table.insert(lvim.plugins, {
+	"nvim-neorg/neorg",
+	requires = "nvim-lua/plenary.nvim",
+	config = function()
+		require("neorg").setup({
+			-- Tell Neorg what modules to load
+			load = {
+				["core.defaults"] = {}, -- Load all the default modules
+				["core.norg.concealer"] = {}, -- Allows for use of icons
+				["core.norg.dirman"] = { -- Manage your directories with Neorg
+					config = {
+						workspaces = {
+							home = "~/neorg",
+						},
+					},
+				},
+				["core.norg.completion"] = {
+					config = {
+						engine = "nvim-cmp", -- We current support nvim-compe and nvim-cmp only
+					},
+				},
+			},
+		})
+	end,
+})
+
+-- ==== Neorg: Treesitter ====
+local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+
+parser_configs.norg = {
+	install_info = {
+		url = "https://github.com/nvim-neorg/tree-sitter-norg",
+		files = { "src/parser.c", "src/scanner.cc" },
+		branch = "main",
+	},
+}
+
+-- ==== Neorg: cmp completion ====
+table.insert(lvim.builtin.cmp.sources, { name = "neorg" })
