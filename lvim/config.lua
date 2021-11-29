@@ -158,6 +158,9 @@ lvim.builtin.comment.opleader = {
 table.insert(lvim.plugins, { "f3fora/cmp-spell" })
 table.insert(lvim.builtin.cmp.sources, { name = "spell" })
 
+-- ==== Emoji ====
+table.insert(lvim.plugins, { "hrsh7th/cmp-emoji" })
+
 vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = { "en_us" }
