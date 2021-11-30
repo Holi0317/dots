@@ -194,6 +194,14 @@ lvim.builtin.lualine.sections.lualine_b = {
 	}),
 }
 
+-- ==== Project (auto cd to project root directory) ====
+vim.list_extend(lvim.builtin.project.patterns, {
+	".obsidian",
+})
+lvim.builtin.project.ignore_lsp = {
+  "null-ls"
+}
+
 -- ==== Surround ====
 table.insert(lvim.plugins, { "tpope/vim-surround" })
 
