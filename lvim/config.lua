@@ -422,3 +422,41 @@ parser_configs.norg = {
 
 -- ==== Neorg: cmp completion ====
 table.insert(lvim.builtin.cmp.sources, { name = "neorg" })
+
+-- ==== zettelkasten with telekasten.nvim ====
+table.insert(lvim.plugins, {
+	"renerocksai/telekasten.nvim",
+	requires = "renerocksai/calendar-vim",
+	config = function()
+		local home = vim.fn.expand("~/Notes")
+		require("telekasten").setup({
+			home = home,
+			dailies = home .. "/" .. "daily",
+			weeklies = home .. "/" .. "weekly",
+			templates = home .. "/" .. "templates",
+
+			extension = ".md",
+			-- image link style
+			image_link_style = "markdown",
+
+			-- following a link to a non-existing note will create it
+			follow_creates_nonexisting = true,
+			dailies_create_nonexisting = true,
+			weeklies_create_nonexisting = true,
+
+			-- template for new notes (new_note, follow_link)
+			template_new_note = home .. "/" .. "templates/new_note.md",
+			-- template for newly created daily notes (goto_today)
+			template_new_daily = home .. "/" .. "templates/daily.md",
+			-- template for newly created weekly notes (goto_thisweek)
+			template_new_weekly = home .. "/" .. "templates/weekly.md",
+
+			-- integrate with calendar-vim
+			plug_into_calendar = true,
+		})
+	end,
+})
+
+lvim.autocommands.telekasten_keys = {
+	{ "BufWinEnter", "*.md", "lua require('h4s.context_keys').markdown()" },
+}
