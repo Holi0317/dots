@@ -185,6 +185,15 @@ lvim.builtin.telescope.defaults.mappings.i["<C-u>"] = function()
 	vim.fn.setline(".", "")
 end
 
+-- ==== Lualine (status line) ====
+local components = require("lvim.core.lualine.components")
+lvim.builtin.lualine.sections.lualine_b = {
+	components.branch,
+	vim.tbl_extend("force", components.filename, {
+		path = 1,
+	}),
+}
+
 -- ==== Surround ====
 table.insert(lvim.plugins, { "tpope/vim-surround" })
 
