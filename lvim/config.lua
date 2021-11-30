@@ -180,6 +180,10 @@ lvim.builtin.telescope.pickers = {
 		find_command = { "fd", "--type=file", "--hidden", "-E", ".git" },
 	},
 }
+-- <C-u> in telescope (insert mode) clears the search field
+lvim.builtin.telescope.defaults.mappings.i["<C-u>"] = function()
+	vim.fn.setline(".", "")
+end
 
 -- ==== Surround ====
 table.insert(lvim.plugins, { "tpope/vim-surround" })
