@@ -206,7 +206,14 @@ lvim.builtin.project.ignore_lsp = {
 table.insert(lvim.plugins, { "tpope/vim-surround" })
 
 -- ==== Lightspeed ====
-table.insert(lvim.plugins, { "ggandor/lightspeed.nvim" })
+table.insert(lvim.plugins, { "ggandor/lightspeed.nvim", opt = true })
+deferwk.on_done(function()
+	-- We need to load this after deferwk finish and unmap the `nmap ;` binding.
+	-- The binding is conflicting with which-key and somehow which-key is not registering it at this moment
+	vim.cmd("PackerLoad lightspeed.nvim")
+
+	vim.api.nvim_del_keymap("n", ";")
+end)
 
 -- ==== Indent line visual ====
 table.insert(lvim.plugins, {

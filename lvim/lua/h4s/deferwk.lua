@@ -2,23 +2,32 @@
 local M = {}
 
 local mappings = {}
+local on_done_cbs = {}
 local up_config_done = lvim.builtin.which_key.on_config_done
 
 local function on_config_done(wk)
-  if up_config_done then
-    up_config_done(wk)
-  end
+	if up_config_done then
+		up_config_done(wk)
+	end
 
-  for _, value in ipairs(mappings) do
-    local mapping, opt = unpack(value)
-    wk.register(mapping, opt)
-  end
+	for _, value in ipairs(mappings) do
+		local mapping, opt = unpack(value)
+		wk.register(mapping, opt)
+	end
+
+	for _, fn in ipairs(on_done_cbs) do
+		fn()
+	end
 end
 
 lvim.builtin.which_key.on_config_done = on_config_done
 
 function M.register(mapping, opt)
-  table.insert(mappings, {mapping, opt})
+	table.insert(mappings, { mapping, opt })
+end
+
+function M.on_done(fn)
+	table.insert(on_done_cbs, fn)
 end
 
 return M
