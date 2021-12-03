@@ -447,8 +447,7 @@ table.insert(lvim.plugins, {
 			-- image link style
 			image_link_style = "markdown",
 
-			-- following a link to a non-existing note will create it
-			follow_creates_nonexisting = true,
+			follow_creates_nonexisting = false,
 			dailies_create_nonexisting = true,
 			weeklies_create_nonexisting = true,
 
