@@ -199,7 +199,7 @@ vim.list_extend(lvim.builtin.project.patterns, {
 	".obsidian",
 })
 lvim.builtin.project.ignore_lsp = {
-  "null-ls"
+	"null-ls",
 }
 
 -- ==== Surround ====
