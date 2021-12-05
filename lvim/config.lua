@@ -299,12 +299,26 @@ lvim.builtin.which_key.mappings["t"] = {
 	t = { "<cmd>TodoTrouble<cr>", "Todo" },
 }
 
+-- ==== DAP ====
+lvim.builtin.dap.active = true
+require("dap.ext.vscode").load_launchjs()
+table.insert(lvim.plugins, {
+	"leoluz/nvim-dap-go",
+	opt = true,
+	ft = { "go" },
+	config = function()
+		require("dap-go").setup()
+	end,
+})
+
 -- ==== Formatters ====
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ exe = "stylua" },
 	{ exe = "prettier" },
+	{ exe = "gofmt" },
+	{ exe = "goimports" },
 })
 
 -- ==== Linters ====
@@ -391,11 +405,6 @@ vim.list_extend(lvim.plugins, {
 	{ "jbyuki/nabla.nvim" },
 })
 table.insert(lvim.builtin.cmp.sources, { name = "cmp_pandoc" })
-
--- ==== Language-specific: go ====
-lvim.autocommands.goimports = {
-	{ "BufWritePre", "*.go", "lua require('h4s.go').goimports(1000)" },
-}
 
 -- ==== Neorg ====
 table.insert(lvim.plugins, {
