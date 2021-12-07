@@ -479,7 +479,3 @@ table.insert(lvim.plugins, {
 		})
 	end,
 })
-
-lvim.autocommands.telekasten_keys = {
-	{ "BufWinEnter", "*.md", "lua require('h4s.context_keys').markdown()" },
-}
