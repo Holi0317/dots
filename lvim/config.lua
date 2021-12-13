@@ -168,6 +168,9 @@ vim.opt.spelllang = { "en_us" }
 -- ==== Sudo write ====
 vim.cmd(":ca w!! lua require('h4s.sudo').sudo_write()")
 
+-- ==== Editorconfig ====
+table.insert(lvim.plugins, { "gpanders/editorconfig.nvim" })
+
 -- ==== redact ====
 -- TODO: Port this to lua and disable LSP on load
 vim.cmd("source ~/.config/lvim/redact.vim")
@@ -325,7 +328,9 @@ formatters.setup({
 
 -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
-linters.setup({})
+linters.setup({
+	{ exe = "golangci-lint" },
+})
 
 -- ==== Treesitter ====
 -- if you don't want all the parsers change this to a table of the ones you want
