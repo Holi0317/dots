@@ -197,6 +197,14 @@ lvim.builtin.lualine.sections.lualine_b = {
 	}),
 }
 
+lvim.builtin.lualine.sections.lualine_x = {
+	components.diagnostics,
+	components.treesitter,
+	components.lsp,
+	components.location,
+	components.filetype,
+}
+
 -- ==== Project (auto cd to project root directory) ====
 vim.list_extend(lvim.builtin.project.patterns, {
 	".obsidian",
