@@ -61,13 +61,13 @@ lvim.keys.normal_mode["<C-c>"] = "<cmd>lua require('h4s.conceal').toggle()<CR>"
 -- ==== Keybindings: LSP-related ====
 deferwk.register({
 	["i"] = {
-		"<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+		"<cmd>lua vim.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
 		"Previous Diagnostic",
 	},
 }, { prefix = "[" })
 deferwk.register({
 	["i"] = {
-		"<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+		"<cmd>lua vim.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
 		"Next Diagnostic",
 	},
 }, { prefix = "]" })
