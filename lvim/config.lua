@@ -61,13 +61,17 @@ lvim.keys.normal_mode["<C-c>"] = "<cmd>lua require('h4s.conceal').toggle()<CR>"
 -- ==== Keybindings: LSP-related ====
 deferwk.register({
 	["i"] = {
-		"<cmd>lua vim.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+		function()
+			vim.diagnostic.goto_prev({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
 		"Previous Diagnostic",
 	},
 }, { prefix = "[" })
 deferwk.register({
 	["i"] = {
-		"<cmd>lua vim.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+		function()
+			vim.diagnostic.goto_next({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
 		"Next Diagnostic",
 	},
 }, { prefix = "]" })
@@ -77,7 +81,12 @@ deferwk.register({
 local lsp_keybinds = {
 	name = "LSP",
 
-	a = { "<cmd>lua require('lvim.core.telescope').code_actions()<cr>", "Code Action" },
+	a = {
+		function()
+			require("lvim.core.telescope").code_actions()
+		end,
+		"Code Action",
+	},
 	d = {
 		"<cmd>Telescope lsp_document_diagnostics<cr>",
 		"Document Diagnostics",
@@ -86,26 +95,65 @@ local lsp_keybinds = {
 		"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 		"Workspace Diagnostics",
 	},
-	f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+	f = {
+		function()
+			vim.lsp.buf.formatting()
+		end,
+		"Format",
+	},
 	i = { "<cmd>LspInfo<cr>", "Info" },
 	I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 	j = {
-		"<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+		function()
+			vim.diagnostic.goto_next({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
 		"Next Diagnostic",
 	},
 	k = {
-		"<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+		function()
+			vim.diagnostic.goto_prev({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
 		"Prev Diagnostic",
 	},
-	l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+	l = {
+		function()
+			vim.lsp.codelens.run()
+		end,
+		"CodeLens Action",
+	},
 	p = {
 		name = "Peek",
-		d = { "<cmd>lua require('lvim.lsp.peek').Peek('definition')<cr>", "Definition" },
-		t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
-		i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
+		d = {
+			function()
+				require("lvim.lsp.peek").Peek("definition")
+			end,
+			"Definition",
+		},
+		t = {
+			function()
+				require("lvim.lsp.peek").Peek("typeDefinition")
+			end,
+			"Type Definition",
+		},
+		i = {
+			function()
+				require("lvim.lsp.peek").Peek("implementation")
+			end,
+			"Implementation",
+		},
 	},
-	q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+	q = {
+		function()
+			vim.lsp.diagnostic.set_loclist()
+		end,
+		"Quickfix",
+	},
+	r = {
+		function()
+			vim.lsp.buf.rename()
+		end,
+		"Rename",
+	},
 	S = {
 		"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 		"Workspace Symbols",
