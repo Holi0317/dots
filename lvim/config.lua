@@ -154,6 +154,26 @@ lvim.builtin.comment.opleader = {
 	block = "tb",
 }
 
+-- ==== Save and format on save ====
+lvim.builtin.which_key.mappings["W"] = {
+	function()
+		local autocmds = require("lvim.core.autocmds")
+
+		if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
+			-- Format on save disabled
+			vim.cmd(":w<CR>")
+		else
+			-- Format on save enabled
+			autocmds.toggle_format_on_save()
+			vim.schedule(function()
+				vim.cmd(":w")
+				autocmds.toggle_format_on_save()
+			end)
+		end
+	end,
+	"Save without format",
+}
+
 -- ==== Spelling ====
 table.insert(lvim.plugins, { "f3fora/cmp-spell" })
 table.insert(lvim.builtin.cmp.sources, { name = "spell" })
