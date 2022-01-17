@@ -251,8 +251,7 @@ vim.cmd(":ca w!! lua require('h4s.sudo').sudo_write()")
 table.insert(lvim.plugins, { "gpanders/editorconfig.nvim" })
 
 -- ==== redact ====
--- TODO: Port this to lua and disable LSP on load
-vim.cmd("source ~/.config/lvim/redact.vim")
+require("h4s.redact").setup()
 
 -- ==== Telescope (Fuzzy searcher) ====
 lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
@@ -321,7 +320,7 @@ table.insert(lvim.plugins, { "jamessan/vim-gnupg" })
 vim.g.GPGPreferSign = 1
 
 lvim.autocommands.gpgenter = {
-	{ "User", "GnuPG", "set noswapfile noundofile nobackup nowritebackup" },
+	{ "User", "GnuPG", "lua require('h4s.redact').redact_once()" },
 }
 
 -- ==== Remember where I left off ====
