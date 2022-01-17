@@ -233,6 +233,17 @@ vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = { "en_us" }
 
+-- ==== Notifycation ====
+table.insert(lvim.plugins, {
+	"rcarriga/nvim-notify",
+	as = "notify", -- Somehow packer need this to have other name or it will refuse to install
+	config = function()
+		local notify = require("notify")
+		notify.setup()
+		vim.notify = notify
+	end,
+})
+
 -- ==== Sudo write ====
 vim.cmd(":ca w!! lua require('h4s.sudo').sudo_write()")
 
