@@ -233,7 +233,7 @@ vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = { "en_us" }
 
--- ==== Notifycation ====
+-- ==== Notification ====
 table.insert(lvim.plugins, {
 	"rcarriga/nvim-notify",
 	as = "notify", -- Somehow packer need this to have other name or it will refuse to install
