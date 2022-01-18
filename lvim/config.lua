@@ -19,6 +19,11 @@ lvim.colorscheme = "gruvbox-material"
 lvim.leader = " "
 vim.opt.timeoutlen = 1000
 
+-- ==== Keybindings: Disable esc keybindings from lvim ====
+lvim.keys.insert_mode["jk"] = false
+lvim.keys.insert_mode["kj"] = false
+lvim.keys.insert_mode["jj"] = false
+
 -- ==== Keybindings: buffer navigation and actions ====
 lvim.keys.normal_mode["]b"] = ":BufferNext<CR>"
 lvim.keys.normal_mode["[b"] = ":BufferPrevious<CR>"
