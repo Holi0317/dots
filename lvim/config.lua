@@ -144,7 +144,7 @@ local lsp_keybinds = {
 	},
 	q = {
 		function()
-			vim.lsp.diagnostic.set_loclist()
+			vim.diagnostic.set_loclist()
 		end,
 		"Quickfix",
 	},
@@ -243,6 +243,13 @@ table.insert(lvim.plugins, {
 		vim.notify = notify
 	end,
 })
+
+lvim.builtin.which_key.mappings.s.n = {
+	function()
+		require("telescope").extensions.notify.notify()
+	end,
+	"Notifications",
+}
 
 -- ==== Sudo write ====
 vim.cmd(":ca w!! lua require('h4s.sudo').sudo_write()")
