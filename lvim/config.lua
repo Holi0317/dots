@@ -25,27 +25,27 @@ lvim.keys.insert_mode["kj"] = false
 lvim.keys.insert_mode["jj"] = false
 
 -- ==== Keybindings: buffer navigation and actions ====
-lvim.keys.normal_mode["]b"] = ":BufferNext<CR>"
-lvim.keys.normal_mode["[b"] = ":BufferPrevious<CR>"
+lvim.keys.normal_mode["]b"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["[b"] = ":BufferLineCyclePrev<CR>"
 lvim.builtin.which_key.mappings["b"] = {
 	name = "Buffers",
 
-	j = { "<cmd>BufferPick<cr>", "Jump" },
+	j = { "<cmd>BufferLinePick<cr>", "Jump" },
 	f = { "<cmd>Telescope buffers<cr>", "Find" },
 	l = { "<cmd>Telescope buffers<cr>", "Find" },
 	b = { "<cmd>b#<cr>", "Previous" },
 
 	-- Wait what's difference between BufferDelete and BufferWipeout
 	w = { "<cmd>BufferWipeout<cr>", "Wipeout/Delete current buffer" },
-	d = { "<cmd>BufferDelete<cr>", "Delete current buffer" },
+	d = { "<cmd>bdelete<cr>", "Delete current buffer" },
 
 	o = {
-		"<cmd>BufferCloseAllButCurrent<cr>",
+		"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
 		"Close all but current",
 	},
-	H = { "<cmd>BufferCloseBuffersLeft<cr>", "Close all to the left" },
+	H = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
 	L = {
-		"<cmd>BufferCloseBuffersRight<cr>",
+		"<cmd>BufferLineCloseRight<cr>",
 		"Close all to the right",
 	},
 	s = {
