@@ -447,6 +447,11 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.indent = {
+	enable = true,
+	-- Some language's indentation in ts is broken
+	disable = { "go" },
+}
 
 -- ==== Treesitter: Auto close HTML/XML tag
 table.insert(lvim.plugins, {
