@@ -420,6 +420,7 @@ formatters.setup({
 	{ exe = "prettier" },
 	{ exe = "gofmt" },
 	{ exe = "goimports" },
+	{ exe = "eslint" },
 })
 
 -- ==== Linters ====
@@ -428,6 +429,7 @@ formatters.setup({
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{ exe = "golangci-lint" },
+	{ exe = "eslint" },
 })
 
 -- ==== Treesitter ====
