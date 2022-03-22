@@ -527,3 +527,14 @@ parser_config.wgsl = {
 		files = { "src/parser.c" },
 	},
 }
+
+-- ==== Language-specific: Dart/Flutter ====
+table.insert(lvim.plugins, {
+	"akinsho/flutter-tools.nvim",
+	ft = { "dart" },
+	config = function()
+		require("flutter-tools").setup()
+	end,
+})
+
+table.insert(lvim.lsp.override, "dartls")
