@@ -518,11 +518,6 @@ vim.list_extend(lvim.plugins, {
 table.insert(lvim.builtin.cmp.sources, { name = "cmp_pandoc" })
 
 -- ==== Language-specific: wgsl ====
-table.insert(lvim.plugins, {
-	"nvim-treesitter/nvim-treesitter",
-	run = ":TSUpdate",
-})
-
 vim.cmd([[au BufRead,BufNewFile *.wgsl	set filetype=wgsl]])
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
