@@ -290,9 +290,10 @@ lvim.builtin.lualine.sections.lualine_b = {
 lvim.builtin.lualine.sections.lualine_x = {
 	components.diagnostics,
 	components.treesitter,
-	components.lsp,
-	components.location,
-	components.filetype,
+	{
+		"filetype",
+		icon_only = true,
+	},
 }
 
 -- ==== Project (auto cd to project root directory) ====
