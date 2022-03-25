@@ -538,3 +538,13 @@ table.insert(lvim.plugins, {
 })
 
 table.insert(lvim.lsp.override, "dartls")
+
+-- ==== Language-specific: Solidity ====
+parser_config.solidity = {
+	install_info = {
+		url = "https://github.com/JoranHonig/tree-sitter-solidity",
+		files = { "src/parser.c" },
+		requires_generate_from_grammar = true,
+	},
+	filetype = "solidity",
+}
