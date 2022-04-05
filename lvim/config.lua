@@ -239,15 +239,7 @@ vim.opt.spelloptions = "camel"
 vim.opt.spelllang = { "en_us" }
 
 -- ==== Notification ====
-table.insert(lvim.plugins, {
-	"rcarriga/nvim-notify",
-	as = "notify", -- Somehow packer need this to have other name or it will refuse to install
-	config = function()
-		local notify = require("notify")
-		notify.setup()
-		vim.notify = notify
-	end,
-})
+lvim.builtin.notify.active = true
 
 lvim.builtin.which_key.mappings.s.n = {
 	function()
