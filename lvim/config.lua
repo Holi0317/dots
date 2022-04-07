@@ -238,6 +238,10 @@ vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 vim.opt.spelllang = { "en_us" }
 
+-- ==== Add omni for nvim-cmp ====
+table.insert(lvim.plugins, { "hrsh7th/cmp-omni" })
+table.insert(lvim.builtin.cmp.sources, { name = "omni" })
+
 -- ==== Notification ====
 lvim.builtin.notify.active = true
 
@@ -397,6 +401,26 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.dap.active = true
 require("dap.ext.vscode").load_launchjs()
 table.insert(lvim.plugins, {
+	"rcarriga/nvim-dap-ui",
+	config = function()
+		local dap = require("dap")
+		local dapui = require("dapui")
+
+		dapui.setup()
+
+		dap.listeners.after.event_initialized["dapui_config"] = function()
+			dapui.open()
+		end
+		dap.listeners.before.event_terminated["dapui_config"] = function()
+			dapui.close()
+		end
+		dap.listeners.before.event_exited["dapui_config"] = function()
+			dapui.close()
+		end
+	end,
+})
+
+table.insert(lvim.plugins, {
 	"leoluz/nvim-dap-go",
 	opt = true,
 	ft = { "go" },
@@ -526,8 +550,15 @@ table.insert(lvim.plugins, {
 	ft = { "dart" },
 	config = function()
 		require("flutter-tools").setup({
+			ui = {
+				notification_style = "plugin",
+			},
 			lsp = {
 				on_attach = require("lvim.lsp").common_on_attach,
+			},
+			debugger = {
+				enabled = true,
+				run_via_dap = true,
 			},
 		})
 	end,
