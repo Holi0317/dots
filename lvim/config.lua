@@ -398,36 +398,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 -- ==== DAP ====
-lvim.builtin.dap.active = true
-require("dap.ext.vscode").load_launchjs()
-table.insert(lvim.plugins, {
-	"rcarriga/nvim-dap-ui",
-	config = function()
-		local dap = require("dap")
-		local dapui = require("dapui")
-
-		dapui.setup()
-
-		dap.listeners.after.event_initialized["dapui_config"] = function()
-			dapui.open()
-		end
-		dap.listeners.before.event_terminated["dapui_config"] = function()
-			dapui.close()
-		end
-		dap.listeners.before.event_exited["dapui_config"] = function()
-			dapui.close()
-		end
-	end,
-})
-
-table.insert(lvim.plugins, {
-	"leoluz/nvim-dap-go",
-	opt = true,
-	ft = { "go" },
-	config = function()
-		require("dap-go").setup()
-	end,
-})
+require("h4s.dap").setup()
 
 -- ==== Formatters ====
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
