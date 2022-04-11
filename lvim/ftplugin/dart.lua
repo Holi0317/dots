@@ -9,3 +9,6 @@ vim.defer_fn(function()
 end, 10)
 
 vim.api.nvim_buf_set_keymap(0, "n", "\\", "<cmd>Telescope flutter commands<cr>", { silent = true })
+
+-- Fix comment string
+vim.bo.commentstring = "//%s"
