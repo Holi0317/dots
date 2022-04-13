@@ -304,7 +304,9 @@ lvim.builtin.lualine.sections.lualine_b = {
 
 lvim.builtin.lualine.sections.lualine_x = {
 	components.diagnostics,
+	components.lsp,
 	components.treesitter,
+	components.location,
 	{
 		"filetype",
 		icon_only = true,
