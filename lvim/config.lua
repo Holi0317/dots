@@ -242,6 +242,25 @@ vim.opt.spelllang = { "en_us" }
 table.insert(lvim.plugins, { "hrsh7th/cmp-omni" })
 table.insert(lvim.builtin.cmp.sources, { name = "omni" })
 
+-- ==== Better UI ====
+table.insert(lvim.plugins, {
+	"stevearc/dressing.nvim",
+	config = function()
+		require("dressing").setup({
+			input = {
+				enabled = true,
+
+				-- When true, <Esc> will close the modal
+				insert_only = false,
+			},
+			select = {
+				-- Set to false to disable the vim.ui.select implementation
+				enabled = true,
+			},
+		})
+	end,
+})
+
 -- ==== Notification ====
 lvim.builtin.notify.active = true
 
