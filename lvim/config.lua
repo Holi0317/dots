@@ -242,6 +242,16 @@ vim.opt.spelllang = { "en_us" }
 table.insert(lvim.plugins, { "hrsh7th/cmp-omni" })
 table.insert(lvim.builtin.cmp.sources, { name = "omni" })
 
+-- ==== DocString generator ====
+table.insert(lvim.plugins, {
+	"danymat/neogen",
+	config = function()
+		require("neogen").setup({
+			snippet_engine = "luasnip",
+		})
+	end,
+})
+
 -- ==== Better UI ====
 table.insert(lvim.plugins, {
 	"stevearc/dressing.nvim",
