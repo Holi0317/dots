@@ -159,6 +159,26 @@ local lsp_keybinds = {
 		end,
 		"Rename",
 	},
+	R = {
+		function()
+			local name = vim.api.nvim_buf_get_name(0)
+			vim.ui.input({
+				prompt = "New filename",
+				default = name,
+			}, function(input)
+				if input == nil then
+					return
+				end
+
+				if input == name then
+					return
+				end
+
+				vim.lsp.util.rename(name, input)
+			end)
+		end,
+		"Rename file",
+	},
 	S = {
 		"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 		"Workspace Symbols",
