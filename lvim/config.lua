@@ -93,11 +93,11 @@ local lsp_keybinds = {
 		"Code Action",
 	},
 	d = {
-		"<cmd>Telescope lsp_document_diagnostics<cr>",
+		"<cmd>TroubleToggle document_diagnostics<cr>",
 		"Document Diagnostics",
 	},
 	w = {
-		"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+		"<cmd>TroubleToggle workspace_diagnostics<cr>",
 		"Workspace Diagnostics",
 	},
 	f = {
@@ -415,7 +415,7 @@ lsp_keybinds.s = { "<cmd>SymbolsOutline<cr>", "Document Symbols" }
 -- ==== LSP: Trouble ====
 table.insert(lvim.plugins, {
 	"folke/trouble.nvim",
-	cmd = "TroubleToggle",
+	cmd = { "Trouble", "TroubleToggle", "TroubleClose", "TroubleRefresh" },
 })
 lvim.builtin.which_key.mappings["t"] = {
 	name = "+Trouble",
@@ -427,6 +427,13 @@ lvim.builtin.which_key.mappings["t"] = {
 	w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 	t = { "<cmd>TodoTrouble<cr>", "Todo" },
 }
+
+-- Use trouble for some lsp keys
+lvim.lsp.buffer_mappings.normal_mode = vim.tbl_extend("force", lvim.lsp.buffer_mappings.normal_mode, {
+	gd = { "<cmd>Trouble lsp_definitions<CR>", "Goto Definition" },
+	gr = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
+	gI = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
+})
 
 -- ==== DAP ====
 require("h4s.dap").setup()
