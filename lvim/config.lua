@@ -7,6 +7,8 @@ table.insert(lvim.plugins, { "tpope/vim-repeat" })
 -- Aka I have no idea where to put these options
 lvim.log.level = "warn"
 lvim.format_on_save = true
+-- Show colorcolumn on textwidth + 1. (currently) Used in markdown only.
+vim.wo.colorcolumn = "+1"
 
 -- ==== Colorscheme configuration ====
 table.insert(lvim.plugins, { "sainnhe/gruvbox-material" })

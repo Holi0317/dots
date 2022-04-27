@@ -34,3 +34,6 @@ context_keys.force_buf_remap(
 	"<cmd>lua require('telekasten').follow_link()<CR>",
 	{ silent = true, noremap = true }
 )
+
+-- Show color column at 90
+vim.bo.textwidth = 90
