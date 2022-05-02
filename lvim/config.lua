@@ -606,3 +606,9 @@ parser_config.solidity = {
 	},
 	filetype = "solidity",
 }
+
+-- ==== Language-specific: HTML ====
+-- Enable emmet LSP
+lvim.lsp.override = vim.tbl_filter(function(entry)
+	return entry ~= "emmet_ls"
+end, lvim.lsp.override)
