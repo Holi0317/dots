@@ -229,6 +229,9 @@ lvim.builtin.comment.opleader = {
 	block = "tb",
 }
 
+-- Disable "-cro" autocommand in lvim
+lvim.autocommands._formatoptions = {}
+
 -- ==== Save and format on save ====
 lvim.builtin.which_key.mappings["W"] = {
 	function()
