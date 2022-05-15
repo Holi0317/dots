@@ -2,6 +2,7 @@ local deferwk = require("h4s.deferwk")
 
 -- Additional plugins
 table.insert(lvim.plugins, { "tpope/vim-repeat" })
+table.insert(lvim.plugins, { "dkarter/bullets.vim" })
 
 -- ==== general ====
 -- Aka I have no idea where to put these options
