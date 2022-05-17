@@ -457,7 +457,10 @@ lvim.builtin.which_key.mappings["t"] = {
 
 -- Use trouble for some lsp keys
 lvim.lsp.buffer_mappings.normal_mode = vim.tbl_extend("force", lvim.lsp.buffer_mappings.normal_mode, {
-	gd = { "<cmd>Trouble lsp_definitions<CR>", "Goto Definition" },
+	-- Use lsp goto definition until trouble is fixed.
+	-- Ref: https://github.com/folke/trouble.nvim/issues/153
+	-- gd = { "<cmd>Trouble lsp_definitions<CR>", "Goto Definition" },
+	gd = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
 	gr = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
 	gI = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
 })
