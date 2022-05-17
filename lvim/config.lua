@@ -527,7 +527,6 @@ lvim.builtin.treesitter.textobjects = {
 		enable = false,
 		-- swap_next = textobj_swap_keymaps,
 	},
-	-- move = textobj_move_keymaps,
 	select = {
 		enable = true,
 		lookahead = true,
@@ -538,11 +537,14 @@ lvim.builtin.treesitter.textobjects = {
 			["ac"] = "@class.outer",
 			["ic"] = "@class.inner",
 
-			["i,"] = "@parameter.inner",
 			["a,"] = "@parameter.outer",
+			["i,"] = "@parameter.inner",
 
-			["a/"] = "@comment.outer",
-			["/"] = "@comment.outer",
+			["a/"] = "@comment",
+			["i/"] = "@comment.inner",
+
+			["ax"] = "@htmlattr.outer",
+			["ix"] = "@htmlattr.inner",
 		},
 	},
 }
