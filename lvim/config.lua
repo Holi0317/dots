@@ -92,7 +92,7 @@ local lsp_keybinds = {
 
   a = {
     function()
-      require("lvim.core.telescope").code_actions()
+      vim.lsp.buf.code_action()
     end,
     "Code Action",
   },
