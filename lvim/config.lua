@@ -34,32 +34,32 @@ lvim.keys.insert_mode["jj"] = false
 lvim.keys.normal_mode["]b"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["[b"] = ":BufferLineCyclePrev<CR>"
 lvim.builtin.which_key.mappings["b"] = {
-  name = "Buffers",
+	name = "Buffers",
 
-  j = { "<cmd>BufferLinePick<cr>", "Jump" },
-  f = { "<cmd>Telescope buffers<cr>", "Find" },
-  l = { "<cmd>Telescope buffers<cr>", "Find" },
-  b = { "<cmd>b#<cr>", "Previous" },
+	j = { "<cmd>BufferLinePick<cr>", "Jump" },
+	f = { "<cmd>Telescope buffers<cr>", "Find" },
+	l = { "<cmd>Telescope buffers<cr>", "Find" },
+	b = { "<cmd>b#<cr>", "Previous" },
 
-  -- Wait what's difference between BufferDelete and BufferWipeout
-  w = { "<cmd>BufferWipeout<cr>", "Wipeout/Delete current buffer" },
-  d = { "<cmd>bdelete<cr>", "Delete current buffer" },
+	-- Wait what's difference between BufferDelete and BufferWipeout
+	w = { "<cmd>BufferWipeout<cr>", "Wipeout/Delete current buffer" },
+	d = { "<cmd>bdelete<cr>", "Delete current buffer" },
 
-  o = {
-    "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
-    "Close all but current",
-  },
-  H = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-  L = {
-    "<cmd>BufferLineCloseRight<cr>",
-    "Close all to the right",
-  },
-  s = {
-    name = "Sort by...",
-    d = { "<cmd>BufferOrderByDirectory<cr>", "Sort by directory" },
-    l = { "<cmd>BufferOrderByLanguage<cr>", "Sort by language" },
-    w = { "<cmd>BufferOrderByWindowNumber<cr>", "Sort by window number" },
-  },
+	o = {
+		"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
+		"Close all but current",
+	},
+	H = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+	L = {
+		"<cmd>BufferLineCloseRight<cr>",
+		"Close all to the right",
+	},
+	s = {
+		name = "Sort by...",
+		d = { "<cmd>BufferOrderByDirectory<cr>", "Sort by directory" },
+		l = { "<cmd>BufferOrderByLanguage<cr>", "Sort by language" },
+		w = { "<cmd>BufferOrderByWindowNumber<cr>", "Sort by window number" },
+	},
 }
 
 -- ==== Keybindings: Add line above/under cursor ====
@@ -71,124 +71,124 @@ lvim.keys.normal_mode["<C-c>"] = "<cmd>lua require('h4s.conceal').toggle()<CR>"
 
 -- ==== Keybindings: LSP-related ====
 deferwk.register({
-  ["i"] = {
-    function()
-      vim.diagnostic.goto_prev({ popup_opts = { border = lvim.lsp.popup_border } })
-    end,
-    "Previous Diagnostic",
-  },
+	["i"] = {
+		function()
+			vim.diagnostic.goto_prev({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
+		"Previous Diagnostic",
+	},
 }, { prefix = "[" })
 deferwk.register({
-  ["i"] = {
-    function()
-      vim.diagnostic.goto_next({ popup_opts = { border = lvim.lsp.popup_border } })
-    end,
-    "Next Diagnostic",
-  },
+	["i"] = {
+		function()
+			vim.diagnostic.goto_next({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
+		"Next Diagnostic",
+	},
 }, { prefix = "]" })
 
 -- Note: This table will be mutated later in this file
 -- Search for usage of `lsp_keybinds` to see where will mutate this table.
 local lsp_keybinds = {
-  name = "LSP",
+	name = "LSP",
 
-  a = {
-    function()
-      vim.lsp.buf.code_action()
-    end,
-    "Code Action",
-  },
-  d = {
-    "<cmd>TroubleToggle document_diagnostics<cr>",
-    "Document Diagnostics",
-  },
-  w = {
-    "<cmd>TroubleToggle workspace_diagnostics<cr>",
-    "Workspace Diagnostics",
-  },
-  f = {
-    function()
-      vim.lsp.buf.formatting()
-    end,
-    "Format",
-  },
-  i = { "<cmd>LspInfo<cr>", "Info" },
-  I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-  j = {
-    function()
-      vim.diagnostic.goto_next({ popup_opts = { border = lvim.lsp.popup_border } })
-    end,
-    "Next Diagnostic",
-  },
-  k = {
-    function()
-      vim.diagnostic.goto_prev({ popup_opts = { border = lvim.lsp.popup_border } })
-    end,
-    "Prev Diagnostic",
-  },
-  l = {
-    function()
-      vim.lsp.codelens.run()
-    end,
-    "CodeLens Action",
-  },
-  p = {
-    name = "Peek",
-    d = {
-      function()
-        require("lvim.lsp.peek").Peek("definition")
-      end,
-      "Definition",
-    },
-    t = {
-      function()
-        require("lvim.lsp.peek").Peek("typeDefinition")
-      end,
-      "Type Definition",
-    },
-    i = {
-      function()
-        require("lvim.lsp.peek").Peek("implementation")
-      end,
-      "Implementation",
-    },
-  },
-  q = {
-    function()
-      vim.diagnostic.set_loclist()
-    end,
-    "Quickfix",
-  },
-  r = {
-    function()
-      vim.lsp.buf.rename()
-    end,
-    "Rename",
-  },
-  R = {
-    function()
-      local name = vim.api.nvim_buf_get_name(0)
-      vim.ui.input({
-        prompt = "New filename",
-        default = name,
-      }, function(input)
-        if input == nil then
-          return
-        end
+	a = {
+		function()
+			vim.lsp.buf.code_action()
+		end,
+		"Code Action",
+	},
+	d = {
+		"<cmd>TroubleToggle document_diagnostics<cr>",
+		"Document Diagnostics",
+	},
+	w = {
+		"<cmd>TroubleToggle workspace_diagnostics<cr>",
+		"Workspace Diagnostics",
+	},
+	f = {
+		function()
+			vim.lsp.buf.formatting()
+		end,
+		"Format",
+	},
+	i = { "<cmd>LspInfo<cr>", "Info" },
+	I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+	j = {
+		function()
+			vim.diagnostic.goto_next({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
+		"Next Diagnostic",
+	},
+	k = {
+		function()
+			vim.diagnostic.goto_prev({ popup_opts = { border = lvim.lsp.popup_border } })
+		end,
+		"Prev Diagnostic",
+	},
+	l = {
+		function()
+			vim.lsp.codelens.run()
+		end,
+		"CodeLens Action",
+	},
+	p = {
+		name = "Peek",
+		d = {
+			function()
+				require("lvim.lsp.peek").Peek("definition")
+			end,
+			"Definition",
+		},
+		t = {
+			function()
+				require("lvim.lsp.peek").Peek("typeDefinition")
+			end,
+			"Type Definition",
+		},
+		i = {
+			function()
+				require("lvim.lsp.peek").Peek("implementation")
+			end,
+			"Implementation",
+		},
+	},
+	q = {
+		function()
+			vim.diagnostic.set_loclist()
+		end,
+		"Quickfix",
+	},
+	r = {
+		function()
+			vim.lsp.buf.rename()
+		end,
+		"Rename",
+	},
+	R = {
+		function()
+			local name = vim.api.nvim_buf_get_name(0)
+			vim.ui.input({
+				prompt = "New filename",
+				default = name,
+			}, function(input)
+				if input == nil then
+					return
+				end
 
-        if input == name then
-          return
-        end
+				if input == name then
+					return
+				end
 
-        vim.lsp.util.rename(name, input)
-      end)
-    end,
-    "Rename file",
-  },
-  S = {
-    "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-    "Workspace Symbols",
-  },
+				vim.lsp.util.rename(name, input)
+			end)
+		end,
+		"Rename file",
+	},
+	S = {
+		"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+		"Workspace Symbols",
+	},
 }
 
 deferwk.register(lsp_keybinds, { prefix = ";" })
@@ -196,41 +196,41 @@ lvim.builtin.which_key.mappings.l = lsp_keybinds
 
 -- ==== Git ====
 table.insert(lvim.plugins, {
-  "tpope/vim-fugitive",
-  cmd = {
-    "G",
-    "Git",
-    "Gdiffsplit",
-    "Gread",
-    "Gwrite",
-    "Ggrep",
-    "GMove",
-    "GDelete",
-    "GBrowse",
-    "GRemove",
-    "GRename",
-    "Glgrep",
-    "Gedit",
-  },
-  ft = { "fugitive" },
+	"tpope/vim-fugitive",
+	cmd = {
+		"G",
+		"Git",
+		"Gdiffsplit",
+		"Gread",
+		"Gwrite",
+		"Ggrep",
+		"GMove",
+		"GDelete",
+		"GBrowse",
+		"GRemove",
+		"GRename",
+		"Glgrep",
+		"Gedit",
+	},
+	ft = { "fugitive" },
 })
 
 -- ==== Relative numberline ====
 vim.opt.relativenumber = true
 lvim.autocommands.relnumber_toggle = {
-  { "InsertEnter", "*", "set norelativenumber" },
-  { "InsertLeave", "*", "set relativenumber" },
+	{ "InsertEnter", "*", "set norelativenumber" },
+	{ "InsertLeave", "*", "set relativenumber" },
 }
 
 -- ==== Comment settings ====
 lvim.builtin.comment.toggler = {
-  line = "tcc",
-  block = "tbc",
+	line = "tcc",
+	block = "tbc",
 }
 
 lvim.builtin.comment.opleader = {
-  line = "tc",
-  block = "tb",
+	line = "tc",
+	block = "tb",
 }
 
 -- Disable "-cro" autocommand in lvim
@@ -238,16 +238,16 @@ lvim.autocommands._formatoptions = {}
 
 -- ==== Save and format on save ====
 lvim.builtin.which_key.mappings["W"] = {
-  function()
-    local autocmds = require("lvim.core.autocmds")
+	function()
+		local autocmds = require("lvim.core.autocmds")
 
-    autocmds.disable_format_on_save()
-    vim.schedule(function()
-      vim.cmd(":w")
-      autocmds.enable_format_on_save()
-    end)
-  end,
-  "Save without format",
+		autocmds.disable_format_on_save()
+		vim.schedule(function()
+			vim.cmd(":w")
+			autocmds.enable_format_on_save()
+		end)
+	end,
+	"Save without format",
 }
 
 -- ==== Spelling ====
@@ -267,41 +267,41 @@ table.insert(lvim.builtin.cmp.sources, { name = "omni" })
 
 -- ==== DocString generator ====
 table.insert(lvim.plugins, {
-  "danymat/neogen",
-  config = function()
-    require("neogen").setup({
-      snippet_engine = "luasnip",
-    })
-  end,
+	"danymat/neogen",
+	config = function()
+		require("neogen").setup({
+			snippet_engine = "luasnip",
+		})
+	end,
 })
 
 -- ==== Better UI ====
 table.insert(lvim.plugins, {
-  "stevearc/dressing.nvim",
-  config = function()
-    require("dressing").setup({
-      input = {
-        enabled = true,
+	"stevearc/dressing.nvim",
+	config = function()
+		require("dressing").setup({
+			input = {
+				enabled = true,
 
-        -- When true, <Esc> will close the modal
-        insert_only = false,
-      },
-      select = {
-        -- Set to false to disable the vim.ui.select implementation
-        enabled = true,
-      },
-    })
-  end,
+				-- When true, <Esc> will close the modal
+				insert_only = false,
+			},
+			select = {
+				-- Set to false to disable the vim.ui.select implementation
+				enabled = true,
+			},
+		})
+	end,
 })
 
 -- ==== Notification ====
 lvim.builtin.notify.active = true
 
 lvim.builtin.which_key.mappings.s.n = {
-  function()
-    require("telescope").extensions.notify.notify()
-  end,
-  "Notifications",
+	function()
+		require("telescope").extensions.notify.notify()
+	end,
+	"Notifications",
 }
 
 -- ==== Sudo write ====
@@ -317,41 +317,41 @@ require("h4s.redact").setup()
 lvim.keys.normal_mode["<C-p>"] = ":Telescope find_files<cr>"
 -- Show hidden file in find_files picker
 lvim.builtin.telescope.pickers = {
-  find_files = {
-    find_command = { "fd", "--type=file", "--hidden", "-E", ".git" },
-  },
+	find_files = {
+		find_command = { "fd", "--type=file", "--hidden", "-E", ".git" },
+	},
 }
 -- <C-u> in telescope (insert mode) clears the search field
 lvim.builtin.telescope.defaults.mappings.i["<C-u>"] = function()
-  vim.fn.setline(".", "")
+	vim.fn.setline(".", "")
 end
 
 -- ==== Lualine (status line) ====
 local components = require("lvim.core.lualine.components")
 lvim.builtin.lualine.sections.lualine_b = {
-  components.branch,
-  vim.tbl_extend("force", components.filename, {
-    path = 1,
-  }),
+	components.branch,
+	vim.tbl_extend("force", components.filename, {
+		path = 1,
+	}),
 }
 
 lvim.builtin.lualine.sections.lualine_x = {
-  components.diagnostics,
-  components.lsp,
-  components.treesitter,
-  components.location,
-  {
-    "filetype",
-    icon_only = true,
-  },
+	components.diagnostics,
+	components.lsp,
+	components.treesitter,
+	components.location,
+	{
+		"filetype",
+		icon_only = true,
+	},
 }
 
 -- ==== Project (auto cd to project root directory) ====
 vim.list_extend(lvim.builtin.project.patterns, {
-  ".obsidian",
+	".obsidian",
 })
 lvim.builtin.project.ignore_lsp = {
-  "null-ls",
+	"null-ls",
 }
 
 -- ==== Surround ====
@@ -360,22 +360,22 @@ table.insert(lvim.plugins, { "tpope/vim-surround" })
 -- ==== Lightspeed ====
 table.insert(lvim.plugins, { "ggandor/lightspeed.nvim", opt = true })
 deferwk.on_done(function()
-  -- We need to load this after deferwk finish and unmap the `nmap ;` binding.
-  -- The binding is conflicting with which-key and somehow which-key is not registering it at this moment
-  vim.cmd("PackerLoad lightspeed.nvim")
+	-- We need to load this after deferwk finish and unmap the `nmap ;` binding.
+	-- The binding is conflicting with which-key and somehow which-key is not registering it at this moment
+	vim.cmd("PackerLoad lightspeed.nvim")
 
-  vim.api.nvim_del_keymap("n", ";")
+	vim.api.nvim_del_keymap("n", ";")
 end)
 
 -- ==== Indent line visual ====
 table.insert(lvim.plugins, {
-  "lukas-reineke/indent-blankline.nvim",
-  config = function()
-    require("indent_blankline").setup({
-      show_current_context = true,
-      show_current_context_start = true,
-    })
-  end,
+	"lukas-reineke/indent-blankline.nvim",
+	config = function()
+		require("indent_blankline").setup({
+			show_current_context = true,
+			show_current_context_start = true,
+		})
+	end,
 })
 
 -- ==== .gpg extension support ====
@@ -383,34 +383,34 @@ table.insert(lvim.plugins, { "jamessan/vim-gnupg" })
 vim.g.GPGPreferSign = 1
 
 lvim.autocommands.gpgenter = {
-  { "User", "GnuPG", "lua require('h4s.redact').redact_once()" },
+	{ "User", "GnuPG", "lua require('h4s.redact').redact_once()" },
 }
 
 -- ==== Remember where I left off ====
 table.insert(lvim.plugins, {
-  "ethanholz/nvim-lastplace",
-  event = "BufRead",
-  config = function()
-    require("nvim-lastplace").setup({
-      lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-      lastplace_ignore_filetype = {
-        "gitcommit",
-        "gitrebase",
-        "svn",
-        "hgcommit",
-      },
-      lastplace_open_folds = true,
-    })
-  end,
+	"ethanholz/nvim-lastplace",
+	event = "BufRead",
+	config = function()
+		require("nvim-lastplace").setup({
+			lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+			lastplace_ignore_filetype = {
+				"gitcommit",
+				"gitrebase",
+				"svn",
+				"hgcommit",
+			},
+			lastplace_open_folds = true,
+		})
+	end,
 })
 
 -- ==== Todo enhancement ====
 table.insert(lvim.plugins, {
-  "folke/todo-comments.nvim",
-  event = "BufRead",
-  config = function()
-    require("todo-comments").setup()
-  end,
+	"folke/todo-comments.nvim",
+	event = "BufRead",
+	config = function()
+		require("todo-comments").setup()
+	end,
 })
 
 -- Need to rebind text search as it was bind to "t" key
@@ -424,55 +424,59 @@ table.insert(lvim.plugins, { "ray-x/lsp_signature.nvim" })
 -- Somehow putting this in config callback in packer does not work
 local ok, lsp_signature = pcall(require, "lsp_signature")
 if ok then
-  lsp_signature.setup()
+	lsp_signature.setup()
 end
 
 -- ==== LSP: Symbols outline ====
 table.insert(lvim.plugins, {
-  "simrat39/symbols-outline.nvim",
-  cmd = "SymbolsOutline",
+	"simrat39/symbols-outline.nvim",
+	cmd = "SymbolsOutline",
 })
 
 lsp_keybinds.s = { "<cmd>SymbolsOutline<cr>", "Document Symbols" }
 
 -- ==== LSP: Trouble ====
 table.insert(lvim.plugins, {
-  "folke/trouble.nvim",
-  cmd = { "Trouble", "TroubleToggle", "TroubleClose", "TroubleRefresh" },
+	"folke/trouble.nvim",
+	cmd = { "Trouble", "TroubleToggle", "TroubleClose", "TroubleRefresh" },
 })
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
-  t = { "<cmd>TodoTrouble<cr>", "Todo" },
+	name = "+Trouble",
+	r = { "<cmd>Trouble lsp_references<cr>", "References" },
+	f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+	d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
+	q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+	l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+	w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
+	t = { "<cmd>TodoTrouble<cr>", "Todo" },
 }
 
 -- Use trouble for some lsp keys
 lvim.lsp.buffer_mappings.normal_mode = vim.tbl_extend("force", lvim.lsp.buffer_mappings.normal_mode, {
-  -- Use lsp goto definition until trouble is fixed.
-  -- Ref: https://github.com/folke/trouble.nvim/issues/153
-  -- gd = { "<cmd>Trouble lsp_definitions<CR>", "Goto Definition" },
-  gd = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
-  gr = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
-  gI = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
+	-- Use lsp goto definition until trouble is fixed.
+	-- Ref: https://github.com/folke/trouble.nvim/issues/153
+	-- gd = { "<cmd>Trouble lsp_definitions<CR>", "Goto Definition" },
+	gd = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
+	gr = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
+	gI = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
 })
 
 -- ==== DAP ====
 require("h4s.dap").setup()
 
 -- ==== Formatters ====
+-- Disable some formatters from LSP
+local block_formatter = require("h4s.block_formatter")
+lvim.lsp.on_init_callback = block_formatter.mk_block_formatter({ "sumneko_lua" })
+
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-  { exe = "stylua" },
-  { exe = "prettier" },
-  { exe = "gofmt" },
-  { exe = "goimports" },
-  { exe = "eslint" },
+	{ exe = "stylua" },
+	{ exe = "prettier" },
+	{ exe = "gofmt" },
+	{ exe = "goimports" },
+	{ exe = "eslint" },
 })
 
 -- ==== Linters ====
@@ -480,39 +484,39 @@ formatters.setup({
 -- set additional linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-  { exe = "golangci-lint" },
-  { exe = "eslint" },
+	{ exe = "golangci-lint" },
+	{ exe = "eslint" },
 })
 
 -- ==== Treesitter ====
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+	"bash",
+	"c",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"typescript",
+	"css",
+	"rust",
+	"java",
+	"yaml",
 }
 
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent = {
-  enable = true,
-  -- Some language's indentation in ts is broken
-  disable = { "go" },
+	enable = true,
+	-- Some language's indentation in ts is broken
+	disable = { "go" },
 }
 
 -- ==== Treesitter: Auto close HTML/XML tag
 table.insert(lvim.plugins, {
-  "windwp/nvim-ts-autotag",
-  config = function()
-    require("nvim-ts-autotag").setup()
-  end,
+	"windwp/nvim-ts-autotag",
+	config = function()
+		require("nvim-ts-autotag").setup()
+	end,
 })
 
 -- Treesitter: Playground ====
@@ -522,72 +526,72 @@ lvim.builtin.treesitter.playground.enable = true
 -- ==== Treesitter: Text subjects ====
 table.insert(lvim.plugins, { "nvim-treesitter/nvim-treesitter-textobjects" })
 lvim.builtin.treesitter.textobjects = {
-  swap = {
-    enable = false,
-    -- swap_next = textobj_swap_keymaps,
-  },
-  select = {
-    enable = true,
-    lookahead = true,
-    keymaps = {
-      ["af"] = "@function.outer",
-      ["if"] = "@function.inner",
+	swap = {
+		enable = false,
+		-- swap_next = textobj_swap_keymaps,
+	},
+	select = {
+		enable = true,
+		lookahead = true,
+		keymaps = {
+			["af"] = "@function.outer",
+			["if"] = "@function.inner",
 
-      ["ac"] = "@class.outer",
-      ["ic"] = "@class.inner",
+			["ac"] = "@class.outer",
+			["ic"] = "@class.inner",
 
-      ["a,"] = "@parameter.outer",
-      ["i,"] = "@parameter.inner",
+			["a,"] = "@parameter.outer",
+			["i,"] = "@parameter.inner",
 
-      ["a/"] = "@comment",
-      ["i/"] = "@comment.inner",
+			["a/"] = "@comment",
+			["i/"] = "@comment.inner",
 
-      ["ax"] = "@htmlattr.outer",
-      ["ix"] = "@htmlattr.inner",
-    },
-  },
+			["ax"] = "@htmlattr.outer",
+			["ix"] = "@htmlattr.inner",
+		},
+	},
 }
 
 -- ==== Text objects ====
 vim.list_extend(lvim.plugins, {
-  -- Foundation for custom textobjects
-  { "kana/vim-textobj-user" },
-  -- CamelCase and underscore_case text objects (v)
-  { "Julian/vim-textobj-variable-segment" },
-  -- Current line (al and il)
-  { "kana/vim-textobj-line" },
+	-- Foundation for custom textobjects
+	{ "kana/vim-textobj-user" },
+	-- CamelCase and underscore_case text objects (v)
+	{ "Julian/vim-textobj-variable-segment" },
+	-- Current line (al and il)
+	{ "kana/vim-textobj-line" },
 })
 
 -- ==== Language-specific: Pandoc ====
 vim.list_extend(lvim.plugins, {
-  {
-    "aspeddro/cmp-pandoc.nvim",
-    config = function()
-      require("cmp_pandoc").setup()
-    end,
-  },
-  { "jbyuki/nabla.nvim" },
+	{
+		"aspeddro/cmp-pandoc.nvim",
+		config = function()
+			require("cmp_pandoc").setup()
+		end,
+	},
+	{ "jbyuki/nabla.nvim" },
 })
 table.insert(lvim.builtin.cmp.sources, { name = "cmp_pandoc" })
 
 -- ==== Language-specific: Dart/Flutter ====
 table.insert(lvim.plugins, {
-  "akinsho/flutter-tools.nvim",
-  ft = { "dart" },
-  config = function()
-    require("flutter-tools").setup({
-      ui = {
-        notification_style = "plugin",
-      },
-      lsp = {
-        on_attach = require("lvim.lsp").common_on_attach,
-      },
-      debugger = {
-        enabled = true,
-        run_via_dap = false,
-      },
-    })
-  end,
+	"akinsho/flutter-tools.nvim",
+	ft = { "dart" },
+	config = function()
+		require("flutter-tools").setup({
+			ui = {
+				notification_style = "plugin",
+			},
+			lsp = {
+				on_attach = require("lvim.lsp").common_on_attach,
+			},
+			debugger = {
+				enabled = true,
+				run_via_dap = false,
+			},
+		})
+	end,
 })
 
 table.insert(lvim.lsp.automatic_configuration.skipped_servers, "dartls")
@@ -595,5 +599,5 @@ table.insert(lvim.lsp.automatic_configuration.skipped_servers, "dartls")
 -- ==== Language-specific: HTML ====
 -- Enable emmet LSP
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(entry)
-  return entry ~= "emmet_ls"
+	return entry ~= "emmet_ls"
 end, lvim.lsp.automatic_configuration.skipped_servers)
