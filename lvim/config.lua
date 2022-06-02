@@ -11,6 +11,8 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 -- Show colorcolumn on textwidth + 1. (currently) Used in markdown only.
 vim.wo.colorcolumn = "+1"
+-- Disable startup greeter
+lvim.builtin.alpha.active = false
 
 -- ==== Colorscheme configuration ====
 table.insert(lvim.plugins, { "sainnhe/gruvbox-material" })
