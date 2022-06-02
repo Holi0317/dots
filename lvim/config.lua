@@ -570,17 +570,6 @@ vim.list_extend(lvim.plugins, {
 })
 table.insert(lvim.builtin.cmp.sources, { name = "cmp_pandoc" })
 
--- ==== Language-specific: wgsl ====
-vim.cmd([[au BufRead,BufNewFile *.wgsl	set filetype=wgsl]])
-
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.wgsl = {
-  install_info = {
-    url = "https://github.com/szebniok/tree-sitter-wgsl",
-    files = { "src/parser.c" },
-  },
-}
-
 -- ==== Language-specific: Dart/Flutter ====
 table.insert(lvim.plugins, {
   "akinsho/flutter-tools.nvim",
@@ -602,16 +591,6 @@ table.insert(lvim.plugins, {
 })
 
 table.insert(lvim.lsp.automatic_configuration.skipped_servers, "dartls")
-
--- ==== Language-specific: Solidity ====
-parser_config.solidity = {
-  install_info = {
-    url = "https://github.com/JoranHonig/tree-sitter-solidity",
-    files = { "src/parser.c" },
-    requires_generate_from_grammar = true,
-  },
-  filetype = "solidity",
-}
 
 -- ==== Language-specific: HTML ====
 -- Enable emmet LSP
