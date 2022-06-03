@@ -4,6 +4,10 @@ local deferwk = require("h4s.deferwk")
 table.insert(lvim.plugins, { "tpope/vim-repeat" })
 table.insert(lvim.plugins, { "dkarter/bullets.vim" })
 table.insert(lvim.plugins, { "jghauser/mkdir.nvim" })
+table.insert(lvim.plugins, {
+	"folke/lsp-colors.nvim",
+	event = "BufRead",
+})
 
 -- ==== general ====
 -- Aka I have no idea where to put these options
