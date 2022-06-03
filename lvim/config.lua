@@ -471,7 +471,7 @@ require("h4s.dap").setup()
 -- ==== Formatters ====
 -- Disable some formatters from LSP
 local block_formatter = require("h4s.block_formatter")
-lvim.lsp.on_init_callback = block_formatter.mk_block_formatter({ "sumneko_lua" })
+lvim.lsp.on_init_callback = block_formatter.mk_block_formatter({ "sumneko_lua", "gopls" })
 
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require("lvim.lsp.null-ls.formatters")
