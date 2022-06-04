@@ -1,44 +1,74 @@
+local dap = require("dap")
+local notify = require("notify")
+
 local M = {}
 
-M.setup = function()
-	-- Make sure dap is active
-	lvim.builtin.dap.active = true
-	require("dap.ext.vscode").load_launchjs()
-
-	-- DAP UI
-	table.insert(lvim.plugins, {
-		"rcarriga/nvim-dap-ui",
-		config = function()
-			local dap = require("dap")
-			local dapui = require("dapui")
-
-			dapui.setup()
-
-			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
+local function setup_go()
+	dap.adapters.go = function(callback, config)
+		local stdout = vim.loop.new_pipe(false)
+		local handle
+		local pid_or_err
+		local port = 38697
+		local opts = {
+			stdio = { nil, stdout },
+			args = { "dap", "--log", "-l", "127.0.0.1:" .. port },
+			detached = true,
+		}
+		handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)
+			stdout:close()
+			handle:close()
+			if code ~= 0 then
+				print("dlv exited with code", code)
 			end
-			dap.listeners.before.event_terminated["dapui_config"] = function()
-				dapui.close()
+		end)
+		assert(handle, "Error running dlv: " .. tostring(pid_or_err))
+		stdout:read_start(function(err, chunk)
+			assert(not err, err)
+			if chunk then
+				vim.schedule(function()
+					require("dap.repl").append(chunk)
+				end)
 			end
-			dap.listeners.before.event_exited["dapui_config"] = function()
-				dapui.close()
-			end
-		end,
-	})
+		end)
+		-- Wait for delve to start
+		vim.defer_fn(function()
+			callback({ type = "server", host = "127.0.0.1", port = port })
+		end, 100)
+	end
 
-	local dap = require("dap")
+	-- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+	dap.configurations.go = {
+		{
+			type = "go",
+			name = "Debug",
+			request = "launch",
+			program = "${file}",
+		},
+		{
+			type = "go",
+			name = "Run main.go",
+			request = "launch",
+			program = "${workspaceFolder}/main.go",
+		},
+		{
+			type = "go",
+			name = "Debug test", -- configuration for debugging test files
+			request = "launch",
+			mode = "test",
+			program = "${file}",
+		},
+		-- works with go.mod packages and sub packages
+		{
+			type = "go",
+			name = "Debug test (go.mod)",
+			request = "launch",
+			mode = "test",
+			program = "./${relativeFileDirname}",
+		},
+	}
+end
 
-	-- ==== Go ====
-	table.insert(lvim.plugins, {
-		"leoluz/nvim-dap-go",
-		opt = true,
-		ft = { "go" },
-		config = function()
-			require("dap-go").setup()
-		end,
-	})
-
-	-- ==== Javascript ====
+local function setup_nodejs()
 	dap.adapters.node2 = {
 		type = "executable",
 		command = "node",
@@ -64,6 +94,39 @@ M.setup = function()
 			processId = require("dap.utils").pick_process,
 		},
 	}
+end
+
+M.setup = function()
+	-- Make sure dap is active
+	lvim.builtin.dap.active = true
+
+	-- Defer load launch.json to ensure cwd is correct
+	vim.defer_fn(function()
+		require("dap.ext.vscode").load_launchjs()
+	end, 100)
+
+	-- DAP UI
+	table.insert(lvim.plugins, {
+		"rcarriga/nvim-dap-ui",
+		config = function()
+			local dapui = require("dapui")
+			local dap = require("dap")
+			dapui.setup()
+
+			dap.listeners.after.event_initialized["dapui_config"] = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated["dapui_config"] = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited["dapui_config"] = function()
+				dapui.close()
+			end
+		end,
+	})
+
+	setup_go()
+	setup_nodejs()
 end
 
 return M
