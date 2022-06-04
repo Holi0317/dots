@@ -1,7 +1,29 @@
 local dap = require("dap")
-local notify = require("notify")
 
 local M = {}
+
+local function setup_keybind()
+	-- Need to wait dap.setup() completed
+	lvim.builtin.dap.on_config_done = function()
+		lvim.builtin.which_key.mappings["d"] = {
+			name = "Debug",
+			t = { dap.toggle_breakpoint, "Toggle Breakpoint" },
+			b = { dap.step_back, "Step Back" },
+			c = { dap.continue, "Continue" },
+			C = { dap.run_to_cursor, "Run To Cursor" },
+			d = { dap.disconnect, "Disconnect" },
+			g = { dap.session, "Get Session" },
+			i = { dap.step_into, "Step Into" },
+			o = { dap.step_over, "Step Over" },
+			n = { dap.step_over, "Next line (Step Over)" },
+			u = { dap.step_out, "Step Out" },
+			p = { dap.pause, "Pause" },
+			r = { dap.toggle, "Toggle Repl" },
+			s = { dap.continue, "Start" },
+			q = { dap.close, "Quit" },
+		}
+	end
+end
 
 local function setup_go()
 	dap.adapters.go = function(callback, config)
@@ -124,6 +146,8 @@ M.setup = function()
 			end
 		end,
 	})
+
+	setup_keybind()
 
 	setup_go()
 	setup_nodejs()
