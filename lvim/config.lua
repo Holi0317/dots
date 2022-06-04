@@ -477,6 +477,7 @@ lvim.lsp.buffer_mappings.normal_mode = vim.tbl_extend("force", lvim.lsp.buffer_m
 	gd = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
 	gr = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
 	gI = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
+	gt = { vim.lsp.buf.type_definition, "Goto type definition" },
 })
 
 -- ==== DAP ====
