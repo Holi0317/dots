@@ -198,6 +198,20 @@ local lsp_keybinds = {
 deferwk.register(lsp_keybinds, { prefix = ";" })
 lvim.builtin.which_key.mappings.l = lsp_keybinds
 
+-- Make `K` dap-aware
+lvim.lsp.buffer_mappings.normal_mode.K = {
+	function()
+		local dap = require("dap")
+		local widgets = require("dap.ui.widgets")
+		if dap.session() == nil then
+			vim.lsp.buf.hover()
+		else
+			widgets.hover()
+		end
+	end,
+	"Show hover",
+}
+
 -- ==== Git ====
 table.insert(lvim.plugins, {
 	"tpope/vim-fugitive",
