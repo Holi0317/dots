@@ -20,6 +20,7 @@ lvim.format_on_save = {
 	---@usage filter func to select client
 	filter = require("lvim.lsp.handlers").format_filter,
 }
+
 -- Show colorcolumn on textwidth + 1. (currently) Used in markdown only.
 vim.wo.colorcolumn = "+1"
 -- Disable startup greeter
@@ -514,6 +515,7 @@ lvim.lsp.on_init_callback = block_formatter.mk_block_formatter({
 	"gopls",
 	"jsonls",
 	"volar",
+	"vue",
 	"tsserver",
 })
 
