@@ -12,7 +12,14 @@ table.insert(lvim.plugins, {
 -- ==== general ====
 -- Aka I have no idea where to put these options
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = {
+	---@usage pattern string pattern used for the autocommand (Default: '*')
+	pattern = "*",
+	---@usage timeout number timeout in ms for the format request (Default: 1000)
+	timeout = 5000,
+	---@usage filter func to select client
+	filter = require("lvim.lsp.handlers").format_filter,
+}
 -- Show colorcolumn on textwidth + 1. (currently) Used in markdown only.
 vim.wo.colorcolumn = "+1"
 -- Disable startup greeter
