@@ -22,8 +22,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(fzf pyenv nvm direnv gpg-agent)
 
 # Additional configuration for nvm plugin
-export NVM_LAZY=1
-export NVM_LAZY_CMD=npx
 # Add to .zprofile if nvm is installed with brew
 #export NVM_HOMEBREW=$(brew --prefix nvm)
 
