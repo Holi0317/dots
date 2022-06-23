@@ -55,7 +55,7 @@ lvim.builtin.which_key.mappings["b"] = {
 
 	-- Wait what's difference between BufferDelete and BufferWipeout
 	w = { "<cmd>BufferWipeout<cr>", "Wipeout/Delete current buffer" },
-	d = { "<cmd>bdelete<cr>", "Delete current buffer" },
+	d = { "<cmd>BufferKill<cr>", "Delete current buffer" },
 
 	o = {
 		"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
@@ -73,6 +73,11 @@ lvim.builtin.which_key.mappings["b"] = {
 		w = { "<cmd>BufferOrderByWindowNumber<cr>", "Sort by window number" },
 	},
 }
+
+-- ==== Keybindings: Tab navigations ====
+lvim.keys.normal_mode["]T"] = ":tabn<cr>"
+lvim.keys.normal_mode["[T"] = ":tabp<cr>"
+lvim.keys.normal_mode["tn"] = ":tabnew %<cr>"
 
 -- ==== Keybindings: Add line above/under cursor ====
 lvim.keys.normal_mode["[<space>"] = ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'["
@@ -493,6 +498,13 @@ lvim.builtin.which_key.mappings["t"] = {
 	t = { "<cmd>TodoTrouble<cr>", "Todo" },
 }
 
+lvim.keys.normal_mode["]t"] = function()
+	require("trouble").next({ skip_groups = true, jump = true })
+end
+lvim.keys.normal_mode["[t"] = function()
+	require("trouble").previous({ skip_groups = true, jump = true })
+end
+
 -- Use trouble for some lsp keys
 lvim.lsp.buffer_mappings.normal_mode = vim.tbl_extend("force", lvim.lsp.buffer_mappings.normal_mode, {
 	-- Use lsp goto definition until trouble is fixed.
@@ -561,7 +573,7 @@ lvim.builtin.treesitter.indent = {
 	disable = { "go" },
 }
 
--- ==== Treesitter: Auto close HTML/XML tag
+-- ==== Treesitter: Auto close HTML/XML tag ====
 table.insert(lvim.plugins, {
 	"windwp/nvim-ts-autotag",
 	config = function()
