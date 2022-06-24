@@ -19,11 +19,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf pyenv nvm direnv gpg-agent)
-
-# Additional configuration for nvm plugin
-# Add to .zprofile if nvm is installed with brew
-#export NVM_HOMEBREW=$(brew --prefix nvm)
+plugins=(fzf pyenv fnm direnv gpg-agent)
 
 # For linux
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]; then
@@ -64,4 +60,8 @@ if [ -x "$(command -v register-python-argcomplete)" ]; then
   autoload -U bashcompinit
   bashcompinit
   eval "$(register-python-argcomplete pipx)"
+fi
+
+if [ -x "$(command -v fnm)" ]; then
+  eval "$(fnm env --use-on-cd)"
 fi
