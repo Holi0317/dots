@@ -54,14 +54,27 @@ alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
 
-
+# Setup pipx completion
 if [ -x "$(command -v register-python-argcomplete)" ]; then
-  # Set up pipx completion
   autoload -U bashcompinit
   bashcompinit
   eval "$(register-python-argcomplete pipx)"
 fi
 
+# fnm: Fast node manager
 if [ -x "$(command -v fnm)" ]; then
   eval "$(fnm env --use-on-cd)"
 fi
+
+# Alias for lazygit
+gg()
+{
+  export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+  lazygit "$@"
+
+  if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+    cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+    rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+  fi
+}
