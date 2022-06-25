@@ -10,6 +10,7 @@ My dotfiles
 | /mpd                    | `~/.config/mpd`                    | [mpd]: Music player daemon                              |
 | /ncmpcpp                | `~/.ncmpcpp`                       | [ncmpcpp]: Console client for [mpd]                     |
 | /mpDris2                | `~/.config/mpDris2`                | [mpDris2]: Bridge between [mpd] and MPRIS 2             |
+| gitconfig               | `~/.gitconfig`                     | [git]: It's git                                         |
 | zshrc                   | `~/.zshrc`                         | [zsh]: Shell. With [oh-my-zsh]                          |
 | /alacritty              | `~/.config/alacritty`              | [alacritty]: Terminal emulator                          |
 | /starship.toml          | `~/.config/starship.toml`          | [starship]: Shell prompt                                |
@@ -25,6 +26,7 @@ My dotfiles
 [ncmpcpp]: https://rybczak.net/ncmpcpp/
 [mpd]: https://www.musicpd.org/
 [mpdris2]: https://github.com/eonpatapon/mpDris2
+[git]: https://git-scm.com/
 [zsh]: https://www.zsh.org/
 [oh-my-zsh]: https://github.com/ohmyzsh/ohmyzsh
 [alacritty]: https://github.com/alacritty/alacritty
