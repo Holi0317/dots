@@ -12,7 +12,6 @@ My dotfiles
 | /mpDris2                | `~/.config/mpDris2`                | [mpDris2]: Bridge between [mpd] and MPRIS 2             |
 | gitconfig               | `~/.gitconfig`                     | [git]: It's git                                         |
 | zshrc                   | `~/.zshrc`                         | [zsh]: Shell. With [oh-my-zsh]                          |
-| /alacritty              | `~/.config/alacritty`              | [alacritty]: Terminal emulator                          |
 | /starship.toml          | `~/.config/starship.toml`          | [starship]: Shell prompt                                |
 | /tmux.conf.local        | `~/.tmux.conf.local`               | [.tmux]: Tmux configuration                             |
 | /lvim                   | `~/.config/lvim`                   | [lvim]: LunaryVim ([NeoVim] distribution) configuration |
@@ -29,7 +28,6 @@ My dotfiles
 [git]: https://git-scm.com/
 [zsh]: https://www.zsh.org/
 [oh-my-zsh]: https://github.com/ohmyzsh/ohmyzsh
-[alacritty]: https://github.com/alacritty/alacritty
 [starship]: https://starship.rs/
 [.tmux]: https://github.com/gpakosz/.tmux
 [lvim]: https://github.com/LunarVim/LunarVim
