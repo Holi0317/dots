@@ -74,7 +74,7 @@ lvim.builtin.which_key.mappings["b"] = {
 	},
 }
 
--- ==== Keybindings: Tab navigations ====
+-- ==== Keybindings: Tab navigation ====
 lvim.keys.normal_mode["]T"] = ":tabn<cr>"
 lvim.keys.normal_mode["[T"] = ":tabp<cr>"
 lvim.keys.normal_mode["tn"] = ":tabnew %<cr>"
@@ -284,6 +284,13 @@ lvim.builtin.which_key.mappings["W"] = {
 -- ==== Spelling ====
 table.insert(lvim.plugins, { "f3fora/cmp-spell" })
 table.insert(lvim.builtin.cmp.sources, { name = "spell" })
+
+table.insert(lvim.plugins, {
+	"lewis6991/spellsitter.nvim",
+	config = function()
+		require("spellsitter").setup()
+	end,
+})
 
 -- ==== Emoji ====
 table.insert(lvim.plugins, { "hrsh7th/cmp-emoji" })
