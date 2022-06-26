@@ -1,0 +1,7 @@
+gui:
+  showIcons: true
+
+git:
+  paging:
+    colorArg: never
+    pager: delta --dark --paging=never
