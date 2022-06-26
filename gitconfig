@@ -4,9 +4,13 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
+  pager = delta
 
 [init]
   defaultBranch = master
+
+[interactive]
+  diffFilter = delta --color-only
 
 [commit]
   gpgsign = true
@@ -26,6 +30,10 @@
 
 [merge]
   ff = false
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
 
 [rebase]
   autoSquash = true
@@ -38,6 +46,10 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
 [include]
   path = ~/.gitconfig.local
