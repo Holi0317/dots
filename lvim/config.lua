@@ -699,6 +699,3 @@ table.insert(lvim.lsp.automatic_configuration.skipped_servers, "dartls")
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(entry)
 	return entry ~= "emmet_ls"
 end, lvim.lsp.automatic_configuration.skipped_servers)
-
--- ==== Language-specific: JS/TS/Vue ====
-table.insert(lvim.lsp.automatic_configuration.skipped_servers, "tsserver")
