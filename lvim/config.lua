@@ -403,7 +403,7 @@ table.insert(lvim.plugins, {
 			autocommands_create = true, -- Create autocommands (VimEnter, DirectoryChanged)
 			commands_create = true, -- Create commands (ConfigSource, ConfigEdit, ConfigTrust, ConfigIgnore)
 			silent = false, -- Disable plugin messages (Config loaded/ignored)
-			lookup_parents = false, -- Lookup config files in parent directories
+			lookup_parents = true, -- Lookup config files in parent directories
 		})
 	end,
 })
@@ -699,3 +699,6 @@ table.insert(lvim.lsp.automatic_configuration.skipped_servers, "dartls")
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(entry)
 	return entry ~= "emmet_ls"
 end, lvim.lsp.automatic_configuration.skipped_servers)
+
+-- ==== Language-specific: JS/TS/Vue ====
+table.insert(lvim.lsp.automatic_configuration.skipped_servers, "tsserver")
