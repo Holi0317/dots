@@ -621,6 +621,14 @@ lvim.builtin.treesitter.textobjects = {
 	},
 }
 
+-- ==== Treesitter: Context ====
+table.insert(lvim.plugins, {
+	"nvim-treesitter/nvim-treesitter-context",
+	config = function()
+		require("treesitter-context").setup()
+	end,
+})
+
 -- ==== Text objects ====
 vim.list_extend(lvim.plugins, {
 	-- Foundation for custom textobjects
