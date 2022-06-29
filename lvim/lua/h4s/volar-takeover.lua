@@ -24,7 +24,6 @@ local function remove_client(server_name, ft)
 	})
 
 	for _, autocmd in ipairs(autocmds) do
-		vim.notify(vim.inspect(autocmd))
 		if autocmd.command:match(server_name) then
 			vim.api.nvim_del_autocmd(autocmd.id)
 		end
@@ -43,7 +42,6 @@ local function client_is_configured(server_name, ft)
 end
 
 local function start_volar()
-	vim.notify("setup volar")
 	manager.setup("volar", {
 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 	})
@@ -69,16 +67,12 @@ function M.setup()
 	id = vim.api.nvim_create_autocmd({ "VimEnter", "User ConfigFinished" }, {
 		pattern = { "*.vue", "*.ts", "*.js", "*.tsx", "*.jsx" },
 		callback = function()
-			vim.notify("doautocmd")
-
 			-- Make it call once only
-			if id == -1 then
-				vim.notify("Fuck")
+			if id ~= -1 then
+				vim.api.nvim_del_autocmd(id)
 			end
-			vim.api.nvim_del_autocmd(id)
 
 			if M.is_enabled() then
-				vim.notify("true")
 				remove_client("volar", "vue")
 
 				if client_is_configured("volar", "vue") then
@@ -88,7 +82,6 @@ function M.setup()
 				kill_tsserver()
 				start_volar()
 			else
-				vim.notify("false")
 				manager.setup("tsserver")
 				manager.setup("volar")
 			end
