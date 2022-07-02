@@ -1,4 +1,5 @@
 local manager = require("lvim.lsp.manager")
+local fix = require("h4s.volar-fix")
 
 local M = {}
 
@@ -41,10 +42,25 @@ local function client_is_configured(server_name, ft)
 	return false
 end
 
-local function start_volar()
-	manager.setup("volar", {
-		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-	})
+---Setup and start volar server
+---@param takeover boolean|nil If true, enable takeover mode. Default to false.
+local function start_volar(takeover)
+	if takeover == nil then
+		takeover = false
+	end
+
+	-- Install temp fix for volar code action
+	fix.install()
+
+	local cfg = {
+		handlers = fix.handlers,
+	}
+
+	if takeover then
+		cfg.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+	end
+
+	manager.setup("volar", cfg)
 end
 
 ---Enable volar's takeover mode.
@@ -80,10 +96,10 @@ function M.setup()
 				end
 
 				kill_tsserver()
-				start_volar()
+				start_volar(true)
 			else
 				manager.setup("tsserver")
-				manager.setup("volar")
+				start_volar(false)
 			end
 		end,
 	})
