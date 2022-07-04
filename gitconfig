@@ -5,6 +5,8 @@
   autocrlf = input
   excludesfile = ~/.gitignore
   pager = delta
+  fsmonitor = true
+  fsyncMethod = batch
 
 [init]
   defaultBranch = master
