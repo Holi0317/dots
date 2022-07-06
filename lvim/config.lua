@@ -588,6 +588,18 @@ table.insert(lvim.plugins, {
 	end,
 })
 
+-- ==== Treesitter: Proper pairs ====
+table.insert(lvim.plugins, {
+	"theHamsta/nvim-treesitter-pairs",
+})
+
+lvim.builtin.treesitter.pairs = {
+	enable = true,
+	keymaps = {
+		goto_partner = "%",
+	},
+}
+
 -- Treesitter: Playground ====
 table.insert(lvim.plugins, { "nvim-treesitter/playground" })
 lvim.builtin.treesitter.playground.enable = true
