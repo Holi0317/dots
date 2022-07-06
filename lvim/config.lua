@@ -4,10 +4,10 @@ local deferwk = require("h4s.deferwk")
 table.insert(lvim.plugins, { "tpope/vim-repeat" })
 table.insert(lvim.plugins, { "dkarter/bullets.vim" })
 table.insert(lvim.plugins, { "jghauser/mkdir.nvim" })
-table.insert(lvim.plugins, {
-	"folke/lsp-colors.nvim",
-	event = "BufRead",
-})
+-- table.insert(lvim.plugins, {
+-- 	"folke/lsp-colors.nvim",
+-- 	event = "BufRead",
+-- })
 
 -- ==== general ====
 -- Aka I have no idea where to put these options
@@ -27,11 +27,18 @@ vim.wo.colorcolumn = "+1"
 lvim.builtin.alpha.active = false
 
 -- ==== Colorscheme configuration ====
-table.insert(lvim.plugins, { "sainnhe/gruvbox-material" })
-vim.g.gruvbox_material_background = "hard"
-vim.g.gruvbox_material_enable_italic = 1
-vim.g.gruvbox_material_sign_column_background = "none"
-lvim.colorscheme = "gruvbox-material"
+table.insert(lvim.plugins, { "ellisonleao/gruvbox.nvim" })
+vim.o.background = "dark" -- or "light" for light mode
+local ok, gruvbox = pcall(require, "gruvbox")
+if ok then
+	require("gruvbox").setup({
+		contrast = "hard", -- can be "hard" or "soft"
+		overrides = {
+			SignColumn = { bg = "none" },
+		},
+	})
+end
+lvim.colorscheme = "gruvbox"
 
 -- ==== Keybindings [view all the defaults by pressing <leader>Lk] ====
 lvim.leader = " "
