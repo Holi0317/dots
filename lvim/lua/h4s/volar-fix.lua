@@ -30,7 +30,6 @@ local function on_textdocument_codeaction(err, actions, ctx)
 end
 
 local function on_textdocument_rename(err, workspace_edit, ctx)
-	vim.notify(vim.inspect(workspace_edit))
 	handlers[ctx.method](err, fix_zero_version(workspace_edit), ctx)
 end
 
