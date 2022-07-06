@@ -373,6 +373,7 @@ end
 
 -- ==== Lualine (status line) ====
 local components = require("lvim.core.lualine.components")
+lvim.builtin.lualine.options.theme = "gruvbox_dark"
 lvim.builtin.lualine.sections.lualine_b = {
 	components.branch,
 	vim.tbl_extend("force", components.filename, {
