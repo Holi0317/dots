@@ -36,6 +36,7 @@ if ok then
 		overrides = {
 			SignColumn = { bg = "none" },
 			SpellBad = { link = "GruvboxAquaUnderline" },
+			IndentBlanklineContextChar = { link = "GruvboxBlue" },
 		},
 	})
 end
