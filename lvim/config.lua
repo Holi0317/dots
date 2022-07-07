@@ -35,6 +35,7 @@ if ok then
 		contrast = "hard", -- can be "hard" or "soft"
 		overrides = {
 			SignColumn = { bg = "none" },
+			SpellBad = { link = "GruvboxAquaUnderline" },
 		},
 	})
 end
