@@ -1,45 +1,43 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="spaceship"
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-eval "$(starship init zsh)"
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+### End of Zinit's installer chunk
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# Load starship theme
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf pyenv fnm direnv gpg-agent)
+zinit light jeffreytse/zsh-vi-mode
 
-scripts=(
-  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-  /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-)
-for script in "${scripts[@]}"; do
-  if [ -f "$script" ]; then
-    source "$script"
-  fi
-done
+# OMZ plugins
+zinit snippet OMZP::direnv
+zinit snippet OMZP::gpg-agent
 
-# Add user completions
-# Instructions:
-# Some tools (eg rustup, poetry) is installed to user.
-# Add those completion files to ~/.zfunc
-# Then delete ~/.zcompdump* and start new shell to regenerate completion cache
-fpath=(~/.zfunc $fpath)
+zinit light zsh-users/zsh-completions
+zinit light zdharma-continuum/fast-syntax-highlighting
 
-source $ZSH/oh-my-zsh.sh
+zinit ice lucid wait
+zinit snippet OMZP::fzf
 
 # export configurations
 export EDITOR="lvim"
@@ -56,12 +54,13 @@ alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
 
+# FIXME: Enable this
 # Setup pipx completion
-if [ -x "$(command -v register-python-argcomplete)" ]; then
-  autoload -U bashcompinit
-  bashcompinit
-  eval "$(register-python-argcomplete pipx)"
-fi
+# if [ -x "$(command -v register-python-argcomplete)" ]; then
+#   autoload -U bashcompinit
+#   bashcompinit
+#   eval "$(register-python-argcomplete pipx)"
+# fi
 
 # fnm: Fast node manager
 if [ -x "$(command -v fnm)" ]; then
