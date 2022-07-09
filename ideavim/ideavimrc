@@ -1,8 +1,11 @@
 " Enable plugins
 " Ref: https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
-set easymotion
 set surround
 set commentary
+set highlightedyank
+
+" Sync clipboard to system
+set clipboard=unnamedplus
 
 " Use intellij join for "J" command
 set ideajoin
@@ -30,12 +33,15 @@ nmap <silent> [b gT
 " Key mapping
 nmap ;f <Action>(ReformatCode)
 nmap ;r <Action>(RenameElement)
+nmap ;R <Action>(RenameFile)
 nmap K <Action>(QuickJavaDoc)
 nmap gr <Action>(FindUsages)
-nmap gD <Action>(GotoTypeDeclaration)
+nmap gT <Action>(GotoTypeDeclaration)
 nmap <C-p> <Action>(GotoFile)
 nmap [<space> <Action>(EditorStartNewLineBefore)
 nmap ]<space> <Action>(EditorStartNewLine)
 nmap ]i <Action>(GotoNextError)
 nmap [i <Action>(GotoPreviousError)
 nmap <space>h :noh<cr>
+nmap <space>g <Action>(FindInPath)
+nmap <space>e <Action>(ActivateProjectToolWindow)
