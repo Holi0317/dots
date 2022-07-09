@@ -4,10 +4,6 @@ local deferwk = require("h4s.deferwk")
 table.insert(lvim.plugins, { "tpope/vim-repeat" })
 table.insert(lvim.plugins, { "dkarter/bullets.vim" })
 table.insert(lvim.plugins, { "jghauser/mkdir.nvim" })
--- table.insert(lvim.plugins, {
--- 	"folke/lsp-colors.nvim",
--- 	event = "BufRead",
--- })
 
 -- ==== general ====
 -- Aka I have no idea where to put these options
@@ -490,6 +486,17 @@ local ok, lsp_signature = pcall(require, "lsp_signature")
 if ok then
 	lsp_signature.setup()
 end
+
+-- ==== LSP: Lightbulb on code action ====
+table.insert(lvim.plugins, {
+	"kosayoda/nvim-lightbulb",
+	requires = "antoinemadec/FixCursorHold.nvim",
+	config = function()
+		require("nvim-lightbulb").setup({
+			autocmd = { enabled = true },
+		})
+	end,
+})
 
 -- ==== LSP: Symbols outline ====
 table.insert(lvim.plugins, {
