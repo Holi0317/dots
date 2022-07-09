@@ -33,6 +33,9 @@ zinit light jeffreytse/zsh-vi-mode
 zinit snippet OMZP::direnv
 zinit snippet OMZP::gpg-agent
 
+zinit pack for system-completions
+
+zinit light willghatch/zsh-saneopt
 zinit light zsh-users/zsh-completions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
@@ -53,6 +56,9 @@ alias l="exa -alh --icons"
 alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # FIXME: Enable this
 # Setup pipx completion
