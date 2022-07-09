@@ -1,0 +1,41 @@
+" Enable plugins
+" Ref: https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+set easymotion
+set surround
+set commentary
+
+" Use intellij join for "J" command
+set ideajoin
+
+" Turn off bell sound
+" Ref: http://jason-stillwell.com/blog/2013/04/11/ideavim/
+set visualbell
+set noerrorbells
+
+" Relative line number
+set number
+set relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
+" Smart case search
+set hlsearch
+set ignorecase
+set smartcase
+
+" Buffer navigation
+nmap <silent> ]b gt
+nmap <silent> [b gT
+
+" Key mapping
+nmap ;f <Action>(ReformatCode)
+nmap ;r <Action>(RenameElement)
+nmap K <Action>(QuickJavaDoc)
+nmap gr <Action>(FindUsages)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap <C-p> <Action>(GotoFile)
+nmap [<space> <Action>(EditorStartNewLineBefore)
+nmap ]<space> <Action>(EditorStartNewLine)
+nmap ]i <Action>(GotoNextError)
+nmap [i <Action>(GotoPreviousError)
+nmap <space>h :noh<cr>
