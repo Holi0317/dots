@@ -5,7 +5,7 @@ set commentary
 set highlightedyank
 
 " Sync clipboard to system
-set clipboard=unnamedplus
+set clipboard+=ideaput
 
 " Use intellij join for "J" command
 set ideajoin
@@ -27,8 +27,8 @@ set ignorecase
 set smartcase
 
 " Buffer navigation
-nmap <silent> ]b gt
-nmap <silent> [b gT
+nmap <silent> ]b :tabn<cr>
+nmap <silent> [b :tabN<cr>
 
 " Key mapping
 nmap ;f <Action>(ReformatCode)
