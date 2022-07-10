@@ -21,6 +21,11 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+
+# ==== Stage sync: export and alias ====
+
+setopt auto_cd
+
 # export configurations
 export EDITOR="lvim"
 export PAGER="less"
@@ -36,78 +41,77 @@ alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
 alias gg="lazygit"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+
+load=load
+
+# ==== Stage sync: sane opts ====
+
+zinit $load willghatch/zsh-saneopt
+
+# ==== Load vi mode plugin ====
+# It will get unhappy if we load it async. So load it first
+zinit $load jeffreytse/zsh-vi-mode
+
+zinit ice lucid subst"bindkey -e ->"
+zinit snippet OMZL::key-bindings.zsh
+
+# ==== Prompt and theme =====
+PS1="
+READY
+➜ " # provide a simple prompt till the theme loads
 
 # Load starship theme
-zinit ice as"command" from"gh-r" \
+zinit ice wait"!" lucid \
+          as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
-zinit light starship/starship
+zinit $load starship/starship
 
-zstyle ':completion:*' menu select
-setopt share_history
-
-zinit light jeffreytse/zsh-vi-mode
-
-# OMZ plugins
-zinit snippet OMZP::direnv
-zinit snippet OMZP::gpg-agent
-
-# fnm: Fast node manager
-if [ -x "$(command -v fnm)" ]; then
-  eval "$(fnm env --use-on-cd)"
-fi
-
-zinit pack for system-completions
-zinit pack for ls_colors
-
-zinit fpath -f /opt/homebrew/share/zsh/site-functions
-
-zinit light willghatch/zsh-saneopt
-zinit light zsh-users/zsh-completions
+zinit ice lucid wait"" atload="zicompinit; zicdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-zinit ice lucid wait
-zinit snippet OMZP::fzf
+# ==== Small plugins ====
 
-# FIXME: Enable this
-# Setup pipx completion
-# if [ -x "$(command -v register-python-argcomplete)" ]; then
-#   autoload -U bashcompinit
-#   bashcompinit
-#   eval "$(register-python-argcomplete pipx)"
-# fi
+zinit wait"1" pack for ls_colors
 
+zinit ice wait"1" lucid autoload'#manydots-magic'
+zinit $load knu/zsh-manydots-magic
 
-# Case-insensitive completion
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zinit wait"1" lucid for \
+  OMZL::history.zsh \
+  atinit"COMPLETION_WAITING_DOTS=true" OMZL::completion.zsh \
+  OMZP::gpg-agent \
+  OMZP::fzf
 
-# ==== ... when <tab> ====
-expand-or-complete-with-dots() {
-  # use $COMPLETION_WAITING_DOTS either as toggle or as the sequence to show
-  COMPLETION_WAITING_DOTS="%F{red}…%f"
-  # turn off line wrapping and print prompt-expanded "dot" sequence
-  printf '\e[?7l%s\e[?7h' "${(%)COMPLETION_WAITING_DOTS}"
-  zle expand-or-complete
-  zle redisplay
-}
-zle -N expand-or-complete-with-dots
-# Set the function as the default tab completion widget
-bindkey -M emacs "^I" expand-or-complete-with-dots
-bindkey -M viins "^I" expand-or-complete-with-dots
-bindkey -M vicmd "^I" expand-or-complete-with-dots
+# ==== Install programs ====
 
-# ==== <S-Tab> for suggestion ====
-bindkey -M emacs '^[[Z' reverse-menu-complete
-bindkey -M viins '^[[Z' reverse-menu-complete
-bindkey -M vicmd '^[[Z' reverse-menu-complete
+# fnm: Fast node manager
+zinit ice lucid wait"1" blockf \
+          as"command" from"gh-r" bpick"*macos*" \
+          atclone"./fnm env --shell zsh --use-on-cd > init.zsh; fnm completions --shell zsh > _fnm" \
+          atpull"%atclone" src"init.zsh"
+zinit $load Schniz/fnm
 
-# Load completion
-autoload -Uz compinit
-autoload -U +X bashcompinit
-compinit
-bashcompinit
+# direnv
+zinit ice lucid wait"1" \
+          as"command" from"gh-r" \
+          atclone"./direnv hook zsh > zhook.zsh" \
+          atpull"%atclone" \
+          mv"direnv* -> direnv" src"zhook.zsh" \
+zinit $load direnv/direnv
 
-zinit cdreplay -q
+zinit ice lucid wait"1" \
+          as"command" from"gh-r" \
+          atclone'cp -vf completions/exa.zsh _exa' \
+          atpull"%atclone" \
+          atload"alias l='exa -alh --icons'; alias tree='exa --tree --icons'" \
+          sbin"**/exa -> exa"
+zinit $load ogham/exa
+
+# ==== Completions ====
+
+zinit ice wait"1" lucid blockf
+zinit add-fpath /opt/homebrew/share/zsh/site-functions
+
+zinit ice lucid wait"1" blockf atpull'zinit creinstall -q .'
+zinit $load zsh-users/zsh-completions
