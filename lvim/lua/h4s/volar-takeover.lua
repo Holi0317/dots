@@ -1,5 +1,4 @@
 local manager = require("lvim.lsp.manager")
-local fix = require("h4s.volar-fix")
 
 local M = {}
 
@@ -49,12 +48,7 @@ local function start_volar(takeover)
 		takeover = false
 	end
 
-	-- Install temp fix for volar code action
-	fix.install()
-
-	local cfg = {
-		handlers = fix.handlers,
-	}
+	local cfg = {}
 
 	if takeover then
 		cfg.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
