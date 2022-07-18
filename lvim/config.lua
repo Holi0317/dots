@@ -486,7 +486,15 @@ table.insert(lvim.plugins, {
 	"folke/todo-comments.nvim",
 	event = "BufRead",
 	config = function()
-		require("todo-comments").setup()
+		require("todo-comments").setup({
+			signs = false,
+			highlight = {
+				pattern = [[.*<(KEYWORDS)(\([^\)]*\))?:]],
+			},
+			search = {
+				pattern = [[\b(KEYWORDS)(\([^\)]*\))?:]],
+			},
+		})
 	end,
 })
 
