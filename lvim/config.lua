@@ -622,6 +622,11 @@ lvim.builtin.treesitter.indent = {
 	disable = { "go" },
 }
 
+-- ==== Treesitter: Enable folding ====
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevelstart = 99
+
 -- ==== Treesitter: Auto close HTML/XML tag ====
 table.insert(lvim.plugins, {
 	"windwp/nvim-ts-autotag",
