@@ -772,3 +772,9 @@ table.insert(lvim.lsp.automatic_configuration.skipped_servers, "tsserver")
 
 -- ==== Language-specific: Vue ====
 table.insert(lvim.lsp.automatic_configuration.skipped_servers, "volar")
+
+-- ==== Language-specific: CSharp ====
+table.insert(lvim.plugins, {
+	"Hoffs/omnisharp-extended-lsp.nvim",
+})
+table.insert(lvim.lsp.automatic_configuration.skipped_servers, "cs")
