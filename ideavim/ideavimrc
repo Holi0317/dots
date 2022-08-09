@@ -5,7 +5,7 @@ set commentary
 set highlightedyank
 
 " Sync clipboard to system
-set clipboard+=ideaput
+set clipboard+=unnamed
 
 " Use intellij join for "J" command
 set ideajoin
