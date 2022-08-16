@@ -86,7 +86,7 @@ zinit wait"1" lucid for \
 # ==== Install programs ====
 
 # fnm: Fast node manager
-zinit ice lucid wait"1" blockf \
+zinit ice lucid wait"!" blockf \
           as"command" from"gh-r" bpick"*macos*" \
           atclone"./fnm env --shell zsh --use-on-cd > init.zsh; fnm completions --shell zsh > _fnm" \
           atpull"%atclone" src"init.zsh"
