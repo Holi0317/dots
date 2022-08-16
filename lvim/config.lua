@@ -771,6 +771,11 @@ end, lvim.lsp.automatic_configuration.skipped_servers)
 -- ==== Language-specific: JS/TS/Vue ====
 table.insert(lvim.lsp.automatic_configuration.skipped_servers, "tsserver")
 
+table.insert(lvim.plugins, {
+	"David-Kunz/cmp-npm",
+})
+table.insert(lvim.builtin.cmp.sources, { name = "npm" })
+
 -- ==== Language-specific: Vue ====
 table.insert(lvim.lsp.automatic_configuration.skipped_servers, "volar")
 
