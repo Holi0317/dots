@@ -31,6 +31,8 @@ export EDITOR="lvim"
 export PAGER="less"
 export CHROME_BIN=/usr/bin/google-chrome-stable
 export LESS='-SFXR'
+export HISTSIZE=500000
+export SAVEHIST=500000
 
 # Aliases
 alias vi="lvim"
