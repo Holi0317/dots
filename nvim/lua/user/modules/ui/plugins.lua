@@ -6,3 +6,10 @@ plugin({
 		require("user.modules.ui.config").notify()
 	end
 })
+
+plugin({
+	"stevearc/dressing.nvim",
+	config = function()
+		require("user.modules.ui.config").dressing()
+	end
+})
