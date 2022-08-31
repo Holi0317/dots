@@ -13,3 +13,10 @@ plugin({
 		require("user.modules.ui.config").dressing()
 	end
 })
+
+plugin({
+	"folke/trouble.nvim",
+	config = function()
+		require("user.modules.ui.config").trouble()
+	end,
+})
