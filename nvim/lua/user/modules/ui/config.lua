@@ -6,15 +6,6 @@ function M.notify()
 	local telescope = require("telescope")
 
 	vim.notify = notify
-
-	-- TODO: Enable notify search binding
-	--keys.mappings.s.n = {
-	--	function()
-	--		telescope.load_extension("notify")
-	--		telescope.extensions.notify.notify()
-	--	end,
-	--	"Notifications",
-	--}
 end
 
 function M.dressing()
