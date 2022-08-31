@@ -20,3 +20,10 @@ plugin({
 		require("user.modules.ui.config").trouble()
 	end,
 })
+
+plugin({
+	"gbprod/yanky.nvim",
+	config = function()
+		require("user.modules.ui.config").yanky()
+	end,
+})
