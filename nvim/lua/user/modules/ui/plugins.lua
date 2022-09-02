@@ -27,3 +27,13 @@ plugin({
 		require("user.modules.ui.config").yanky()
 	end,
 })
+
+
+-- ==== Indent line visual ====
+plugin({
+	"lukas-reineke/indent-blankline.nvim",
+	config = function()
+		require("user.modules.ui.config").indent()
+	end,
+})
+
