@@ -99,6 +99,11 @@ function M.treesitter()
         goto_partner = "%",
       },
     },
+
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+    }
   }
 
 
