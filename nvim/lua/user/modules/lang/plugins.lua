@@ -10,3 +10,10 @@ plugin({
 		require("user.modules.lang.config").lspconfig()
 	end
 })
+
+plugin({
+	"folke/lua-dev.nvim",
+	config = function()
+		require("user.modules.lang.config").luadev()
+	end
+})
