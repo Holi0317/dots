@@ -37,3 +37,6 @@ plugin({
 	end,
 })
 
+plugin({
+	"ggandor/lightspeed.nvim"
+})
