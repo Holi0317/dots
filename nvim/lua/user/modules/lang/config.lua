@@ -1,7 +1,10 @@
 local M = {}
 
-function M.lspconfig()
+function M.mason()
 	require("mason").setup()
+end
+
+function M.lspconfig()
 	require("mason-lspconfig").setup({
 		ensure_installed = { "sumneko_lua" }
 	})
