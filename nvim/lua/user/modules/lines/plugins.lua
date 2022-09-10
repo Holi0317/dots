@@ -18,7 +18,11 @@ plugin({
 		"kyazdani42/nvim-web-devicons",
 		opt = true,
 	},
-	config =function()
+	config = function()
 		require("user.modules.lines.config").bufferline()
 	end
+})
+
+plugin({
+	"ojroques/nvim-bufdel"
 })
