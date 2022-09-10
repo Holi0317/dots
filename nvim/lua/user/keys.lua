@@ -125,15 +125,108 @@ local M = {
 			l = { "<cmd>Trouble loclist<cr>", "LocationList" },
 			w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 			t = { "<cmd>TodoTrouble<cr>", "Todo" },
-		}
+		},
+	},
+	lsp_mappings = {
+		name = "LSP",
+
+		a = {
+			vim.lsp.buf.code_action,
+			"Code Action",
+		},
+		d = {
+			"<cmd>TroubleToggle document_diagnostics<cr>",
+			"Document Diagnostics",
+		},
+		w = {
+			"<cmd>TroubleToggle workspace_diagnostics<cr>",
+			"Workspace Diagnostics",
+		},
+		f = {
+			function()
+				vim.lsp.buf.formatting()
+			end,
+			"Format",
+		},
+		i = { "<cmd>LspInfo<cr>", "Info" },
+		I = { "<cmd>Mason<cr>", "Installer Info" },
+		j = {
+			function()
+				vim.diagnostic.goto_next({ float = true })
+			end,
+			"Next Diagnostic",
+		},
+		k = {
+			function()
+				vim.diagnostic.goto_prev({ float = true })
+			end,
+			"Prev Diagnostic",
+		},
+		l = {
+			function()
+				vim.lsp.codelens.run()
+			end,
+			"CodeLens Action",
+		},
+		q = {
+			function()
+				vim.diagnostic.set_loclist()
+			end,
+			"Quickfix",
+		},
+		r = {
+			function()
+				vim.lsp.buf.rename()
+			end,
+			"Rename",
+		},
+		R = {
+			function()
+				local name = vim.api.nvim_buf_get_name(0)
+				vim.ui.input({
+					prompt = "New filename",
+					default = name,
+				}, function(input)
+					if input == nil then
+						return
+					end
+
+					if input == name then
+						return
+					end
+
+					vim.lsp.util.rename(name, input)
+				end)
+			end,
+			"Rename file",
+		},
+		S = {
+			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+			"Workspace Symbols",
+		},
 	},
 }
+
+local function setup_vim_keys()
+	vim.keymap.set('n', ']i', function()
+		vim.diagnostic.goto_next({ float = true })
+	end, { desc = "Next Diagnostic" })
+	vim.keymap.set('n', '[i', function()
+		vim.diagnostic.goto_prev({ float = true })
+	end, { desc = "Previous Diagnostic" })
+end
 
 function M.setup()
 	local wk = require("which-key")
 
+	setup_vim_keys()
+
 	wk.register(M.mappings, {
 		prefix = "<leader>",
+	})
+
+	wk.register(M.lsp_mappings, {
+		prefix = ";",
 	})
 end
 
