@@ -8,20 +8,24 @@ plugin({
 })
 
 plugin({
-	"tpope/vim-repeat" 
+	"tpope/vim-repeat"
 })
 
 plugin({
 	"Julian/vim-textobj-variable-segment",
 	requires = {
-		"kana/vim-textobj-user" 
+		"kana/vim-textobj-user"
 	}
 })
 
 
 plugin({
-	"kana/vim-textobj-line" ,
+	"kana/vim-textobj-line",
 	requires = {
-		"kana/vim-textobj-user" 
+		"kana/vim-textobj-user"
 	}
+})
+
+plugin({
+	"tpope/vim-surround"
 })
