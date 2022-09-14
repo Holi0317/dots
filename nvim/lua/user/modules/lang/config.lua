@@ -70,4 +70,30 @@ function M.luadev()
 	})
 end
 
+function M.null()
+	local null = require("null-ls")
+	local callbacks = require("user.lsp.callbacks")
+
+	null.setup({
+		on_attach = callbacks.on_attach,
+		on_init = callbacks.on_init,
+		on_exit = callbacks.on_exit,
+		sources = {
+			null.builtins.code_actions.eslint_d,
+
+			null.builtins.diagnostics.eslint_d,
+			null.builtins.diagnostics.golangci_lint,
+
+			null.builtins.formatting.black,
+			null.builtins.formatting.eslint_d,
+			null.builtins.formatting.gofmt,
+			null.builtins.formatting.goimports,
+			null.builtins.formatting.isort,
+			null.builtins.formatting.prettierd,
+			null.builtins.formatting.stylua,
+			null.builtins.formatting.taplo,
+		}
+	})
+end
+
 return M

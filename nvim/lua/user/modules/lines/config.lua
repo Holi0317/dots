@@ -87,16 +87,11 @@ function M.lualine()
 					end
 				end
 
-				-- FIXME: Integrate with null-ls
-				-- -- add formatter
-				-- local formatters = require("lvim.lsp.null-ls.formatters")
-				-- local supported_formatters = formatters.list_registered(buf_ft)
-				-- vim.list_extend(buf_client_names, supported_formatters)
-
-				-- -- add linter
-				-- local linters = require("lvim.lsp.null-ls.linters")
-				-- local supported_linters = linters.list_registered(buf_ft)
-				-- vim.list_extend(buf_client_names, supported_linters)
+				local s = require("null-ls.sources")
+				local available_sources = s.get_available(buf_ft)
+				for _, source in ipairs(available_sources) do
+					table.insert(buf_client_names, source.name)
+				end
 
 				local unique_client_names = vim.fn.uniq(buf_client_names)
 				return "[" .. table.concat(unique_client_names, ", ") .. "]"
