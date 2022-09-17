@@ -3,12 +3,11 @@ local M = {}
 ---@type table<string,string[]>
 local mappings = {
 	["K"] = { vim.lsp.buf.hover, "Show hover" },
-	["gd"] = { vim.lsp.buf.definition, "Goto Definition" },
-	["gD"] = { vim.lsp.buf.declaration, "Goto declaration" },
+	["gd"] = { "<cmd>Trouble lsp_definitions<cr>", "Goto Definition" },
 	["gr"] = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
 	["gI"] = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
 	["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
-	["gt"] = { vim.lsp.buf.type_definition, "Goto type definition" },
+	["gt"] = { "<cmd>Trouble lsp_type_definitions<cr>", "Goto type definition" },
 	["gp"] = {
 		function()
 			require("lvim.lsp.peek").Peek("definition")
@@ -87,10 +86,8 @@ function M.on_attach(client, bufnr)
 	setup_keymap(client, bufnr)
 end
 
-function M.on_init()
-end
+function M.on_init() end
 
-function M.on_exit()
-end
+function M.on_exit() end
 
 return M
