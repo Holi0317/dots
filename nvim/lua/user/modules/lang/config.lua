@@ -3,61 +3,61 @@ local M = {}
 function M.mason()
 	require("mason").setup()
 
-	require('mason-tool-installer').setup {
+	require("mason-tool-installer").setup({
 		-- a list of all tools you want to ensure are installed upon
 		-- start; they should be the names Mason uses for each tool
 		ensure_installed = {
-			'dockerfile-language-server',
-			'vim-language-server',
+			"dockerfile-language-server",
+			"vim-language-server",
 
 			-- Bash and shell
-			'bash-language-server',
-			'shellcheck',
-			'shfmt',
+			"bash-language-server",
+			"shellcheck",
+			"shfmt",
 
 			-- C and C++
-			'clangd',
-			'cmake-language-server',
+			"clangd",
+			"cmake-language-server",
 
 			-- C#
-			'omnisharp',
-			'netcoredbg',
+			"omnisharp",
+			"netcoredbg",
 
 			-- Go
-			'gopls',
-			'golangci-lint',
-			'delve',
+			"gopls",
+			"golangci-lint",
+			"delve",
 
 			-- Python
-			'pyright',
-			'isort',
-			'black',
-			'debugpy',
+			"pyright",
+			"isort",
+			"black",
+			"debugpy",
 
 			-- Lua
-			'lua-language-server',
-			'stylua',
+			"lua-language-server",
+			"stylua",
 
 			-- JSON, yaml, toml
-			'json-lsp',
-			'fixjson',
-			'yaml-language-server',
-			'ansible-language-server',
-			'taplo',
+			"json-lsp",
+			"fixjson",
+			"yaml-language-server",
+			"ansible-language-server",
+			"taplo",
 
 			-- Typescript and the web
-			'css-lsp',
-			'html-lsp',
-			'typescript-language-server',
-			'eslint_d',
-			'prettierd',
-			'vue-language-server',
-			'emmet-ls',
+			"css-lsp",
+			"html-lsp",
+			"typescript-language-server",
+			"eslint_d",
+			"prettierd",
+			"vue-language-server",
+			"emmet-ls",
 
 			-- Non-language
-			'editorconfig-checker',
+			"editorconfig-checker",
 		},
-	}
+	})
 end
 
 function M.lspconfig()
@@ -72,10 +72,15 @@ end
 
 function M.null()
 	local null = require("null-ls")
+	local lspformat = require("lsp-format")
 	local callbacks = require("user.lsp.callbacks")
 
 	null.setup({
-		on_attach = callbacks.on_attach,
+		on_attach = function(client, bufnr)
+			lspformat.on_attach(client)
+
+			callbacks.on_attach(client, bufnr)
+		end,
 		on_init = callbacks.on_init,
 		on_exit = callbacks.on_exit,
 		sources = {
@@ -92,8 +97,15 @@ function M.null()
 			null.builtins.formatting.prettierd,
 			null.builtins.formatting.stylua,
 			null.builtins.formatting.taplo,
-		}
+		},
 	})
+end
+
+function M.format()
+	require("lsp-format").setup({})
+
+	-- Fix `:wq` as we need to do the formatting in sync
+	vim.cmd([[cabbrev wq execute "Format sync" <bar> wq]])
 end
 
 return M
