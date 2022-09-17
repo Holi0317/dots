@@ -2,6 +2,8 @@ local M = {}
 
 function M.nvimtree()
 	require("nvim-tree").setup({
+		sync_root_with_cwd = true,
+		respect_buf_cwd = true,
 		disable_netrw = true,
 		hijack_netrw = true,
 		open_on_setup = false,
@@ -35,6 +37,7 @@ function M.nvimtree()
 		update_focused_file = {
 			enable = true,
 			update_cwd = true,
+			update_root = true,
 			ignore_list = {},
 		},
 		system_open = {
