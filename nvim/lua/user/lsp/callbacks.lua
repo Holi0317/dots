@@ -15,11 +15,7 @@ local mappings = {
 		"Peek definition",
 	},
 	["gl"] = {
-		function()
-			local config = lvim.lsp.diagnostics.float
-			config.scope = "line"
-			vim.diagnostic.open_float(0, config)
-		end,
+		"<cmd>Lspsaga show_line_diagnostics<CR>",
 		"Show line diagnostics",
 	},
 }

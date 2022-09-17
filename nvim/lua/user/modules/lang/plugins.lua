@@ -51,3 +51,11 @@ plugin({
 		require("user.modules.lang.config").fidget()
 	end,
 })
+
+plugin({
+	"glepnir/lspsaga.nvim",
+	branch = "main",
+	config = function()
+		require("user.modules.lang.config").saga()
+	end,
+})
