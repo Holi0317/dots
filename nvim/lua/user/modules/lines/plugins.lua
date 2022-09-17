@@ -8,7 +8,7 @@ plugin({
 	},
 	config = function()
 		require("user.modules.lines.config").lualine()
-	end
+	end,
 })
 
 plugin({
@@ -20,9 +20,9 @@ plugin({
 	},
 	config = function()
 		require("user.modules.lines.config").bufferline()
-	end
+	end,
 })
 
 plugin({
-	"ojroques/nvim-bufdel"
+	"ojroques/nvim-bufdel",
 })

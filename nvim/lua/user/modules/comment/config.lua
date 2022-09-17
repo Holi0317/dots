@@ -1,28 +1,27 @@
 local M = {}
 
 function M.comment()
-	require('Comment').setup {
+	require("Comment").setup({
 		toggler = {
-			line = 'tcc',
-			block = 'tbc',
+			line = "tcc",
+			block = "tbc",
 		},
 		opleader = {
 			---Line-comment keymap
-			line = 'tc',
+			line = "tc",
 			---Block-comment keymap
-			block = 'tb',
+			block = "tb",
 		},
-		 extra = {
-        ---Add comment on the line above
-        above = 'tcO',
-        ---Add comment on the line below
-        below = 'tco',
-        ---Add comment at the end of line
-        eol = 'tcA',
-    },
-		pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-	}
+		extra = {
+			---Add comment on the line above
+			above = "tcO",
+			---Add comment on the line below
+			below = "tco",
+			---Add comment at the end of line
+			eol = "tcA",
+		},
+		pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+	})
 end
-
 
 return M

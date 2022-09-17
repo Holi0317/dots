@@ -84,7 +84,7 @@ local plugins = setmetatable({}, {
 
 function plugins.ensure_plugins()
 	Packer:init_ensure_plugins()
-	bus.emit('plugin_loaded')
+	bus.emit("plugin_loaded")
 end
 
 function plugins.register_plugin(repo)

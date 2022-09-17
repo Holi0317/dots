@@ -4,28 +4,27 @@ plugin({
 	"windwp/nvim-autopairs",
 	config = function()
 		require("user.modules.textobj.config").autopairs()
-	end
+	end,
 })
 
 plugin({
-	"tpope/vim-repeat"
+	"tpope/vim-repeat",
 })
 
 plugin({
 	"Julian/vim-textobj-variable-segment",
 	requires = {
-		"kana/vim-textobj-user"
-	}
+		"kana/vim-textobj-user",
+	},
 })
-
 
 plugin({
 	"kana/vim-textobj-line",
 	requires = {
-		"kana/vim-textobj-user"
-	}
+		"kana/vim-textobj-user",
+	},
 })
 
 plugin({
-	"tpope/vim-surround"
+	"tpope/vim-surround",
 })
