@@ -22,3 +22,11 @@ plugin({
     "JoosepAlviste/nvim-ts-context-commentstring"
   }
 })
+
+-- TODO(0.8): Remove spellsitter as it is now native.
+plugin({
+  "lewis6991/spellsitter.nvim",
+  config = function()
+    require("user.modules.syntax.config").spellsitter()
+  end
+})
