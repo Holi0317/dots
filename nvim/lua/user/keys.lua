@@ -126,6 +126,10 @@ local M = {
 			w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 			t = { "<cmd>TodoTrouble<cr>", "Todo" },
 		},
+		e = {
+			":NvimTreeToggle<CR>",
+			"Toggle file explorer",
+		},
 	},
 	lsp_mappings = {
 		name = "LSP",
