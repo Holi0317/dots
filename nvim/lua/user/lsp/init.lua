@@ -3,7 +3,12 @@ local cmp_nvim = require("cmp_nvim_lsp")
 local lspformat = require("lsp-format")
 local callbacks = require("user.lsp.callbacks")
 
-local M = {}
+local M = {
+	---Set of configured language server names.
+	---If a server already exist here, it will not be configured again.
+	---@type table<string, boolean>
+	configured = {},
+}
 
 -- manually start the server and don't wait for the usual filetype trigger from lspconfig
 local function buf_try_add(server)
@@ -23,6 +28,10 @@ end
 ---@param server_name string Name of the server listed in lspconfig
 ---@param custom? LspSetupConfig Additional overrides to be passed into setup function
 function M.setup(server_name, custom)
+	if M.configured[server_name] then
+		return
+	end
+
 	custom = custom or {}
 
 	local capabilities = M.common_capabilities()
@@ -46,6 +55,7 @@ function M.setup(server_name, custom)
 	server.setup(opt)
 
 	buf_try_add(server)
+	M.configured[server_name] = true
 end
 
 ---Setup javascript/typescript/volar.
