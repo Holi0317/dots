@@ -37,7 +37,6 @@ export SAVEHIST=500000
 # Aliases
 alias vi="lvim"
 alias vim="lvim"
-alias nvim="lvim"
 alias l="exa -alh --icons"
 alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
