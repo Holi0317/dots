@@ -108,4 +108,12 @@ function M.format()
 	vim.cmd([[cabbrev wq execute "Format sync" <bar> wq]])
 end
 
+function M.fidget()
+	require("fidget").setup({
+		text = {
+			spinner = "dots_negative",
+		},
+	})
+end
+
 return M
