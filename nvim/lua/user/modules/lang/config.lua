@@ -40,7 +40,6 @@ function M.mason()
 
 			-- JSON, yaml, toml
 			"json-lsp",
-			"fixjson",
 			"yaml-language-server",
 			"ansible-language-server",
 			"taplo",
@@ -53,6 +52,12 @@ function M.mason()
 			"prettierd",
 			"vue-language-server",
 			"emmet-ls",
+
+			-- PHP
+			"intelephense",
+
+			-- XML
+			"lemminx",
 
 			-- Non-language
 			"editorconfig-checker",
@@ -85,9 +90,11 @@ function M.null()
 		on_exit = callbacks.on_exit,
 		sources = {
 			null.builtins.code_actions.eslint_d,
+			null.builtins.code_actions.shellcheck,
 
 			null.builtins.diagnostics.eslint_d,
 			null.builtins.diagnostics.golangci_lint,
+			null.builtins.diagnostics.shellcheck,
 
 			null.builtins.formatting.black,
 			null.builtins.formatting.eslint_d,
@@ -95,6 +102,7 @@ function M.null()
 			null.builtins.formatting.goimports,
 			null.builtins.formatting.isort,
 			null.builtins.formatting.prettierd,
+			null.builtins.formatting.shfmt,
 			null.builtins.formatting.stylua,
 			null.builtins.formatting.taplo,
 		},

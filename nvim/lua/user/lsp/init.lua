@@ -11,6 +11,10 @@ local function buf_try_add(server)
 	server.manager.try_add_wrapper(bufnr)
 end
 
+function M.common_capabilities()
+	return cmp_nvim.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+end
+
 ---@class LspSetupConfig
 ---@field override? any Table of options to override
 ---@field enable_format? boolean Enable formatting from this lsp. Default to false.
@@ -21,7 +25,7 @@ end
 function M.setup(server_name, custom)
 	custom = custom or {}
 
-	local capabilities = cmp_nvim.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+	local capabilities = M.common_capabilities()
 
 	local defaults = {
 		on_attach = function(client, bufnr)
@@ -42,6 +46,12 @@ function M.setup(server_name, custom)
 	server.setup(opt)
 
 	buf_try_add(server)
+end
+
+---Setup javascript/typescript/volar.
+---Putting this as a special function for supporting volar takeover mode later
+function M.setup_js()
+	M.setup("tsserver")
 end
 
 return M
