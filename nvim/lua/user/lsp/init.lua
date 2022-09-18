@@ -58,10 +58,27 @@ function M.setup(server_name, custom)
 	M.configured[server_name] = true
 end
 
----Setup javascript/typescript/volar.
----Putting this as a special function for supporting volar takeover mode later
-function M.setup_js()
-	M.setup("tsserver")
+---Setup volar with takeover mode
+---After calling this function, all existing tsserver will be killed and
+---replaced with volar.
+---
+---Call this function in vue ftplugin. Optionally also call this in project
+---`.vimrc.lua` to ensure volar is started even the first file to edit is not
+---a vue file.
+function M.setup_volar()
+	local volar = require("user.lsp.volar")
+
+	-- Skip future tsserver setup
+	M.configured["tsserver"] = true
+
+	volar.kill_tsserver()
+
+	-- Start volar in takeover mode
+	M.setup("volar", {
+		override = {
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+		},
+	})
 end
 
 return M

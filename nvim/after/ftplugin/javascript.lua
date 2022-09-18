@@ -1,1 +1,1 @@
-require("user.lsp").setup_js()
+require("user.lsp").setup("tsserver")
