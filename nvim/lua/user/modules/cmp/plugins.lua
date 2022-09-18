@@ -11,6 +11,14 @@ plugin({
 })
 
 plugin({
+	"danymat/neogen",
+	after = "LuaSnip",
+	config = function()
+		require("user.modules.cmp.config").neogen()
+	end,
+})
+
+plugin({
 	"onsails/lspkind.nvim",
 	config = function()
 		require("user.modules.cmp.config").lspkind()
