@@ -81,7 +81,7 @@ end
 local redacted = false
 
 --- Run redact if we haven't run it before and we should redact.
-local function redact_once()
+function M.redact_once()
 	if redacted then
 		return
 	end
@@ -107,7 +107,7 @@ function M.setup()
 	vim.api.nvim_create_autocmd("VimEnter", {
 		group = id,
 		pattern = { "/dev/shm/*", "secret" },
-		callback = redact_once,
+		callback = M.redact_once,
 	})
 end
 
