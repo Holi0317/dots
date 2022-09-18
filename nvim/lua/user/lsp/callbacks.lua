@@ -10,12 +10,6 @@ local mappings = {
 	["gI"] = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
 	["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
 	["gt"] = { "<cmd>Trouble lsp_type_definitions<cr>", "Goto type definition" },
-	["gp"] = {
-		function()
-			require("lvim.lsp.peek").Peek("definition")
-		end,
-		"Peek definition",
-	},
 	["gl"] = {
 		"<cmd>Lspsaga show_line_diagnostics<CR>",
 		"Show line diagnostics",
