@@ -17,3 +17,7 @@ plugin({
 plugin({
 	"jghauser/mkdir.nvim",
 })
+
+plugin({
+	"gpanders/editorconfig.nvim",
+})
