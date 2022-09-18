@@ -2,6 +2,14 @@ local M = {}
 
 function M.notify()
 	local notify = require("notify")
+	notify.setup({
+		max_width = function()
+			local winwidth = vim.fn.winwidth(0)
+			local target = math.floor(winwidth / 4)
+
+			return math.min(math.max(target, 60), 120)
+		end,
+	})
 
 	vim.notify = notify
 end
