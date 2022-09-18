@@ -13,3 +13,7 @@ plugin({
 		require("user.modules.editing.config").autolist()
 	end,
 })
+
+plugin({
+	"jghauser/mkdir.nvim",
+})
