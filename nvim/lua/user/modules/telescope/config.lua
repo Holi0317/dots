@@ -64,7 +64,11 @@ function M.telescope()
 			color_devicons = true,
 			set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
 		},
-		pickers = {},
+		pickers = {
+			find_files = {
+				find_command = { "fd", "--type=file", "--hidden", "-E", ".git" },
+			},
+		},
 	})
 
 	local builtin = require("telescope.builtin")
