@@ -64,3 +64,6 @@ bus.emit("afterOptions")
 bus.emit("beforeCompile")
 pack.load_compile()
 bus.emit("afterCompile")
+
+require("user.plugins.redact").setup()
+require("user.plugins.sudo").setup()
