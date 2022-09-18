@@ -24,4 +24,8 @@ function M.comment()
 	})
 end
 
+function M.autolist()
+	require("autolist").setup({})
+end
+
 return M
