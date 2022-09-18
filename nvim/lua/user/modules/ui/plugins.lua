@@ -42,6 +42,9 @@ plugin({
 
 plugin({
 	"ggandor/lightspeed.nvim",
+	config = function()
+		require("user.modules.ui.config").lightspeed()
+	end,
 })
 
 plugin({
