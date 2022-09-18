@@ -8,7 +8,6 @@ local mappings = {
 	["gd"] = { "<cmd>Trouble lsp_definitions<cr>", "Goto Definition" },
 	["gr"] = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
 	["gI"] = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
-	["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
 	["gt"] = { "<cmd>Trouble lsp_type_definitions<cr>", "Goto type definition" },
 	["gl"] = {
 		"<cmd>Lspsaga show_line_diagnostics<CR>",
