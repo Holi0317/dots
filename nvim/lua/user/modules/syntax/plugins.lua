@@ -1,10 +1,6 @@
 local plugin = require("user.pack").register_plugin
 
 plugin({
-	"sheerun/vim-polyglot",
-})
-
-plugin({
 	"nvim-treesitter/nvim-treesitter",
 	run = function()
 		require("nvim-treesitter.install").update({ with_sync = true })
