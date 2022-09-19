@@ -99,6 +99,13 @@ function M.cmp()
 			{ name = "cmdline" },
 		}),
 	})
+
+	-- Setup for dap
+	cmp.setup.filetype({ "dap-repl", "dapui_watches" }, {
+		sources = {
+			{ name = "dap" },
+		},
+	})
 end
 
 return M

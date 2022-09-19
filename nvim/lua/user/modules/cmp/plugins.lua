@@ -38,6 +38,7 @@ plugin({
 		"David-Kunz/cmp-npm",
 		"hrsh7th/cmp-path",
 		"ray-x/cmp-treesitter",
+		"rcarriga/cmp-dap",
 	},
 	after = {
 		"LuaSnip",
