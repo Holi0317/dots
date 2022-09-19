@@ -227,6 +227,10 @@ function M.bufferline()
 
 		highlights = {
 			background = {
+				fg = {
+					attribute = "fg",
+					highlight = "GruvboxGray",
+				},
 				italic = true,
 			},
 			buffer_selected = {
