@@ -52,6 +52,7 @@ function M.mason()
 			"prettierd",
 			"vue-language-server",
 			"emmet-ls",
+			"node-debug2-adapter",
 
 			-- PHP
 			"intelephense",
