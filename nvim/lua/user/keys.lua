@@ -218,6 +218,10 @@ local function setup_vim_keys()
 	vim.keymap.set("n", "]i", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Next Diagnostic" })
 	vim.keymap.set("n", "[i", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Previous Diagnostic" })
 
+	-- ]q and [q for quickfix
+	vim.keymap.set("n", "]q", "<cmd>cn<cr>", { desc = "Next QuickFix" })
+	vim.keymap.set("n", "[q", "<cmd>cp<cr>", { desc = "Previous QuickFix" })
+
 	-- ]<space> and [<space> for insert space
 	vim.keymap.set("n", "]<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", { silent = true })
 	vim.keymap.set("n", "[<space>", ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[", { silent = true })
