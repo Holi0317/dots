@@ -32,7 +32,9 @@ function M.cmp()
 			end,
 		},
 		formatting = {
-			format = lspkind.cmp_format(),
+			format = lspkind.cmp_format({
+				maxwidth = 50,
+			}),
 		},
 		window = {
 			completion = cmp.config.window.bordered(),
