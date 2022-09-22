@@ -41,7 +41,7 @@ end
 
 function M.js()
 	require("dap-vscode-js").setup({
-		debugger_path = vim.fn.stdpath("data") .. "/mason/packages/vscode-js-debug",
+		debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
 		adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 	})
 end
