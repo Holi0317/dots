@@ -45,6 +45,7 @@ function M.treesitter()
 			"php",
 			-- "phpdoc",  -- This is causing problem with installing on aarch darwin
 
+			"hcl",
 			"comment",
 			"c_sharp",
 			"python",

@@ -44,6 +44,9 @@ function M.mason()
 			"ansible-language-server",
 			"taplo",
 
+			-- Terraform
+			"terraform-ls",
+
 			-- Typescript and the web
 			"css-lsp",
 			"html-lsp",
