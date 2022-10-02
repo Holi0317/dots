@@ -87,8 +87,6 @@ function M.on_attach(client, bufnr)
 	setup_document_highlight(client, bufnr)
 	setup_codelens_refresh(client, bufnr)
 	setup_keymap(client, bufnr)
-
-	bus.emit("lsp_on_attach", client)
 end
 
 function M.on_init() end
