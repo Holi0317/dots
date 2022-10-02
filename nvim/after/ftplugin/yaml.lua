@@ -5,6 +5,7 @@ require("user.lsp").setup("yamlls", {
 				hover = true,
 				completion = true,
 				validate = true,
+				customTags = { "!vault" },
 				schemaStore = {
 					enable = true,
 					url = "https://www.schemastore.org/api/json/catalog.json",
@@ -13,3 +14,6 @@ require("user.lsp").setup("yamlls", {
 		},
 	},
 })
+
+-- This only loads in ft=yaml.ansible
+require("user.lsp").setup("ansiblels")
