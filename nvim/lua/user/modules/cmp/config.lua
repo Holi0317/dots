@@ -45,7 +45,18 @@ function M.cmp()
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
-			["<CR>"] = cmp.mapping.confirm({ select = false }),
+			["<CR>"] = cmp.mapping(function(fallback)
+				local selected = cmp.get_selected_entry()
+				if selected == nil then
+					return fallback()
+				end
+
+				if selected.source.name == "nvim_lsp_signature_help" then
+					return fallback()
+				end
+
+				cmp.confirm({ select = true })
+			end),
 
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
