@@ -230,7 +230,10 @@ local M = {
 						return
 					end
 
-					vim.lsp.util.rename(name, input)
+					vim.lsp.util.rename(name, input, {})
+
+					local notify = require("user.lsp.notify")
+					notify.didRenameFile(name, input)
 				end)
 			end,
 			"Rename file",

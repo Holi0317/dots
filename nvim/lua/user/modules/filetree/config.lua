@@ -149,20 +149,14 @@ function M.nvimtree()
 
 	local api = require("nvim-tree.api")
 	local Event = api.events.Event
-	-- api.events.subscribe(Event.NodeRenamed, function(data)
-	-- 	print("Node renamed from " .. data.old_name .. " to " .. data.new_name)
-	-- end)
+	api.events.subscribe(Event.NodeRenamed, function(data)
+		local notify = require("user.lsp.notify")
+		notify.didRenameFile(data.old_name, data.new_name)
+	end)
 
 	api.events.subscribe(Event.FileCreated, function(data)
-		for _, client in ipairs(vim.lsp.get_active_clients()) do
-			client.notify("workspace/didCreateFiles", {
-				files = {
-					{
-						uri = "file://" .. data.fname,
-					},
-				},
-			})
-		end
+		local notify = require("user.lsp.notify")
+		notify.didCreateFile(data.fname)
 	end)
 end
 
