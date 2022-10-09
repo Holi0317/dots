@@ -112,7 +112,13 @@ zinit $load ogham/exa
 # ==== Completions ====
 
 zinit ice wait"1" lucid blockf
-zinit add-fpath /opt/homebrew/share/zsh/site-functions
+zinit add-fpath $HOMEBREW_PREFIX/share/zsh/site-functions
+
+zinit ice lucid wait blockf \
+                as"none" id-as"local-plugins" \
+                nocompile run-atpull \
+                atpull"mkdir -p ${HOME}/.zsh/completions && zinit creinstall -q ${HOME}/.zsh/completions"
+zinit $load zdharma-continuum/null
 
 zinit ice lucid wait"1" creinstall
 zinit $load zsh-users/zsh-completions
