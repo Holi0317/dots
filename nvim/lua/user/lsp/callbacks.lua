@@ -9,11 +9,11 @@ local mappings = {
 			local dap = require("dap")
 			local widgets = require("dap.ui.widgets")
 
-			if dap.session() == nil then
-				vim.cmd("Lspsaga hover_doc")
-			else
+			if dap.session() ~= nil then
 				widgets.hover()
 			end
+
+			vim.cmd("Lspsaga hover_doc")
 		end,
 		"Show hover",
 	},
