@@ -47,6 +47,7 @@
 
 [rebase]
   autoSquash = true
+  updateRefs = true
 
 [gpg "ssh"]
   allowedSignersFile = ~/.config/git/allowed_signers
