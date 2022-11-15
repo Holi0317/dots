@@ -1,1 +1,2 @@
+; extends
 (comment) @comment

@@ -1,3 +1,4 @@
+; extends
 (jsx_attribute) @htmlattr.outer
 
 (jsx_attribute
