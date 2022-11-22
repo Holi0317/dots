@@ -32,6 +32,7 @@ function M.mason()
 			"pyright",
 			"isort",
 			"black",
+			"flake8",
 			"debugpy",
 
 			-- Lua
@@ -99,6 +100,7 @@ function M.null()
 			null.builtins.diagnostics.eslint_d,
 			null.builtins.diagnostics.golangci_lint,
 			null.builtins.diagnostics.shellcheck,
+			null.builtins.diagnostics.flake8,
 
 			null.builtins.formatting.black,
 			null.builtins.formatting.eslint_d,
