@@ -46,12 +46,14 @@ function M.cmp()
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
 			["<CR>"] = cmp.mapping(function(fallback)
-				local selected = cmp.get_selected_entry()
+				local selected = cmp.get_active_entry()
 				if selected == nil then
+					cmp.close()
 					return fallback()
 				end
 
 				if selected.source.name == "nvim_lsp_signature_help" then
+					cmp.close()
 					return fallback()
 				end
 
