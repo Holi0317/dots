@@ -11,6 +11,7 @@ plugin({
 	-- Put extra modules in `requires` to make sure our config is picking them up
 	-- correctly
 	requires = {
+		"yioneko/nvim-yati",
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"windwp/nvim-ts-autotag",
 		"nvim-treesitter/playground",
