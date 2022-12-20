@@ -47,6 +47,7 @@ function M.mason()
 
 			-- Terraform
 			"terraform-ls",
+			"tflint",
 
 			-- Typescript and the web
 			"css-lsp",
