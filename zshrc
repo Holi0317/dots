@@ -45,6 +45,7 @@ alias tg="terragrunt"
 
 load=load
 
+
 # ==== Stage sync: sane opts ====
 
 zinit $load willghatch/zsh-saneopt
@@ -94,13 +95,15 @@ zinit ice lucid wait"!" blockf \
 zinit $load Schniz/fnm
 
 # direnv
-zinit ice lucid wait"1" \
-          as"command" from"gh-r" \
-          atclone"./direnv hook zsh > zhook.zsh" \
-          atpull"%atclone" \
-          mv"direnv* -> direnv" src"zhook.zsh" \
+zinit ice wait"!" blockf \
+    as"program" from"gh-r" \
+    atclone'./direnv hook zsh > zhook.zsh' \
+    atpull"%atclone" \
+    mv"direnv* -> direnv" \
+    src'zhook.zsh'
 zinit $load direnv/direnv
 
+# exa (ls replacement)
 zinit ice lucid wait"1" \
           as"command" from"gh-r" \
           atclone'cp -vf completions/exa.zsh _exa' \
