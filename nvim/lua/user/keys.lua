@@ -16,7 +16,7 @@ local M = {
 		},
 		b = {
 			name = "Buffers",
-			f = { "<cmd>Telescope buffers<cr>", "Find" },
+			l = { "<cmd>Telescope buffers<cr>", "Find" },
 			d = { "<cmd>BufDel<cr>", "Delete current buffer" },
 			o = {
 				"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
@@ -146,7 +146,7 @@ local M = {
 			"<cmd>TroubleToggle document_diagnostics<cr>",
 			"Document Diagnostics",
 		},
-		w = {
+		D = {
 			"<cmd>TroubleToggle workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
