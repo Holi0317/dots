@@ -1,3 +1,9 @@
+local function dap(method)
+	return function()
+		require("dap")[method]()
+	end
+end
+
 local M = {
 	mappings = {
 		["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -133,6 +139,37 @@ local M = {
 		e = {
 			":NvimTreeToggle<CR>",
 			"Toggle file explorer",
+		},
+		d = {
+			name = "+Debugging",
+			d = {
+				function()
+					require("dapui").toggle()
+				end,
+				"Toggle debug view",
+			},
+
+			s = {
+				name = "+Step",
+				i = { dap("step_into"), "into" },
+				o = { dap("step_over"), "over" },
+				n = { dap("step_over"), "over" },
+				O = { dap("step_out"), "out" },
+				b = { dap("step_back"), "back" },
+			},
+
+			v = {
+				name = "+Session",
+
+				s = { dap("continue"), "Start" },
+				d = { dap("disconnect"), "Disconnect" },
+				q = { dap("close"), "Stop/Quit" },
+				i = { dap("session"), "Get session info" },
+			},
+
+			b = { dap("toggle_breakpoint"), "Toggle Breakpoint" },
+			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+			C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
 		},
 	},
 	lsp_mappings = {
