@@ -1,8 +1,25 @@
-local bus = require("user.bus")
-
 local M = {}
 
 local attached_listener = false
+
+---Attach event listener to kill all future tsserver starts
+local function attach_listener()
+	if attached_listener then
+		return
+	end
+
+	attached_listener = true
+
+	vim.api.nvim_create_autocmd("LspAttach", {
+		callback = function(args)
+			local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+			if client.name == "tsserver" then
+				client.stop()
+			end
+		end,
+	})
+end
 
 function M.kill_tsserver()
 	-- Kill existing tsserver
@@ -14,15 +31,7 @@ function M.kill_tsserver()
 	end
 
 	-- Kill future tsserver
-	if not attached_listener then
-		attached_listener = true
-
-		bus.on("lsp_on_attach", function(client)
-			if client.name == "tsserver" then
-				client.stop()
-			end
-		end)
-	end
+	attach_listener()
 end
 
 return M
