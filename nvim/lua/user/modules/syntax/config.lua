@@ -30,6 +30,8 @@ function M.treesitter()
 			"yaml",
 			"toml",
 			"dockerfile",
+			"hcl",
+			"scheme",
 
 			-- C
 			"c",
@@ -45,7 +47,12 @@ function M.treesitter()
 			"php",
 			-- "phpdoc",  -- This is causing problem with installing on aarch darwin
 
-			"hcl",
+			-- Git
+			"git_rebase",
+			"gitattributes",
+			"gitcommit",
+			"gitignore",
+
 			"comment",
 			"c_sharp",
 			"python",
