@@ -30,6 +30,7 @@ if ok then
 	require("gruvbox").setup({
 		contrast = "hard", -- can be "hard" or "soft"
 		overrides = {
+			Operator = { link = "GruvboxRed" },
 			SignColumn = { bg = "none" },
 			SpellBad = { link = "GruvboxAquaUnderline" },
 			IndentBlanklineContextChar = { link = "GruvboxBlue" },
@@ -253,10 +254,25 @@ table.insert(lvim.plugins, {
 
 -- ==== Relative numberline ====
 vim.opt.relativenumber = true
-lvim.autocommands.relnumber_toggle = {
-	{ "InsertEnter", "*", "set norelativenumber" },
-	{ "InsertLeave", "*", "set relativenumber" },
-}
+vim.api.nvim_create_augroup("relnumber_toggle", {})
+vim.api.nvim_create_autocmd("InsertEnter", {
+	group = "relnumber_toggle",
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
+})
+vim.api.nvim_create_autocmd("InsertLeave", {
+	group = "relnumber_toggle",
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = { "*.json", "*.jsonc" },
+	-- enable wrap mode for json files only
+	command = "setlocal wrap",
+})
 
 -- ==== Comment settings ====
 lvim.builtin.comment.toggler = {
@@ -270,7 +286,7 @@ lvim.builtin.comment.opleader = {
 }
 
 -- Disable "-cro" autocommand in lvim
-lvim.autocommands._formatoptions = {}
+vim.api.nvim_del_augroup_by_name("_format_options")
 
 -- ==== Save and format on save ====
 lvim.builtin.which_key.mappings["W"] = {
@@ -442,6 +458,7 @@ table.insert(lvim.plugins, {
 table.insert(lvim.plugins, { "jamessan/vim-gnupg" })
 vim.g.GPGPreferSign = 1
 
+-- FIXME: Upgrade to native neovim syntax
 lvim.autocommands.gpgenter = {
 	{ "User", "GnuPG", "lua require('h4s.redact').redact_once()" },
 }
