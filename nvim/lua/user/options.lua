@@ -25,7 +25,6 @@ vim.opt.directory = cache_dir .. "swag/"
 vim.opt.undodir = cache_dir .. "undo/"
 vim.opt.backupdir = cache_dir .. "backup/"
 vim.opt.viewdir = cache_dir .. "view/"
-vim.opt.spellfile = cache_dir .. "spell/en.uft-8.add"
 vim.opt.history = 2000
 vim.opt.shada = "!,'300,<50,@100,s10,h"
 vim.opt.backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim"
@@ -76,8 +75,6 @@ vim.opt.cmdwinheight = 5
 vim.opt.equalalways = false
 vim.opt.laststatus = 2
 vim.opt.display = "lastline"
-vim.opt.showbreak = "↳  "
-vim.opt.listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←"
 vim.opt.pumblend = 10
 vim.opt.winblend = 10
 
