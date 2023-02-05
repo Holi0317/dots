@@ -3,14 +3,14 @@ local M = {
 		["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 		W = {
 			function()
-				-- FIXME: Find the autocmd for save
-				local autocmds = require("lvim.core.autocmds")
-
-				autocmds.disable_format_on_save()
-				vim.schedule(function()
+				-- Internal API(?) for lspformat
+				if vim.b.format_saving then
 					vim.cmd(":w")
-					autocmds.enable_format_on_save()
-				end)
+				end
+
+				vim.b.format_saving = true
+				vim.cmd(":w")
+				vim.b.format_saving = false
 			end,
 			"Save without format",
 		},
@@ -143,9 +143,7 @@ local M = {
 			"Workspace Diagnostics",
 		},
 		f = {
-			function()
-				vim.lsp.buf.formatting()
-			end,
+			"<cmd>Format<cr>",
 			"Format",
 		},
 		i = { "<cmd>LspInfo<cr>", "Info" },
@@ -209,18 +207,17 @@ local M = {
 
 local function setup_vim_keys()
 	-- ]i and [i for diagnostics
-	vim.keymap.set('n', ']i', function()
+	vim.keymap.set("n", "]i", function()
 		vim.diagnostic.goto_next({ float = true })
 	end, { desc = "Next Diagnostic" })
 
-	vim.keymap.set('n', '[i', function()
+	vim.keymap.set("n", "[i", function()
 		vim.diagnostic.goto_prev({ float = true })
 	end, { desc = "Previous Diagnostic" })
 
-
 	-- ]<space> and [<space> for insert space
-	vim.keymap.set('n', ']<space>', ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", { silent = true })
-	vim.keymap.set('n', '[<space>', ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[", { silent = true })
+	vim.keymap.set("n", "]<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", { silent = true })
+	vim.keymap.set("n", "[<space>", ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[", { silent = true })
 end
 
 function M.setup()

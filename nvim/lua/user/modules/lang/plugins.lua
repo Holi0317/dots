@@ -37,3 +37,10 @@ plugin({
 		require("user.modules.lang.config").null()
 	end,
 })
+
+plugin({
+	"lukas-reineke/lsp-format.nvim",
+	config = function()
+		require("user.modules.lang.config").format()
+	end,
+})
