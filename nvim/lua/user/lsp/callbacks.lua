@@ -4,7 +4,19 @@ local M = {}
 
 ---@type table<string,string[]>
 local mappings = {
-	["K"] = { vim.lsp.buf.hover, "Show hover" },
+	["K"] = {
+		function()
+			local dap = require("dap")
+			local widgets = require("dap.ui.widgets")
+
+			if dap.session() == nil then
+				vim.cmd("Lspsaga hover_doc")
+			else
+				widgets.hover()
+			end
+		end,
+		"Show hover",
+	},
 	["gd"] = { "<cmd>Trouble lsp_definitions<cr>", "Goto Definition" },
 	["gr"] = { "<cmd>Trouble lsp_references<CR>", "Goto references" },
 	["gI"] = { "<cmd>Trouble lsp_implementations<CR>", "Goto Implementation" },
