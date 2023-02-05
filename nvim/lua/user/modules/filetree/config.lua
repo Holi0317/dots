@@ -6,15 +6,7 @@ function M.nvimtree()
 		respect_buf_cwd = true,
 		disable_netrw = true,
 		hijack_netrw = true,
-		open_on_setup = false,
-		open_on_setup_file = false,
 		sort_by = "name",
-		ignore_buffer_on_setup = false,
-		ignore_ft_on_setup = {
-			"startify",
-			"dashboard",
-			"alpha",
-		},
 		auto_reload_on_write = true,
 		hijack_unnamed_buffer_when_opening = false,
 		hijack_directories = {
