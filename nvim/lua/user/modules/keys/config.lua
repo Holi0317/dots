@@ -1,13 +1,7 @@
 local M = {}
 
 function M.whichkey()
-	local bus = require("user.bus")
 	local keys = require("user.keys")
-
-	bus.on("afterCompile", function()
-		keys.setup()
-		bus.emit("afterKey")
-	end)
 
 	require("which-key").setup({
 		plugins = {
@@ -71,6 +65,8 @@ function M.whichkey()
 			v = { "j", "k" },
 		},
 	})
+
+	keys.setup()
 end
 
 return M
