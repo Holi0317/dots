@@ -41,6 +41,9 @@
   guitool = nvimdiff
   external = difft
 
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
 [rebase]
   autoSquash = true
 
