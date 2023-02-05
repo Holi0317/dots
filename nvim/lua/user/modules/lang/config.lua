@@ -73,8 +73,8 @@ function M.lspconfig()
 	require("mason-lspconfig").setup()
 end
 
-function M.luadev()
-	require("lua-dev").setup({
+function M.neodev()
+	require("neodev").setup({
 		-- add any options here, or leave empty to use the default settings
 	})
 end

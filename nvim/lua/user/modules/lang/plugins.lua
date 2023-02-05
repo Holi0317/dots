@@ -22,10 +22,10 @@ plugin({
 })
 
 plugin({
-	"folke/lua-dev.nvim",
+	"folke/neodev.nvim",
 	after = "nvim-lspconfig",
 	config = function()
-		require("user.modules.lang.config").luadev()
+		require("user.modules.lang.config").neodev()
 	end,
 })
 
