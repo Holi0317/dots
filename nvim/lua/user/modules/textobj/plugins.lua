@@ -28,3 +28,10 @@ plugin({
 plugin({
 	"tpope/vim-surround",
 })
+
+plugin({
+	"gbprod/substitute.nvim",
+	config = function()
+		require("user.modules.textobj.config").substitute()
+	end,
+})
