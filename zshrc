@@ -29,7 +29,6 @@ setopt auto_cd
 # export configurations
 export EDITOR="nvim"
 export PAGER="less"
-export CHROME_BIN=/usr/bin/google-chrome-stable
 export LESS='-SFXR'
 export HISTSIZE=500000
 export SAVEHIST=500000
@@ -38,11 +37,11 @@ export SAVEHIST=500000
 alias vi="nvim"
 alias vim="nvim"
 alias l="exa -alh --icons"
-alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
 alias gg="lazygit"
 alias tf="terraform"
+alias tg="terragrunt"
 
 load=load
 
