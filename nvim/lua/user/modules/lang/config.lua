@@ -127,7 +127,18 @@ end
 function M.saga()
 	local saga = require("lspsaga")
 
-	saga.init_lsp_saga()
+	saga.init_lsp_saga({
+		show_outline = {
+			auto_preview = false,
+		},
+		finder_action_keys = {
+			quit = "<esc>",
+		},
+		code_action_keys = {
+			quit = "<esc>",
+		},
+		rename_action_quit = "q",
+	})
 end
 
 return M

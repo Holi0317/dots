@@ -174,12 +174,6 @@ local M = {
 			end,
 			"CodeLens Action",
 		},
-		q = {
-			function()
-				vim.diagnostic.set_loclist()
-			end,
-			"Quickfix",
-		},
 		r = {
 			"<cmd>Lspsaga rename<CR>",
 			"Rename",
@@ -204,13 +198,17 @@ local M = {
 			end,
 			"Rename file",
 		},
-		S = {
+		s = {
 			"<cmd>Lspsaga lsp_finder<CR>",
 			"Workspace Symbols",
 		},
 		p = {
 			"<cmd>Lspsaga peek_definition<CR>",
 			"Peak definition",
+		},
+		o = {
+			"<cmd>LSoutlineToggle<CR>",
+			"Show outline",
 		},
 	},
 }
