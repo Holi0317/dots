@@ -27,7 +27,7 @@ zinit light-mode for \
 setopt auto_cd
 
 # export configurations
-export EDITOR="lvim"
+export EDITOR="nvim"
 export PAGER="less"
 export CHROME_BIN=/usr/bin/google-chrome-stable
 export LESS='-SFXR'
@@ -35,8 +35,8 @@ export HISTSIZE=500000
 export SAVEHIST=500000
 
 # Aliases
-alias vi="lvim"
-alias vim="lvim"
+alias vi="nvim"
+alias vim="nvim"
 alias l="exa -alh --icons"
 alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
