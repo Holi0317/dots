@@ -69,6 +69,8 @@ vim.opt.pumheight = 15
 vim.opt.helpheight = 12
 vim.opt.previewheight = 12
 vim.opt.showcmd = false
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us' }
 -- just for nightly
 vim.opt.cmdheight = 2
 vim.opt.cmdwinheight = 5

@@ -116,4 +116,8 @@ function M.treesitter()
 
 end
 
+function M.spellsitter()
+  require('spellsitter').setup()
+end
+
 return M

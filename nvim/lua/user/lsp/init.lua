@@ -1,4 +1,5 @@
 local lspconfig = require("lspconfig")
+local cmp_nvim = require("cmp_nvim_lsp")
 local callbacks = require("user.lsp.callbacks")
 
 local M = {}
@@ -13,10 +14,13 @@ end
 ---@param server_name string Name of the server listed in lspconfig
 ---@param custom any Additional overrides to be passed into setup function
 function M.setup(server_name, custom)
+	local capabilities = cmp_nvim.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 	local defaults = {
 		on_attach = callbacks.on_attach,
 		on_init = callbacks.on_init,
 		on_exit = callbacks.on_exit,
+		capabilities = capabilities,
 	}
 
 	local opt = vim.tbl_deep_extend("force", defaults, custom or {})
