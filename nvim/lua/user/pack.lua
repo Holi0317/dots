@@ -40,6 +40,7 @@ function Packer:load_packer()
 	packer.init({
 		compile_path = packer_compiled,
 		git = { clone_timeout = 120 },
+		max_jobs = 8,
 		disable_commands = true,
 		display = {
 			open_fn = require("packer.util").float,
