@@ -157,7 +157,9 @@ function M.nvimtree()
 		for _, client in ipairs(vim.lsp.get_active_clients()) do
 			client.notify("workspace/didCreateFiles", {
 				files = {
-					uri = "file://" .. data.fname,
+					{
+						uri = "file://" .. data.fname,
+					},
 				},
 			})
 		end
