@@ -588,7 +588,7 @@ formatters.setup({
 	{ exe = "prettier" },
 	{ exe = "gofmt" },
 	{ exe = "goimports" },
-	{ exe = "eslint_d", env = { ESLINT_D_LOCAL_ESLINT_ONLY = "1" } },
+	{ exe = "eslint" },
 })
 
 -- ==== Linters ====
@@ -597,7 +597,7 @@ formatters.setup({
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{ exe = "golangci-lint" },
-	{ exe = "eslint_d", env = { ESLINT_D_LOCAL_ESLINT_ONLY = "1" } },
+	{ exe = "eslint" },
 })
 
 -- ==== Treesitter ====
