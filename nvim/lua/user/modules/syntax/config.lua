@@ -27,6 +27,7 @@ function M.treesitter()
 			"jsonc",
 			"yaml",
 			"toml",
+			"dockerfile",
 
 			"go",
 			"gomod",
