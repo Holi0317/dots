@@ -17,7 +17,7 @@ local M = {
 		b = {
 			name = "Buffers",
 			f = { "<cmd>Telescope buffers<cr>", "Find" },
-			d = { "<cmd>BufferKill<cr>", "Delete current buffer" },
+			d = { "<cmd>BufDel<cr>", "Delete current buffer" },
 			o = {
 				"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
 				"Close all but current",
