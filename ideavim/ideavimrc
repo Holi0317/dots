@@ -3,6 +3,7 @@
 set surround
 set commentary
 set highlightedyank
+set sneak
 
 " Sync clipboard to system
 set clipboard+=unnamed
