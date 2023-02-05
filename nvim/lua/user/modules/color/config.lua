@@ -9,6 +9,9 @@ function M.gruvbox()
 			SignColumn = { bg = "none" },
 			SpellBad = { link = "GruvboxAquaUnderline" },
 			IndentBlanklineContextChar = { link = "GruvboxBlue" },
+
+			LuasnipInsertNodePassive = { link = "GurvoxRed" },
+			LuasnipSnippetPassive = { link = "GruvboxBlue" },
 		},
 	})
 
