@@ -7,3 +7,7 @@ plugin({
 		require("user.modules.term.config").toggleterm()
 	end,
 })
+
+plugin({
+	"samjwill/nvim-unception",
+})
