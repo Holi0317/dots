@@ -116,4 +116,10 @@ function M.fidget()
 	})
 end
 
+function M.saga()
+	local saga = require("lspsaga")
+
+	saga.init_lsp_saga()
+end
+
 return M

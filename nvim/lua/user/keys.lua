@@ -115,6 +115,10 @@ local M = {
 				end,
 				"Notifications",
 			},
+			s = {
+				"<cmd>Lspsaga lsp_finder<CR>",
+				"LSP Symbols",
+			},
 		},
 		t = {
 			name = "+Trouble",
@@ -135,7 +139,7 @@ local M = {
 		name = "LSP",
 
 		a = {
-			vim.lsp.buf.code_action,
+			"<cmd>Lspsaga code_action<CR>",
 			"Code Action",
 		},
 		d = {
@@ -177,9 +181,7 @@ local M = {
 			"Quickfix",
 		},
 		r = {
-			function()
-				vim.lsp.buf.rename()
-			end,
+			"<cmd>Lspsaga rename<CR>",
 			"Rename",
 		},
 		R = {
@@ -203,21 +205,20 @@ local M = {
 			"Rename file",
 		},
 		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+			"<cmd>Lspsaga lsp_finder<CR>",
 			"Workspace Symbols",
+		},
+		p = {
+			"<cmd>Lspsaga peek_definition<CR>",
+			"Peak definition",
 		},
 	},
 }
 
 local function setup_vim_keys()
 	-- ]i and [i for diagnostics
-	vim.keymap.set("n", "]i", function()
-		vim.diagnostic.goto_next({ float = true })
-	end, { desc = "Next Diagnostic" })
-
-	vim.keymap.set("n", "[i", function()
-		vim.diagnostic.goto_prev({ float = true })
-	end, { desc = "Previous Diagnostic" })
+	vim.keymap.set("n", "]i", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "Next Diagnostic" })
+	vim.keymap.set("n", "[i", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "Previous Diagnostic" })
 
 	-- ]<space> and [<space> for insert space
 	vim.keymap.set("n", "]<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", { silent = true })

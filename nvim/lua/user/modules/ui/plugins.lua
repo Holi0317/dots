@@ -4,14 +4,14 @@ plugin({
 	"rcarriga/nvim-notify",
 	config = function()
 		require("user.modules.ui.config").notify()
-	end
+	end,
 })
 
 plugin({
 	"stevearc/dressing.nvim",
 	config = function()
 		require("user.modules.ui.config").dressing()
-	end
+	end,
 })
 
 plugin({
@@ -28,7 +28,6 @@ plugin({
 	end,
 })
 
-
 -- ==== Indent line visual ====
 plugin({
 	"lukas-reineke/indent-blankline.nvim",
@@ -38,5 +37,5 @@ plugin({
 })
 
 plugin({
-	"ggandor/lightspeed.nvim"
+	"ggandor/lightspeed.nvim",
 })
