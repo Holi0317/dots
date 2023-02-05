@@ -50,7 +50,7 @@ function M.nvimtree()
 			timeout = 200,
 		},
 		view = {
-			width = 30,
+			width = 50,
 			height = 30,
 			hide_root_folder = false,
 			side = "left",
