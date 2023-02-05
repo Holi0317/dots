@@ -66,6 +66,7 @@ plugin({
 
 plugin({
 	"Hoffs/omnisharp-extended-lsp.nvim",
+	ft = { "csharp" },
 })
 
 plugin({
