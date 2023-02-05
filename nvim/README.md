@@ -11,3 +11,4 @@
 - [ ] https://github.com/Djancyp/better-comments.nvim
 - [ ] https://github.com/gaoDean/autolist.nvim
 - [ ] https://github.com/phaazon/mind.nvim
+- [ ] https://github.com/gbprod/substitute.nvim
