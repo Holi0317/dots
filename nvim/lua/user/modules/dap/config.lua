@@ -1,12 +1,26 @@
 local M = {}
 
 function M.dap()
-	local dap = require("dap")
-	dap.adapters.node2 = {
-		type = "executable",
-		command = "node-debug2-adapter",
-		args = {},
-	}
+	vim.fn.sign_define("DapBreakpoint", {
+		text = "",
+		texthl = "DiagnosticError",
+		linehl = "",
+		numhl = "",
+	})
+
+	vim.fn.sign_define("DapBreakpointRejected", {
+		text = "",
+		texthl = "DiagnosticHint",
+		linehl = "",
+		numhl = "",
+	})
+
+	vim.fn.sign_define("DapStopped", {
+		text = "",
+		texthl = "DiagnosticSignInfo",
+		linehl = "DiagnosticUnderlineInfo",
+		numhl = "DiagnosticSignInfo",
+	})
 end
 
 function M.dapui()
