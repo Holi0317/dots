@@ -1,1 +1,3 @@
-require("user.lsp").setup("dockerls")
+require("user.lsp").setup("dockerls", {
+	enable_format = true,
+})

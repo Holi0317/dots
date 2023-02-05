@@ -1,1 +1,3 @@
-require("user.lsp").setup("cmake")
+require("user.lsp").setup("cmake", {
+	enable_format = true,
+})
