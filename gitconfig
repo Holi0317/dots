@@ -34,6 +34,7 @@
 [merge]
   ff = false
   conflictstyle = diff3
+  tool = nvimdiff
 
 [diff]
   colorMoved = default
