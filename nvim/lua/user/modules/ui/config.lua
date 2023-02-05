@@ -48,4 +48,15 @@ function M.comment()
 	require("better-comment").Setup()
 end
 
+function M.lightspeed()
+	-- Setting up keymaps by ourselves to avoid conflict with which-key
+	vim.g.lightspeed_no_default_keymaps = true
+
+	vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>Lightspeed_s", { silent = true })
+	vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>Lightspeed_S", { silent = true })
+
+	vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>Lightspeed_f", { silent = true })
+	vim.keymap.set({ "n", "x", "o" }, "F", "<Plug>Lightspeed_F", { silent = true })
+end
+
 return M
