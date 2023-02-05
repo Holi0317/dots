@@ -35,4 +35,8 @@ function M.trouble()
 	end)
 end
 
+function M.yanky()
+	require("yanky").setup({})
+end
+
 return M
