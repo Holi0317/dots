@@ -39,3 +39,10 @@ plugin({
 plugin({
 	"ggandor/lightspeed.nvim",
 })
+
+plugin({
+	"Djancyp/better-comments.nvim",
+	config = function()
+		require("user.modules.ui.config").comment()
+	end,
+})

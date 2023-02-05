@@ -44,4 +44,8 @@ function M.indent()
 	})
 end
 
+function M.comment()
+	require("better-comment").Setup()
+end
+
 return M
