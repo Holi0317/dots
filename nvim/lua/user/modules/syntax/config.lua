@@ -77,9 +77,16 @@ function M.treesitter()
 		},
 
 		indent = {
-			enable = true,
-			-- Some language indentation is broken
+			enable = false,
 			disable = {},
+		},
+
+		yati = {
+			enable = true,
+			disable = {},
+			-- Whether to enable lazy mode (recommend to enable this if bad indent happens frequently)
+			default_lazy = true,
+			default_fallback = "auto",
 		},
 
 		textobjects = {
