@@ -9,6 +9,7 @@ plugin({
 
 plugin({
 	"gaoDean/autolist.nvim",
+	ft = { "markdown", "text", "tex", "plaintex" },
 	config = function()
 		require("user.modules.editing.config").autolist()
 	end,
