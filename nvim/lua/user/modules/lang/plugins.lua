@@ -63,3 +63,7 @@ plugin({
 plugin({
 	"b0o/schemastore.nvim",
 })
+
+plugin({
+	"Hoffs/omnisharp-extended-lsp.nvim",
+})
