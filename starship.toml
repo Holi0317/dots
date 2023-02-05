@@ -2,9 +2,6 @@
 success_symbol = "➜"
 error_symbol = "➜"
 
-[aws]
-disabled = true
-
 [status]
 disabled = false
 symbol = " "
