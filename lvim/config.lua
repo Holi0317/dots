@@ -364,6 +364,9 @@ lvim.builtin.which_key.mappings.s.n = {
 	"Notifications",
 }
 
+-- ==== nvim-tree.lua (File tree) ====
+lvim.builtin.nvimtree.setup.view.width = 50
+
 -- ==== Sudo write ====
 vim.cmd(":ca w!! lua require('h4s.sudo').sudo_write()")
 
