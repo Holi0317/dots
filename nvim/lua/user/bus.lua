@@ -3,7 +3,7 @@
 --
 --Copyright (c) 2020 Prabir Shrestha
 
-function new()
+local function new()
 	local bus = {}
 
 	local handlers = {}
