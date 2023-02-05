@@ -70,7 +70,7 @@ vim.opt.helpheight = 12
 vim.opt.previewheight = 12
 vim.opt.showcmd = false
 vim.opt.spell = true
-vim.opt.spelloptions = "camel"
+vim.opt.spelloptions = "camel,noplainbuffer"
 vim.opt.spelllang = { "en_us" }
 -- just for nightly
 vim.opt.cmdheight = 2

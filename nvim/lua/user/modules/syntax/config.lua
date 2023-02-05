@@ -131,8 +131,4 @@ function M.treesitter()
 	vim.o.foldlevelstart = 99
 end
 
-function M.spellsitter()
-	require("spellsitter").setup()
-end
-
 return M
