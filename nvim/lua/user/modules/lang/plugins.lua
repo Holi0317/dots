@@ -59,3 +59,7 @@ plugin({
 		require("user.modules.lang.config").saga()
 	end,
 })
+
+plugin({
+	"b0o/schemastore.nvim",
+})
