@@ -2,9 +2,12 @@ local plugin = require("user.pack").register_plugin
 
 plugin({
 	"williamboman/mason.nvim",
+	requires = {
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
 	config = function()
 		require("user.modules.lang.config").mason()
-	end
+	end,
 })
 
 plugin({
@@ -15,7 +18,7 @@ plugin({
 	after = "mason.nvim",
 	config = function()
 		require("user.modules.lang.config").lspconfig()
-	end
+	end,
 })
 
 plugin({
@@ -23,5 +26,5 @@ plugin({
 	after = "nvim-lspconfig",
 	config = function()
 		require("user.modules.lang.config").luadev()
-	end
+	end,
 })
