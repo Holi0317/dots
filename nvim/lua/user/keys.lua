@@ -221,6 +221,12 @@ local function setup_vim_keys()
 	-- ]<space> and [<space> for insert space
 	vim.keymap.set("n", "]<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", { silent = true })
 	vim.keymap.set("n", "[<space>", ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[", { silent = true })
+
+	vim.keymap.set("n", "<C-c>", function()
+		vim.wo.conceallevel = vim.wo.conceallevel == 0 and 2 or 0
+	end, {
+		silent = true,
+	})
 end
 
 function M.setup()
