@@ -42,6 +42,7 @@ alias xclip="xclip -selection clipboard"
 alias tree="exa --tree --icons"
 alias s3="aws s3"
 alias gg="lazygit"
+alias tf="terraform"
 
 load=load
 
