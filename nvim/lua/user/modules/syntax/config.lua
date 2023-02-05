@@ -16,10 +16,12 @@ function M.treesitter()
 			"javascript",
 			"jsdoc",
 			"typescript",
+			"tsx",
 			"vue",
 			"html",
 			"css",
 			"scss",
+			"prisma",
 
 			-- Config languages
 			"json",
@@ -29,13 +31,26 @@ function M.treesitter()
 			"toml",
 			"dockerfile",
 
+			-- C
+			"c",
+			"cpp",
+			"cmake",
+			"make",
+
+			-- Go
 			"go",
 			"gomod",
+
+			-- PHP
+			"php",
+			"phpdoc",
+
+			"comment",
+			"c_sharp",
 			"python",
 			"regex",
 			"sql",
 			"bash",
-			"c",
 		},
 
 		-- Install parsers synchronously (only applied to `ensure_installed`)
