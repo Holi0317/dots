@@ -28,3 +28,12 @@ plugin({
 		require("user.modules.lang.config").luadev()
 	end,
 })
+
+plugin({
+	"jose-elias-alvarez/null-ls.nvim",
+	after = "nvim-lspconfig",
+	requires = { "nvim-lua/plenary.nvim" },
+	config = function()
+		require("user.modules.lang.config").null()
+	end,
+})

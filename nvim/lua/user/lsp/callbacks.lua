@@ -87,4 +87,10 @@ function M.on_attach(client, bufnr)
 	setup_keymap(client, bufnr)
 end
 
+function M.on_init()
+end
+
+function M.on_exit()
+end
+
 return M

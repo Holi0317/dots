@@ -5,10 +5,9 @@ local M = {}
 
 -- manually start the server and don't wait for the usual filetype trigger from lspconfig
 local function buf_try_add(server)
-  local bufnr = vim.api.nvim_get_current_buf()
+	local bufnr = vim.api.nvim_get_current_buf()
 	server.manager.try_add_wrapper(bufnr)
 end
-
 
 ---Setup the given server
 ---@param server_name string Name of the server listed in lspconfig
@@ -16,6 +15,8 @@ end
 function M.setup(server_name, custom)
 	local defaults = {
 		on_attach = callbacks.on_attach,
+		on_init = callbacks.on_init,
+		on_exit = callbacks.on_exit,
 	}
 
 	local opt = vim.tbl_deep_extend("force", defaults, custom or {})
