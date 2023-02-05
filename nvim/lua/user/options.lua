@@ -117,3 +117,19 @@ if vim.loop.os_uname().sysname == "Darwin" then
 end
 
 vim.g.mapleader = " "
+
+-- ==== Relative numberline ====
+vim.opt.relativenumber = true
+vim.api.nvim_create_augroup("relnumber_toggle", {})
+vim.api.nvim_create_autocmd("InsertEnter", {
+	group = "relnumber_toggle",
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
+})
+vim.api.nvim_create_autocmd("InsertLeave", {
+	group = "relnumber_toggle",
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
