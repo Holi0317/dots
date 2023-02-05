@@ -4,6 +4,12 @@ function M.snip()
 	require("luasnip.loaders.from_vscode").lazy_load()
 end
 
+function M.neogen()
+	require("neogen").setup({
+		snippet_engine = "luasnip",
+	})
+end
+
 function M.lspkind()
 	local lspkind = require("lspkind")
 	lspkind.init({})
