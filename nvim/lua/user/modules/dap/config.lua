@@ -28,8 +28,15 @@ function M.dapui()
 	local dap = require("dap")
 	dapui.setup()
 
+	local opened = false
+
 	dap.listeners.after.event_initialized["dapui_config"] = function()
+		if opened then
+			return
+		end
+
 		dapui.open()
+		opened = true
 	end
 end
 
