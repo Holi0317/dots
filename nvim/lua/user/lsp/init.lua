@@ -17,7 +17,7 @@ local function buf_try_add(server)
 end
 
 function M.common_capabilities()
-	return cmp_nvim.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+	return cmp_nvim.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 end
 
 ---@class LspSetupConfig
