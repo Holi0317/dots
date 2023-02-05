@@ -43,7 +43,7 @@ function M.treesitter()
 
 			-- PHP
 			"php",
-			"phpdoc",
+			-- "phpdoc",  -- This is causing problem with installing on aarch darwin
 
 			"comment",
 			"c_sharp",
