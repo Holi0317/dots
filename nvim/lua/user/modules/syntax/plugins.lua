@@ -19,5 +19,6 @@ plugin({
     "theHamsta/nvim-treesitter-pairs",
     'adelarsq/vim-matchit',  -- Required by pairs
     "nvim-treesitter/nvim-treesitter-context",
+    "JoosepAlviste/nvim-ts-context-commentstring"
   }
 })
