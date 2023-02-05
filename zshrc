@@ -114,5 +114,5 @@ zinit $load ogham/exa
 zinit ice wait"1" lucid blockf
 zinit add-fpath /opt/homebrew/share/zsh/site-functions
 
-zinit ice lucid wait"1" blockf atpull'zinit creinstall -q .'
+zinit ice lucid wait"1" creinstall
 zinit $load zsh-users/zsh-completions
