@@ -2,6 +2,9 @@
 success_symbol = "➜"
 error_symbol = "➜"
 
+[aws]
+force_display = true
+
 [status]
 disabled = false
 symbol = " "
