@@ -411,6 +411,9 @@ lvim.builtin.lualine.sections.lualine_x = {
 vim.list_extend(lvim.builtin.project.patterns, {
 	".obsidian",
 })
+lvim.builtin.project.patterns = vim.tbl_filter(function(entry)
+	return entry ~= "package.json"
+end, lvim.builtin.project.patterns)
 lvim.builtin.project.ignore_lsp = {
 	"null-ls",
 }
