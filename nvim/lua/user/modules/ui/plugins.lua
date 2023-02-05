@@ -1,6 +1,10 @@
 local plugin = require("user.pack").register_plugin
 
 plugin({
+	"antoinemadec/FixCursorHold.nvim",
+})
+
+plugin({
 	"rcarriga/nvim-notify",
 	config = function()
 		require("user.modules.ui.config").notify()
