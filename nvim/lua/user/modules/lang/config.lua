@@ -143,7 +143,7 @@ function M.saga()
 		code_action_keys = {
 			quit = "<esc>",
 		},
-		rename_action_quit = "q",
+		rename_action_quit = "<C-c>",
 	})
 
 	local signs = {
