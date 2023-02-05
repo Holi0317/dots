@@ -57,10 +57,10 @@ bus.emit("beforePacker")
 pack.ensure_plugins()
 bus.emit("afterPacker")
 
-bus.emit('beforeOptions')
+bus.emit("beforeOptions")
 require("user.options")
-bus.emit('afterOptions')
+bus.emit("afterOptions")
 
 bus.emit("beforeCompile")
 pack.load_compile()
-bus.emit('afterCompile')
+bus.emit("afterCompile")
