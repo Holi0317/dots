@@ -1,4 +1,4 @@
-require("user.lsp").setup("sumneko_lua", {
+require("user.lsp").setup("lua_ls", {
 	override = {
 		settings = {
 			Lua = {
