@@ -10,6 +10,11 @@ plugin({
 plugin({
 	"gaoDean/autolist.nvim",
 	ft = { "markdown", "text", "tex", "plaintex" },
+	requires = {
+		-- Force autolist load after autopairs to fix autolist
+		-- See gaoDean/autolist.nvim#43
+		"windwp/nvim-autopairs",
+	},
 	config = function()
 		require("user.modules.editing.config").autolist()
 	end,
