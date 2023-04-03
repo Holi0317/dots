@@ -7,6 +7,7 @@ function M.treesitter()
 			-- vim
 			"lua",
 			"vim",
+			"vimdoc",
 
 			-- MD
 			"markdown",
