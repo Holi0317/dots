@@ -95,6 +95,16 @@ zinit ice lucid wait"!" blockf \
           atpull"%atclone" src"init.zsh"
 zinit $load Schniz/fnm
 
+# pyenv: Python version manager
+zinit ice lucid wait"!" blockf \
+          as"command" \
+          atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+          atinit'export PYENV_ROOT="$PWD"' \
+          atpull'%atclone' \
+          pick'bin/pyenv' \
+          src'zpyenv.zsh'
+zinit $load pyenv/pyenv
+
 # direnv
 zinit ice wait"!" blockf \
     as"program" from"gh-r" \
