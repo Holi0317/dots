@@ -48,7 +48,7 @@ plugin({
 })
 
 plugin({
-	"Djancyp/better-comments.nvim",
+	"folke/todo-comments.nvim",
 	config = function()
 		require("user.modules.ui.config").comment()
 	end,

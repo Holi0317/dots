@@ -53,7 +53,7 @@ function M.indent()
 end
 
 function M.comment()
-	require("better-comment").Setup()
+	require("todo-comments").setup({})
 end
 
 function M.lightspeed()
