@@ -23,6 +23,7 @@ end
 ---@class LspSetupConfig
 ---@field override? any Table of options to override
 ---@field enable_format? boolean Enable formatting from this lsp. Default to false.
+---@field semantic_token? boolean Enable semantic token higlighting for this lsp. Default to true
 
 ---Setup the given server
 ---@param server_name string Name of the server listed in lspconfig
@@ -40,6 +41,10 @@ function M.setup(server_name, custom)
 		on_attach = function(client, bufnr)
 			if custom.enable_format then
 				lspformat.on_attach(client)
+			end
+
+			if custom.semantic_token == false then
+				client.server_capabilities.semanticTokensProvider = nil
 			end
 
 			callbacks.on_attach(client, bufnr)
