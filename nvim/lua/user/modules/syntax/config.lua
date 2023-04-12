@@ -6,12 +6,14 @@ function M.treesitter()
 		ensure_installed = {
 			-- vim
 			"lua",
+			"luadoc",
 			"vim",
 			"vimdoc",
 
 			-- MD
 			"markdown",
 			"markdown_inline",
+			"mermaid",
 
 			-- Webs
 			"javascript",
@@ -32,7 +34,9 @@ function M.treesitter()
 			"toml",
 			"dockerfile",
 			"hcl",
+			"terraform",
 			"scheme",
+			"ini",
 
 			-- C
 			"c",
@@ -49,6 +53,7 @@ function M.treesitter()
 			-- "phpdoc",  -- This is causing problem with installing on aarch darwin
 
 			-- Git
+			"git_config",
 			"git_rebase",
 			"gitattributes",
 			"gitcommit",
