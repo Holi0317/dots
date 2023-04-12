@@ -68,7 +68,7 @@ end
 ---replaced with volar.
 ---
 ---Call this function in vue ftplugin. Optionally also call this in project
----`.vimrc.lua` to ensure volar is started even the first file to edit is not
+---`.nvim.lua` to ensure volar is started even the first file to edit is not
 ---a vue file.
 function M.setup_volar()
 	local volar = require("user.lsp.volar")

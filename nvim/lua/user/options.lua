@@ -72,7 +72,6 @@ vim.opt.showcmd = false
 vim.opt.spell = true
 vim.opt.spelloptions = "camel,noplainbuffer"
 vim.opt.spelllang = { "en_us" }
--- just for nightly
 vim.opt.cmdheight = 2
 vim.opt.cmdwinheight = 5
 vim.opt.equalalways = false
@@ -80,6 +79,7 @@ vim.opt.laststatus = 2
 vim.opt.display = "lastline"
 vim.opt.pumblend = 10
 vim.opt.winblend = 10
+vim.opt.exrc = true
 
 vim.opt.undofile = true
 vim.opt.synmaxcol = 2500
