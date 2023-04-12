@@ -2,6 +2,8 @@
 -- date: 2022-07-02
 -- License: MIT
 
+vim.loader.enable()
+
 local vim = vim
 local home = os.getenv("HOME")
 -- remove check is windows because I only use mac or linux
