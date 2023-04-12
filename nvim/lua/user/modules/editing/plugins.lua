@@ -12,10 +12,6 @@ plugin({
 })
 
 plugin({
-	"gpanders/editorconfig.nvim",
-})
-
-plugin({
 	"ethanholz/nvim-lastplace",
 	event = "BufRead",
 	config = function()
