@@ -1,1 +1,3 @@
-require("user.lsp").setup("astro")
+require("user.lsp").setup("astro", {
+	enable_format = true,
+})
