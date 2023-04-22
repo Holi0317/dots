@@ -58,6 +58,7 @@ function M.mason()
 			"vue-language-server",
 			"emmet-ls",
 			"js-debug-adapter",
+			"astro-language-server",
 
 			-- PHP
 			"intelephense",

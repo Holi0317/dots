@@ -25,6 +25,7 @@ function M.treesitter()
 			"css",
 			"scss",
 			"prisma",
+			"astro",
 
 			-- Config languages
 			"json",
