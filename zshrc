@@ -78,6 +78,15 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit wait"" lucid for \
   OMZP::fzf
 
+zinit ice wait"" lucid \
+  atload"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+  "
+zinit $load zsh-users/zsh-history-substring-search
+
 zinit wait"1" pack for ls_colors
 
 zinit ice wait"1" lucid autoload'#manydots-magic'
