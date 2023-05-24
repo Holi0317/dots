@@ -75,6 +75,9 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 # ==== Small plugins ====
 
+zinit wait"" lucid for \
+  OMZP::fzf
+
 zinit wait"1" pack for ls_colors
 
 zinit ice wait"1" lucid autoload'#manydots-magic'
@@ -84,7 +87,6 @@ zinit wait"1" lucid for \
   OMZL::history.zsh \
   atinit"COMPLETION_WAITING_DOTS=true" OMZL::completion.zsh \
   OMZP::gpg-agent \
-  OMZP::fzf
 
 # ==== Install programs ====
 
