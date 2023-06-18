@@ -44,11 +44,11 @@ function Packer:load_packer()
 		disable_commands = true,
 		display = {
 			open_fn = require("packer.util").float,
-			working_sym = "ﰭ",
-			error_sym = "",
-			done_sym = "",
-			removed_sym = "",
-			moved_sym = "ﰳ",
+			working_sym = "󰜯",
+			error_sym = "󰅗",
+			done_sym = "󰄲",
+			removed_sym = "󰍵",
+			moved_sym = "󰜵",
 		},
 	})
 	packer.reset()

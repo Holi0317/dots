@@ -2,14 +2,14 @@ local M = {}
 
 function M.dap()
 	vim.fn.sign_define("DapBreakpoint", {
-		text = "",
+		text = "󰃤",
 		texthl = "DiagnosticError",
 		linehl = "",
 		numhl = "",
 	})
 
 	vim.fn.sign_define("DapBreakpointRejected", {
-		text = "",
+		text = "󰃤",
 		texthl = "DiagnosticHint",
 		linehl = "",
 		numhl = "",

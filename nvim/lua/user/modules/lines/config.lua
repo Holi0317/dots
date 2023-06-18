@@ -63,7 +63,7 @@ function M.lualine()
 		diagnostics = {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
-			symbols = { error = " ", warn = " ", info = " ", hint = " " },
+			symbols = { error = " ", warn = " ", info = " ", hint = "󰌶 " },
 			cond = conditions.hide_in_width,
 		},
 		lsp = {
@@ -202,7 +202,7 @@ function M.bufferline()
 			indicator = {
 				icon = "▎",
 			},
-			buffer_close_icon = "",
+			buffer_close_icon = "󰅖",
 			modified_icon = "●",
 			close_icon = "",
 			left_trunc_marker = "",
