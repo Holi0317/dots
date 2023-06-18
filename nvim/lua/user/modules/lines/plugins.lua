@@ -13,7 +13,7 @@ plugin({
 
 plugin({
 	"akinsho/bufferline.nvim",
-	tag = "v2.*",
+	tag = "*",
 	after = { "gruvbox.nvim" },
 	requires = {
 		"kyazdani42/nvim-web-devicons",
