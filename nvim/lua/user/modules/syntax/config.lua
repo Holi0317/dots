@@ -60,6 +60,9 @@ function M.treesitter()
 			"gitcommit",
 			"gitignore",
 
+			-- Rust
+			"rust",
+
 			"comment",
 			"c_sharp",
 			"python",

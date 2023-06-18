@@ -39,6 +39,10 @@ function M.mason()
 			"lua-language-server",
 			"stylua",
 
+			-- Rust
+			"rust-analyzer",
+			"rustfmt",
+
 			-- JSON, yaml, toml
 			"json-lsp",
 			"yaml-language-server",
@@ -100,9 +104,9 @@ function M.null()
 			null.builtins.code_actions.shellcheck,
 
 			null.builtins.diagnostics.eslint_d,
+			null.builtins.diagnostics.flake8,
 			null.builtins.diagnostics.golangci_lint,
 			null.builtins.diagnostics.shellcheck,
-			null.builtins.diagnostics.flake8,
 
 			null.builtins.formatting.black,
 			null.builtins.formatting.eslint_d,
@@ -113,6 +117,7 @@ function M.null()
 			null.builtins.formatting.shfmt,
 			null.builtins.formatting.stylua,
 			null.builtins.formatting.taplo,
+			null.builtins.formatting.rustfmt,
 		},
 	})
 end
