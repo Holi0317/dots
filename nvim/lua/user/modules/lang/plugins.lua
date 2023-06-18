@@ -47,6 +47,7 @@ plugin({
 
 plugin({
 	"j-hui/fidget.nvim",
+	branch = "legacy",
 	config = function()
 		require("user.modules.lang.config").fidget()
 	end,
