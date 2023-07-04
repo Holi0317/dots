@@ -72,6 +72,7 @@ function M.mason()
 
 			-- Non-language
 			"editorconfig-checker",
+			"marksman",
 		},
 	})
 end
