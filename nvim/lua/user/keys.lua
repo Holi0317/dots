@@ -247,7 +247,7 @@ local M = {
 			"Peak definition",
 		},
 		o = {
-			"<cmd>LSoutlineToggle<CR>",
+			"<cmd>Lspsaga outline<CR>",
 			"Show outline",
 		},
 	},
