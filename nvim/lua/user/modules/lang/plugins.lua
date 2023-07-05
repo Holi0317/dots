@@ -62,6 +62,13 @@ plugin({
 })
 
 plugin({
+	"stevearc/aerial.nvim",
+	config = function()
+		require("user.modules.lang.config").aerial()
+	end,
+})
+
+plugin({
 	"b0o/schemastore.nvim",
 })
 

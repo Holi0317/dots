@@ -167,6 +167,10 @@ function M.saga()
 	end
 end
 
+function M.aerial()
+	require("aerial").setup()
+end
+
 function M.gnupg()
 	vim.g.GPGPreferSign = 1
 
