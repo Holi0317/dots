@@ -19,10 +19,6 @@ function M.mason()
 			"clangd",
 			"cmake-language-server",
 
-			-- C#
-			"omnisharp",
-			"netcoredbg",
-
 			-- Go
 			"gopls",
 			"golangci-lint",
@@ -41,7 +37,6 @@ function M.mason()
 
 			-- Rust
 			"rust-analyzer",
-			"rustfmt",
 
 			-- JSON, yaml, toml
 			"json-lsp",
@@ -63,9 +58,6 @@ function M.mason()
 			"emmet-ls",
 			"js-debug-adapter",
 			"astro-language-server",
-
-			-- PHP
-			"intelephense",
 
 			-- XML
 			"lemminx",

@@ -73,11 +73,6 @@ plugin({
 })
 
 plugin({
-	"Hoffs/omnisharp-extended-lsp.nvim",
-	ft = { "csharp" },
-})
-
-plugin({
 	"jamessan/vim-gnupg",
 	config = function()
 		require("user.modules.lang.config").gnupg()
