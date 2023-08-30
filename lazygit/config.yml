@@ -1,5 +1,5 @@
 gui:
-  showIcons: true
+  nerdFontsVersion: "3"
 
 git:
   overrideGpg: true # My gpg won't show a password prompt. lg disable some features if I am on gpg
