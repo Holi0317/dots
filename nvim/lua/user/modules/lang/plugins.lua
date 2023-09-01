@@ -54,7 +54,7 @@ plugin({
 })
 
 plugin({
-	"glepnir/lspsaga.nvim",
+	"nvimdev/lspsaga.nvim",
 	branch = "main",
 	config = function()
 		require("user.modules.lang.config").saga()
