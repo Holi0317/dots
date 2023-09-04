@@ -13,7 +13,7 @@ local M = {
 -- manually start the server and don't wait for the usual filetype trigger from lspconfig
 local function buf_try_add(server)
 	local bufnr = vim.api.nvim_get_current_buf()
-	server.manager.try_add_wrapper(bufnr)
+	server.manager:try_add_wrapper(bufnr)
 end
 
 function M.common_capabilities()
