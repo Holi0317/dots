@@ -93,16 +93,22 @@ function M.null()
 		on_init = callbacks.on_init,
 		on_exit = callbacks.on_exit,
 		sources = {
-			null.builtins.code_actions.eslint_d,
+			null.builtins.code_actions.eslint_d.with({
+				extra_filetypes = { "astro" },
+			}),
 			null.builtins.code_actions.shellcheck,
 
-			null.builtins.diagnostics.eslint_d,
+			null.builtins.diagnostics.eslint_d.with({
+				extra_filetypes = { "astro" },
+			}),
 			null.builtins.diagnostics.flake8,
 			null.builtins.diagnostics.golangci_lint,
 			null.builtins.diagnostics.shellcheck,
 
 			null.builtins.formatting.black,
-			null.builtins.formatting.eslint_d,
+			null.builtins.formatting.eslint_d.with({
+				extra_filetypes = { "astro" },
+			}),
 			null.builtins.formatting.gofmt,
 			null.builtins.formatting.goimports,
 			null.builtins.formatting.isort,
