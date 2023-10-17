@@ -46,10 +46,7 @@ function M.yanky()
 end
 
 function M.indent()
-	require("indent_blankline").setup({
-		show_current_context = true,
-		show_current_context_start = true,
-	})
+	require("ibl").setup({})
 end
 
 function M.comment()
