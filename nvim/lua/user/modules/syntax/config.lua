@@ -147,7 +147,9 @@ function M.treesitter()
 		},
 	})
 
-	require("treesitter-context").setup()
+	require("treesitter-context").setup({
+		max_lines = 5,
+	})
 
 	-- Enable folding with treesitter
 	vim.o.foldmethod = "expr"
