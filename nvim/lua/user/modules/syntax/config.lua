@@ -1,5 +1,8 @@
 local M = {}
 
+-- JoosepAlviste/nvim-ts-context-commentstring: Skip compatibility check
+vim.g.skip_ts_context_commentstring_module = true
+
 function M.treesitter()
 	require("nvim-treesitter.configs").setup({
 		-- A list of parser names, or "all"
@@ -140,11 +143,10 @@ function M.treesitter()
 				goto_partner = "%",
 			},
 		},
+	})
 
-		context_commentstring = {
-			enable = true,
-			enable_autocmd = false,
-		},
+	require("ts_context_commentstring").setup({
+		enable_autocmd = false,
 	})
 
 	require("treesitter-context").setup({
