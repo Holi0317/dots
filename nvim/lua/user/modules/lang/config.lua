@@ -22,14 +22,9 @@ function M.mason()
 			-- Go
 			"gopls",
 			"golangci-lint",
-			"delve",
 
 			-- Python
 			"pyright",
-			"isort",
-			"black",
-			"flake8",
-			"debugpy",
 			"ruff-lsp",
 
 			-- Lua
@@ -57,7 +52,6 @@ function M.mason()
 			"prettierd",
 			"vue-language-server",
 			"emmet-ls",
-			"js-debug-adapter",
 			"astro-language-server",
 
 			-- XML
