@@ -30,6 +30,7 @@ function M.mason()
 			"black",
 			"flake8",
 			"debugpy",
+			"ruff-lsp",
 
 			-- Lua
 			"lua-language-server",
