@@ -46,6 +46,16 @@ function M.yanky()
 end
 
 function M.indent()
+	vim.opt.listchars = {
+		--space = "⋅",
+		-- eol = "↴",
+		tab = "  ",
+		-- tab = "|_>",
+		trail = "•",
+		-- extends = "❯",
+		-- precedes = "❮",
+		nbsp = "",
+	}
 	require("ibl").setup({})
 end
 
