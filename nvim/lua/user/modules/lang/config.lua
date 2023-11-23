@@ -96,11 +96,9 @@ function M.null()
 			null.builtins.diagnostics.eslint_d.with({
 				extra_filetypes = { "astro" },
 			}),
-			null.builtins.diagnostics.flake8,
 			null.builtins.diagnostics.golangci_lint,
 			null.builtins.diagnostics.shellcheck,
 
-			null.builtins.formatting.black,
 			null.builtins.formatting.eslint_d.with({
 				extra_filetypes = { "astro" },
 			}),
