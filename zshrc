@@ -36,8 +36,8 @@ export SAVEHIST=500000
 # Aliases
 alias vi="nvim"
 alias vim="nvim"
-alias l="exa -alh --icons"
-alias tree="exa --tree --icons"
+alias l="eza -alh --icons"
+alias tree="eza --tree --icons"
 alias s3="aws s3"
 alias s3a="aws s3 --endpoint-url https://s3-accelerate.amazonaws.com"
 alias gg="lazygit"
@@ -124,15 +124,6 @@ zinit ice wait"!" blockf \
     mv"direnv* -> direnv" \
     src'zhook.zsh'
 zinit $load direnv/direnv
-
-# exa (ls replacement)
-zinit ice lucid wait"1" \
-          as"command" from"gh-r" \
-          atclone'cp -vf completions/exa.zsh _exa' \
-          atpull"%atclone" \
-          atload"alias l='exa -alh --icons'; alias tree='exa --tree --icons'" \
-          sbin"**/exa -> exa"
-zinit $load ogham/exa
 
 # ==== Completions ====
 
