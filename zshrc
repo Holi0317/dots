@@ -36,8 +36,8 @@ export SAVEHIST=500000
 # Aliases
 alias vi="nvim"
 alias vim="nvim"
-alias l="eza -alh --icons"
-alias tree="eza --tree --icons"
+alias l="eza -alh --icons=always"
+alias tree="eza --tree --icons=always"
 alias s3="aws s3"
 alias s3a="aws s3 --endpoint-url https://s3-accelerate.amazonaws.com"
 alias gg="lazygit"
