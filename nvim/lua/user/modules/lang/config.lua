@@ -104,7 +104,9 @@ function M.null()
 			}),
 			null.builtins.formatting.gofmt,
 			null.builtins.formatting.goimports,
-			null.builtins.formatting.prettierd,
+			null.builtins.formatting.prettierd.with({
+				extra_filetypes = { "mdx" },
+			}),
 			null.builtins.formatting.shfmt,
 			null.builtins.formatting.stylua,
 			null.builtins.formatting.taplo,
