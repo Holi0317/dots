@@ -4,6 +4,8 @@ local M = {}
 vim.g.skip_ts_context_commentstring_module = true
 
 function M.treesitter()
+	vim.treesitter.language.register("markdown", "mdx")
+
 	require("nvim-treesitter.configs").setup({
 		-- A list of parser names, or "all"
 		ensure_installed = {
