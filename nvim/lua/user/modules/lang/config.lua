@@ -38,7 +38,6 @@ function M.mason()
 			"json-lsp",
 			"yaml-language-server",
 			"ansible-language-server",
-			"taplo",
 
 			-- Terraform
 			"terraform-ls",
@@ -102,7 +101,6 @@ function M.null()
 			}),
 			null.builtins.formatting.shfmt,
 			null.builtins.formatting.stylua,
-			-- null.builtins.formatting.taplo,
 			-- null.builtins.formatting.rustfmt,
 		},
 	})

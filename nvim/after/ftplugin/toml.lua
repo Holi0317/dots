@@ -1,1 +1,1 @@
-require("user.lsp").setup("taplo")
+require("user.lsp").setup("taplo", { enable_format = true })
