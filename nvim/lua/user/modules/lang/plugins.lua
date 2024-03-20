@@ -30,7 +30,7 @@ plugin({
 })
 
 plugin({
-	"jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	after = "nvim-lspconfig",
 	requires = { "nvim-lua/plenary.nvim" },
 	config = function()
