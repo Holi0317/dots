@@ -1,1 +1,1 @@
-require("user.lsp").setup_volar()
+require("user.lsp").setup_tsserver()

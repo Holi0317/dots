@@ -63,25 +63,29 @@ function M.setup(server_name, custom)
 	M.configured[server_name] = true
 end
 
----Setup volar with takeover mode
----After calling this function, all existing tsserver will be killed and
----replaced with volar.
+---Setup typescript server with vue/volar integration
 ---
----Call this function in vue ftplugin. Optionally also call this in project
----`.nvim.lua` to ensure volar is started even the first file to edit is not
----a vue file.
-function M.setup_volar()
-	local volar = require("user.lsp.volar")
+---Instead of calling M.setup("tsserver") in ftplugin, call this instead for all
+---js-related languages, even if they are not using vue at all.
+function M.setup_tsserver()
+	-- Ref: https://github.com/vuejs/language-tools/issues/3925
+	local mason_registry = require("mason-registry")
+	local vls_path = mason_registry.get_package("vue-language-server"):get_install_path()
+	local ts_plugin_path = vls_path .. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
 
-	-- Skip future tsserver setup
-	M.configured["tsserver"] = true
-
-	volar.kill_tsserver()
-
-	-- Start volar in takeover mode
-	M.setup("volar", {
+	M.setup("tsserver", {
 		override = {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = ts_plugin_path,
+						-- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
+						languages = { "vue" },
+					},
+				},
+			},
 		},
 	})
 end

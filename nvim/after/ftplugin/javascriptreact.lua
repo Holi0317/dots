@@ -1,1 +1,1 @@
-require("user.lsp").setup("tsserver")
+require("user.lsp").setup_tsserver()
