@@ -92,7 +92,7 @@ function M.treesitter()
 		},
 
 		indent = {
-			enable = false,
+			enable = true,
 			disable = {},
 		},
 
