@@ -9,6 +9,7 @@ plugin({
 
 plugin({
 	"rcarriga/nvim-dap-ui",
+	requires = "nvim-neotest/nvim-nio",
 	after = "nvim-dap",
 	config = function()
 		require("user.modules.dap.config").dapui()
