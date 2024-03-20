@@ -38,6 +38,7 @@ function M.mason()
 			"json-lsp",
 			"yaml-language-server",
 			"ansible-language-server",
+			"taplo",
 
 			-- Terraform
 			"terraform-ls",
