@@ -9,14 +9,11 @@ local M = {
 		["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 		W = {
 			function()
-				-- Internal API(?) for lspformat
-				if vim.b.format_saving then
-					vim.cmd(":w")
-				end
+				local lspformat = require("lsp-format")
 
-				vim.b.format_saving = true
+				lspformat.disable({ args = "" })
 				vim.cmd(":w")
-				vim.b.format_saving = false
+				lspformat.enable({ args = "" })
 			end,
 			"Save without format",
 		},
