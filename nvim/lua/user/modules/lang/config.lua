@@ -12,7 +12,6 @@ function M.mason()
 
 			-- Bash and shell
 			"bash-language-server",
-			"shellcheck",
 			"shfmt",
 
 			-- C and C++
@@ -88,12 +87,7 @@ function M.null()
 		on_init = callbacks.on_init,
 		on_exit = callbacks.on_exit,
 		sources = {
-			-- FIXME: Find replacement for comment out sources
-
-			-- null.builtins.code_actions.shellcheck,
-
 			null.builtins.diagnostics.golangci_lint,
-			-- null.builtins.diagnostics.shellcheck,
 
 			null.builtins.formatting.gofmt,
 			null.builtins.formatting.goimports,
@@ -102,7 +96,6 @@ function M.null()
 			}),
 			null.builtins.formatting.shfmt,
 			null.builtins.formatting.stylua,
-			-- null.builtins.formatting.rustfmt,
 		},
 	})
 end
