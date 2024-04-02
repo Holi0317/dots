@@ -12,6 +12,7 @@ function M.mason()
 
 			-- Bash and shell
 			"bash-language-server",
+			"shellcheck",
 			"shfmt",
 
 			-- C and C++
