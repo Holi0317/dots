@@ -49,7 +49,7 @@ function M.indent()
 	vim.opt.listchars = {
 		--space = "⋅",
 		-- eol = "↴",
-		tab = "→ ",
+		tab = "  ",
 		-- tab = "|_>",
 		trail = "•",
 		-- extends = "❯",
