@@ -75,7 +75,7 @@ function M.setup_tsserver()
 
 	M.setup("tsserver", {
 		override = {
-			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			init_options = {
 				plugins = {
 					{
