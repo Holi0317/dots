@@ -63,29 +63,70 @@ function M.setup(server_name, custom)
 	M.configured[server_name] = true
 end
 
+---Install `typescript-tools` as an lsp server in lspconfig.
+---It is safe to call this function multiple times. We check if the sever is
+---registered. Subsequent call will be noop.
+local function prepare_tsserver()
+	local configs = require("lspconfig.configs")
+	local plugin_config = require("typescript-tools.config")
+	local rpc = require("typescript-tools.rpc")
+	local util = require("lspconfig.util")
+
+	if configs[plugin_config.plugin_name] ~= nil then
+		return
+	end
+
+	plugin_config.load_settings({
+		tsserver_plugins = {
+			"@vue/typescript-plugin",
+		},
+	})
+
+	configs[plugin_config.plugin_name] = {
+		default_config = {
+			cmd = function(...)
+				return rpc.start(...)
+			end,
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+				"vue",
+			},
+			root_dir = function(fname)
+				-- INFO: stealed from:
+				-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua#L22
+				local root_dir = util.root_pattern("tsconfig.json")(fname)
+					or util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
+
+				-- INFO: this is needed to make sure we don't pick up root_dir inside node_modules
+				local node_modules_index = root_dir and root_dir:find("node_modules", 1, true)
+				if node_modules_index and node_modules_index > 0 then
+					root_dir = root_dir:sub(1, node_modules_index - 2)
+				end
+
+				return root_dir
+			end,
+			single_file_support = true,
+		},
+	}
+end
+
 ---Setup typescript server with vue/volar integration
 ---
 ---Instead of calling M.setup("tsserver") in ftplugin, call this instead for all
 ---js-related languages, even if they are not using vue at all.
 function M.setup_tsserver()
-	-- Ref: https://github.com/vuejs/language-tools/issues/3925
-	local mason_registry = require("mason-registry")
-	local vls_path = mason_registry.get_package("vue-language-server"):get_install_path()
-	local ts_plugin_path = vls_path .. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
+	prepare_tsserver()
 
-	M.setup("tsserver", {
+	local server_name = require("typescript-tools.config").plugin_name
+
+	M.setup(server_name, {
 		override = {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-			init_options = {
-				plugins = {
-					{
-						name = "@vue/typescript-plugin",
-						location = ts_plugin_path,
-						-- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
-						languages = { "vue" },
-					},
-				},
-			},
 		},
 	})
 end
