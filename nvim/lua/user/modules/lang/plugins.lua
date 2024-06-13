@@ -78,9 +78,3 @@ plugin({
 		require("user.modules.lang.config").gnupg()
 	end,
 })
-
--- Required by ts (and ts-like) languages. Used in `setup_tsserver`.
-plugin({
-	"pmizio/typescript-tools.nvim",
-	requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-})
