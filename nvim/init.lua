@@ -53,19 +53,10 @@ vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
 
 local pack = require("user.pack")
-local bus = require("user.bus")
 
-bus.emit("beforePacker")
 pack.ensure_plugins()
-bus.emit("afterPacker")
-
-bus.emit("beforeOptions")
 require("user.options")
-bus.emit("afterOptions")
-
-bus.emit("beforeCompile")
 pack.load_compile()
-bus.emit("afterCompile")
 
 require("user.plugins.redact").setup()
 require("user.plugins.sudo").setup()

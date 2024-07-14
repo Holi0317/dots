@@ -1,5 +1,3 @@
-local bus = require("user.bus")
-
 local M = {}
 
 ---@type table<string,string[]>
