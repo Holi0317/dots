@@ -5,4 +5,7 @@ plugin({
 	config = function()
 		require("user.modules.keys.config").whichkey()
 	end,
+	requires = {
+		"echasnovski/mini.icons",
+	},
 })
