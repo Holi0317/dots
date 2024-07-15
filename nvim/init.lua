@@ -52,11 +52,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
 
-local pack = require("user.pack")
+local lazy = require("user.lazy")
 
-pack.ensure_plugins()
 require("user.options")
-pack.load_compile()
+
+lazy.bootstrap()
+lazy.setup()
 
 require("user.plugins.redact").setup()
 require("user.plugins.sudo").setup()
