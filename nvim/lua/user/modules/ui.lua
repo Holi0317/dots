@@ -142,15 +142,11 @@ return {
 	},
 
 	{
-		"ggandor/lightspeed.nvim",
+		"ggandor/leap.nvim",
 		config = function()
-			vim.g.lightspeed_no_default_keymaps = true
-
-			vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>Lightspeed_s", { silent = true })
-			vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>Lightspeed_S", { silent = true })
-
-			vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>Lightspeed_f", { silent = true })
-			vim.keymap.set({ "n", "x", "o" }, "F", "<Plug>Lightspeed_F", { silent = true })
+			vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+			vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+			vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
 		end,
 	},
 
