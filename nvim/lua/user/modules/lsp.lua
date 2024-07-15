@@ -59,7 +59,6 @@ return {
 
 	{
 		"b0o/schemastore.nvim",
-		-- TODO: Add all json-like ft
-		ft = { "json", "yaml" },
+		ft = { "json", "jsonc", "yaml", "toml" },
 	},
 }

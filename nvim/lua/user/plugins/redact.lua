@@ -69,7 +69,7 @@ function M.redact()
 	vim.o.clipboard = ""
 
 	-- Stop all LSP
-	vim.lsp.stop_client(vim.lsp.get_active_clients(), true)
+	vim.lsp.stop_client(vim.lsp.get_clients(), true)
 
 	-- Disable plugins that may leak
 	vim.api.nvim_clear_autocmds({
