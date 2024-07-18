@@ -23,6 +23,37 @@ return {
 	},
 	{
 		"gbprod/substitute.nvim",
+		keys = {
+			{
+				"gs",
+				function()
+					require("substitute").operator()
+				end,
+				noremap = true,
+			},
+			{
+				"gss",
+				function()
+					require("substitute").line()
+				end,
+				noremap = true,
+			},
+			{
+				"gS",
+				function()
+					require("substitute").eol()
+				end,
+				noremap = true,
+			},
+			{
+				"gs",
+				function()
+					require("substitute").visual()
+				end,
+				mode = "x",
+				noremap = true,
+			},
+		},
 		config = true,
 	},
 }
