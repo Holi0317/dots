@@ -50,7 +50,7 @@ function M.setup()
 	-- Buffers
 	wk.add({
 		{ "<leader>b", group = "+Buffers", icon = "" },
-		{ "<leaderbl", "<cmd>Telescope buffers<cr>", desc = "Find", icon = "" },
+		{ "<leader>bl", "<cmd>Telescope buffers<cr>", desc = "Find", icon = "" },
 		{ "<leader>bd", "<cmd>BufDel<cr>", desc = "Delete current buffer", icon = "" },
 		{
 			"<leader>bo",
