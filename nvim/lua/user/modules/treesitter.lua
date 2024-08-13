@@ -84,6 +84,7 @@ return {
 					"regex",
 					"sql",
 					"bash",
+					"typst",
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)

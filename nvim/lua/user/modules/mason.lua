@@ -66,6 +66,7 @@ return {
 				-- Non-language
 				"editorconfig-checker",
 				"marksman",
+				"tinymist",
 			},
 		},
 	},
