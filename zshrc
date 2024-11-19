@@ -43,6 +43,7 @@ alias s3a="aws s3 --endpoint-url https://s3-accelerate.amazonaws.com"
 alias gg="lazygit"
 alias tf="terraform"
 alias tg="terragrunt"
+alias g="git"
 
 load=load
 
