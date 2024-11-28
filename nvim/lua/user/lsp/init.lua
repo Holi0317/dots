@@ -65,15 +65,19 @@ end
 
 ---Setup typescript server with vue/volar integration
 ---
----Instead of calling M.setup("tsserver") in ftplugin, call this instead for all
+---Instead of calling M.setup("ts_ls") in ftplugin, call this instead for all
 ---js-related languages, even if they are not using vue at all.
-function M.setup_tsserver()
+---
+---This helper exists when volar support was a mess. Keeping this function
+---around because ts_ls setup is still a bit special and a lot of languages are
+---using it.
+function M.setup_tsls()
 	-- Ref: https://github.com/vuejs/language-tools/issues/3925
 	local mason_registry = require("mason-registry")
 	local vls_path = mason_registry.get_package("vue-language-server"):get_install_path()
 	local ts_plugin_path = vls_path .. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
 
-	M.setup("tsserver", {
+	M.setup("ts_ls", {
 		override = {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			init_options = {
@@ -81,8 +85,7 @@ function M.setup_tsserver()
 					{
 						name = "@vue/typescript-plugin",
 						location = ts_plugin_path,
-						-- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
-						languages = { "vue" },
+						languages = { "javascript", "typescript", "vue" },
 					},
 				},
 			},
