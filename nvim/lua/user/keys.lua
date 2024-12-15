@@ -167,11 +167,11 @@ function M.setup()
 			end,
 			desc = "Notifications",
 		},
-		{
-			"<leader>ss",
-			"<cmd>Lspsaga lsp_finder<CR>",
-			desc = "LSP Symbols",
-		},
+	})
+
+	-- Search and replace (grug-far)
+	wk.add({
+		{ "<leader>f", "<cmd>GrugFar<cr>", desc = "+Search and replace", icon = "󰬲" },
 	})
 
 	-- Trouble (quick fix like)

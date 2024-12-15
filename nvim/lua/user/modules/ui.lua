@@ -142,4 +142,42 @@ return {
 		"folke/todo-comments.nvim",
 		config = true,
 	},
+	{
+		"MagicDuck/grug-far.nvim",
+		cmd = { "GrugFar" },
+		config = function()
+			require("grug-far").setup({
+				-- shortcuts for the actions you see at the top of the buffer
+				-- set to '' or false to unset. Mappings with no normal mode value will be removed from the help header
+				-- you can specify either a string which is then used as the mapping for both normal and insert mode
+				-- or you can specify a table of the form { [mode] = <lhs> } (ex: { i = '<C-enter>', n = '<localleader>gr'})
+				-- it is recommended to use <localleader> though as that is more vim-ish
+				-- see https://learnvimscriptthehardway.stevelosh.com/chapters/11.html#local-leader
+				keymaps = {
+					help = { n = "g?" },
+					gotoLocation = { n = "<enter>" },
+					pickHistoryEntry = { n = "<enter>" },
+					openNextLocation = { n = "<down>" },
+					openPrevLocation = { n = "<up>" },
+
+					replace = { n = "\\r" },
+					qflist = { n = "\\q" },
+					syncLocations = { n = "\\s" },
+					syncLine = { n = "\\l" },
+					close = { n = "" },
+					historyOpen = { n = "\\t" },
+					historyAdd = { n = "\\a" },
+					refresh = { n = "\\f" },
+					openLocation = { n = "o" },
+					abort = { n = "<C-c>" },
+					toggleShowCommand = { n = "\\p" },
+					swapEngine = { n = "\\e" },
+					previewLocation = { n = "\\i" },
+					swapReplacementInterpreter = { n = "\\x" },
+					applyNext = { n = "<C-j>" },
+					applyPrev = { n = "<C-k>" },
+				},
+			})
+		end,
+	},
 }
