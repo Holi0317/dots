@@ -71,14 +71,14 @@ function M.setup()
 		{
 			"<leader>gj",
 			function()
-				require("gitsigns").next_hunk()
+				require("gitsigns").nav_hunk("next")
 			end,
 			desc = "Next Hunk",
 		},
 		{
 			"<leader>gk",
 			function()
-				require("gitsigns").prev_hunk()
+				require("gitsigns").nav_hunk("prev")
 			end,
 			desc = "Prev Hunk",
 		},
@@ -176,6 +176,29 @@ function M.setup()
 
 	-- Trouble (quick fix like)
 	wk.add({
+		{
+			"]t",
+			function()
+				require("trouble").next({
+					opts = {
+						jump = true,
+					},
+				})
+			end,
+			desc = "Next trouble",
+		},
+		{
+			"[t",
+			function()
+				require("trouble").prev({
+					opts = {
+						jump = true,
+					},
+				})
+			end,
+			desc = "Next trouble",
+		},
+
 		{ "<leader>t", group = "+Trouble", icon = "" },
 		{ "<leader>tr", "<cmd>Trouble lsp_references<cr>", desc = "References" },
 		{ "<leader>tf", "<cmd>Trouble lsp_definitions<cr>", desc = "Definitions" },
