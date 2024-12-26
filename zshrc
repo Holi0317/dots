@@ -103,7 +103,7 @@ zinit wait"1" lucid for \
 # fnm: Fast node manager
 zinit ice lucid wait"!" blockf \
           as"command" from"gh-r" bpick"*macos*" \
-          atclone"./fnm env --shell zsh --use-on-cd --arch arm64 > init.zsh; fnm completions --shell zsh > _fnm" \
+          atclone"./fnm env --shell zsh --use-on-cd --arch $(uname -m) > init.zsh; fnm completions --shell zsh > _fnm" \
           atpull"%atclone" src"init.zsh"
 zinit $load Schniz/fnm
 
