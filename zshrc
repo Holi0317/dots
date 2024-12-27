@@ -101,11 +101,10 @@ zinit wait"1" lucid for \
 # ==== Install programs ====
 
 # fnm: Fast node manager
-zinit ice lucid wait"!" blockf \
-          as"command" from"gh-r" bpick"*macos*" \
-          atclone"./fnm env --shell zsh --use-on-cd --arch $(uname -m) > init.zsh; fnm completions --shell zsh > _fnm" \
-          atpull"%atclone" src"init.zsh"
-zinit $load Schniz/fnm
+zinit ice lucid wait"" blockf \
+          has"fnm" id-as"fnm" as"null" \
+          atload'eval "$(fnm env --shell zsh --use-on-cd --arch $(uname -m | sed s/86_//))"'
+zinit $load zdharma-continuum/null
 
 # direnv
 zinit ice wait"!" blockf \
