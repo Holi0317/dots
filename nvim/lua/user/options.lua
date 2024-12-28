@@ -114,6 +114,19 @@ if vim.loop.os_uname().sysname == "Darwin" then
 		cache_enabled = 0,
 	}
 	vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+elseif vim.fn.filereadable("/proc/sys/fs/binfmt_misc/WSLInterop") == 1 then
+	vim.g.clipboard = {
+		name = "WslClipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		},
+		cache_enabled = 0,
+	}
 end
 
 vim.g.mapleader = " "
