@@ -1,3 +1,5 @@
+local env = require("user.env")
+
 -- author: glepnr https://github.com/glepnir
 -- date: 2022-07-02
 -- License: MIT
@@ -100,7 +102,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = "niv"
 
-if vim.loop.os_uname().sysname == "Darwin" then
+if env.sysname() == "Darwin" then
 	vim.g.clipboard = {
 		name = "macOS-clipboard",
 		copy = {
@@ -114,18 +116,19 @@ if vim.loop.os_uname().sysname == "Darwin" then
 		cache_enabled = 0,
 	}
 	vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
-elseif vim.fn.filereadable("/proc/sys/fs/binfmt_misc/WSLInterop") == 1 then
+elseif env.is_wsl() then
+	-- See https://github.com/memoryInject/wsl-clipboard
 	vim.g.clipboard = {
-		name = "WslClipboard",
+		name = "wsl-clipboard",
 		copy = {
-			["+"] = "clip.exe",
-			["*"] = "clip.exe",
+			["+"] = "wcopy",
+			["*"] = "wcopy",
 		},
 		paste = {
-			["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-			["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			["+"] = "wpaste",
+			["*"] = "wpaste",
 		},
-		cache_enabled = 0,
+		cache_enabled = true,
 	}
 end
 
