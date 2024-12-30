@@ -28,7 +28,7 @@ keybinds clear-defaults=true {
     bind "$" { SwitchToMode "renametab"; PaneNameInput 0; }
 
     // Tabs
-    bind "c" { NewTab; SwitchToMode "locked"; }
+    bind "c" { NewTab { cwd "~"; }; SwitchToMode "locked"; }
     bind "Ctrl l" { GoToPreviousTab; SwitchToMode "locked"; }
     bind "Ctrl h" { GoToNextTab; SwitchToMode "locked"; }
 
