@@ -76,7 +76,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 # ==== Small plugins ====
 
-zinit wait"" lucid for \
+zinit wait"" lucid for has"fzf" \
   OMZP::fzf
 
 zinit ice wait"" lucid \
@@ -104,6 +104,12 @@ zinit wait"1" lucid for \
 zinit ice lucid wait"" blockf \
           has"fnm" id-as"fnm" as"null" \
           atload'eval "$(fnm env --shell zsh --use-on-cd --arch $(uname -m | sed s/86_//))"'
+zinit $load zdharma-continuum/null
+
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+zinit ice lucid wait"" blockf \
+          has"aqua" id-as"aqua" as"null" \
+          atload'export PATH="$(aqua root-dir)/bin:$PATH"'
 zinit $load zdharma-continuum/null
 
 # direnv
