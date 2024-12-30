@@ -14,6 +14,7 @@ My dotfiles
 | /nvim            | `~/.config/nvim`             | [nvim]: Neovim configuration   |
 | /mpv             | `~/.config/mpv`              | [mpv]: Video player            |
 | /kitty           | `~/.config/kitty`            | [kitty]: Terminal emulator     |
+| /zellij          | `~/.config/zellij`           | [zellij]: Tmux altarnative     |
 
 [rime]: https://rime.im/
 [git]: https://git-scm.com/
@@ -24,3 +25,4 @@ My dotfiles
 [nvim]: https://neovim.io/
 [mpv]: https://mpv.io/
 [kitty]: https://sw.kovidgoyal.net/kitty/
+[zellij]: https://zellij.dev/
