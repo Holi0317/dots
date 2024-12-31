@@ -22,7 +22,8 @@ return {
 
 				-- C and C++
 				"clangd",
-				"cmake-language-server",
+				-- Can't install on arch because python is too new...
+				-- "cmake-language-server",
 
 				-- Go
 				"gopls",
