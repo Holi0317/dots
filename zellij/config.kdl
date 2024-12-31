@@ -29,8 +29,8 @@ keybinds clear-defaults=true {
 
     // Tabs
     bind "c" { NewTab { cwd "~"; }; SwitchToMode "locked"; }
-    bind "Ctrl l" { GoToPreviousTab; SwitchToMode "locked"; }
-    bind "Ctrl h" { GoToNextTab; SwitchToMode "locked"; }
+    bind "Ctrl h" { GoToPreviousTab; SwitchToMode "locked"; }
+    bind "Ctrl l" { GoToNextTab; SwitchToMode "locked"; }
 
     // Session
     bind "d" { Detach; }
@@ -105,6 +105,7 @@ keybinds clear-defaults=true {
     bind "right" { PageScrollDown; }
     bind "Ctrl b" { PageScrollUp; }
     bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
+    bind "q" { ScrollToBottom; SwitchToMode "locked"; }
     bind "d" { HalfPageScrollDown; }
     bind "Ctrl f" { PageScrollDown; }
     bind "h" { PageScrollUp; }
@@ -201,7 +202,7 @@ default_mode "locked"
 //   - true (default)
 //   - false
 // 
-mouse_mode false
+mouse_mode true
 
 // Toggle having pane frames around the panes
 // Options:
@@ -246,7 +247,7 @@ pane_frames false
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
-copy_command "wcopy"
+// copy_command "wcopy"
 
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
