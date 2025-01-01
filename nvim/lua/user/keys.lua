@@ -26,6 +26,8 @@ local function setup_vim_keys()
 	})
 end
 
+local _lazygit = nil
+
 function M.setup()
 	local wk = require("which-key")
 
@@ -136,6 +138,22 @@ function M.setup()
 			"<leader>gd",
 			"<cmd>Gitsigns diffthis HEAD<cr>",
 			desc = "Git Diff",
+		},
+		{
+			"<leader>gg",
+			function()
+				if _lazygit == nil then
+					local Terminal = require("toggleterm.terminal").Terminal
+					_lazygit = Terminal:new({
+						cmd = "lazygit",
+						hidden = true,
+						direction = "float",
+					})
+				end
+
+				_lazygit:toggle()
+			end,
+			desc = "Launch LazyGit",
 		},
 	})
 
