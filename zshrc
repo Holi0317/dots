@@ -47,6 +47,10 @@ alias g="git"
 
 load=load
 
+path=(
+  $HOME/.local/bin
+  $path
+)
 
 # ==== Stage sync: sane opts ====
 
@@ -123,8 +127,17 @@ zinit $load direnv/direnv
 
 # ==== Completions ====
 
-zinit ice wait"1" lucid blockf
-zinit add-fpath $HOMEBREW_PREFIX/share/zsh/site-functions
+# MacOS Homebrew
+if [[ -v HOMEBREW_PREFIX ]]; then
+  zinit ice wait"1" lucid blockf
+  zinit add-fpath $HOMEBREW_PREFIX/share/zsh/site-functions
+fi
+
+# Arch Linux
+if [ -d "/usr/share/zsh/site-functions" ]; then
+  zinit ice wait"1" lucid blockf
+  zinit add-fpath /usr/share/zsh/site-functions
+fi
 
 zinit ice lucid wait blockf \
                 as"none" id-as"local-plugins" \
