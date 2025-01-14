@@ -27,6 +27,21 @@
   graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   cp = cherry-pick
 
+	append = town append
+	compress = town compress
+	contribute = town contribute
+	diff-parent = town diff-parent
+	hack = town hack
+	delete = town delete
+	observe = town observe
+	park = town park
+	prepend = town prepend
+	propose = town propose
+	rename = town rename
+	repo = town repo
+	set-parent = town set-parent
+	sync = town sync
+
 [push]
   default = current
   autoSetupRemote = true
