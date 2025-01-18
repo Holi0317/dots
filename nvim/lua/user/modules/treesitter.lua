@@ -84,6 +84,7 @@ return {
 					"regex",
 					"sql",
 					"bash",
+					"nu",
 					"typst",
 				},
 
