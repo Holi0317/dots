@@ -13,3 +13,6 @@ symbol = " "
 python_binary = ["py"]
 # The following isn't necessary, but convenient.
 detect_folders = [".venv"]
+
+[shell]
+disabled = false
