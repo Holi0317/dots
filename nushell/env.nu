@@ -16,3 +16,21 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
+
+let col_paths = {
+  from_string: { |s| $s | split row ':' }
+  to_string: { |v| $v | str join ':' }
+}
+
+$env.ENV_CONVERSIONS.MANPATH = $col_paths
+$env.ENV_CONVERSIONS.INFOPATH = $col_paths
+$env.ENV_CONVERSIONS.AQUA_GLOBAL_CONFIG = $col_paths
+
+
+$env.NU_LIB_DIRS = [
+  ($nu.config-path | path dirname | path join 'plugins')
+]
+
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
