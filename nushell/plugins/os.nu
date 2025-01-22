@@ -4,3 +4,7 @@ export def is-wsl []: nothing -> bool {
 
   ($nu.os-info.name == 'linux') and ($v | path exists) and (open $v | str contains 'microsoft')
 }
+
+export def win-or-wsl []: nothing -> bool {
+  $nu.os-info.name == 'windows' or (is-wsl)
+}
