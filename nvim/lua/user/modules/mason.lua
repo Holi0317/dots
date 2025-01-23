@@ -33,6 +33,9 @@ return {
 				"pyright",
 				"ruff",
 
+				-- PHP
+				"intelephense",
+
 				-- Lua
 				"lua-language-server",
 				"stylua",
