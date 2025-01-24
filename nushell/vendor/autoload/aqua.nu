@@ -5,6 +5,6 @@ export-env {
     return
   }
 
-  $env.AQUA_GLOBAL_CONFIG = ($env.AQUA_GLOBAL_CONFIG? | default []) ++ ["~/.config/aquaproj-aqua/aqua.yaml" | path expand]
+  $env.AQUA_GLOBAL_CONFIG = ($env.AQUA_GLOBAL_CONFIG? | default []) ++ [("~/.config/aquaproj-aqua/aqua.yaml" | path expand)]
   path add $"(aqua root-dir)/bin"
 }
