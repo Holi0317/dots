@@ -33,7 +33,7 @@ export-env {
     rm --force $sock
 
     # nushell don't have background job mechanism. Shelling out to tmux instead
-    tmux new-session -d -s coffee -- setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork
+    tmux new-session -d -s coffee $'setsid socat UNIX-LISTEN:($sock),fork EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork'
 
     $sock
   }
