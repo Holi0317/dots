@@ -9,13 +9,27 @@ function M.sysname()
 	return vim.loop.os_uname().sysname
 end
 
-function M.is_wsl()
+local _is_wsl = nil
+
+local function is_wsl()
+	if M.sysname() ~= "Linux" then
+		return false
+	end
+
 	local version_file = io.open("/proc/version", "rb")
 	if version_file ~= nil and string.find(version_file:read("*a"), "microsoft") then
 		version_file:close()
 		return true
 	end
 	return false
+end
+
+function M.is_wsl()
+	if _is_wsl == nil then
+		_is_wsl = is_wsl()
+	end
+
+	return _is_wsl
 end
 
 return M
