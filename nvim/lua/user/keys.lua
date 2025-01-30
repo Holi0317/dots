@@ -24,6 +24,10 @@ local function setup_vim_keys()
 	end, {
 		silent = true,
 	})
+
+	vim.keymap.set("n", "<C-z>", function()
+		vim.wo.wrap = not vim.wo.wrap
+	end, { silent = true })
 end
 
 local _lazygit = nil
