@@ -57,7 +57,7 @@ return {
 		dependencies = { "mfussenegger/nvim-dap" },
 		-- FIXME: Find way to load this
 		lazy = true,
-		config = {
+		opts = {
 			debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
 			adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 		},
