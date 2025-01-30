@@ -44,6 +44,7 @@ return {
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
 			local luasnip = require("luasnip")
+			local env = require("user.env")
 
 			local has_words_before = function()
 				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -134,13 +135,23 @@ return {
 				}),
 			})
 
+			local cmdline_sources = {
+				{ name = "path" },
+			}
+
+			if not env.is_wsl() then
+				-- Only enable cmdline if we are not in wsl.
+				-- See hrsh7th/cmp-cmdline#112. For some reason this doesn't happen on
+				-- my mac
+				table.insert(cmdline_sources, {
+					{ name = "cmdline" },
+				})
+			end
+
 			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path" },
-					{ name = "cmdline" },
-				}),
+				sources = cmp.config.sources(cmdline_sources),
 			})
 
 			-- Setup for dap
