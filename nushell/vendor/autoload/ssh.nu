@@ -45,7 +45,7 @@ export-env {
     _ => ('~/.1password/agent.sock' | path expand)
   }
 
-  if ($sock != null and $sock | path exists) {
+  if (($sock != null) and ($sock | path exists)) {
     $env.SSH_AUTH_SOCK = $sock
   }
 }
