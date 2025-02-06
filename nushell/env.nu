@@ -11,6 +11,9 @@ export-env {
 }
 
 # Add our plugins to search path
+const NU_LIB_DIRS = [
+  ($nu.config-path | path dirname | path join 'plugins')
+]
 $env.NU_LIB_DIRS = [
   ($nu.config-path | path dirname | path join 'plugins')
 ]
@@ -20,7 +23,7 @@ $env.NU_LIB_DIRS = [
 # block, at least if it's managed by brew.
 export-env {
   def --env "_conf brew" [brew_prefix: string] {
-    if ($brew_prefix == null) {
+    if ($brew_prefix == "") {
       return
     }
 
@@ -32,15 +35,17 @@ export-env {
     path add ($brew_prefix | path join 'bin')
     path add ($brew_prefix | path join 'sbin')
 
-    $env.MANPATH = ($env.MANPATH | prepend '')
-    $env.INFOPATH = ($env.MANPATH | prepend ($brew_prefix | path join 'share' 'info') )
+    $env.MANPATH = (($env.MANPATH? | default []) | prepend '')
+    $env.INFOPATH = (($env.INFOPATH? | default []) | prepend ($brew_prefix | path join 'share' 'info') )
   }
+
+  use os.nu
 
   _conf brew (match $nu.os-info {
     { name: macos, arch: aarch64 } => "/opt/homebrew"
     { name: macos, arch: x86_64 } => "/usr/local"
-    { name: linux } => "/home/linuxbrew/.linuxbrew"
-    _ => null
+    { name: linux } if (not (os is-wsl)) => "/home/linuxbrew/.linuxbrew"
+    _ => ""
   })
 }
 
