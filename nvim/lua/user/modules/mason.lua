@@ -40,9 +40,6 @@ return {
 				"lua-language-server",
 				"stylua",
 
-				-- Rust
-				"rust-analyzer",
-
 				-- JSON, yaml, toml
 				"json-lsp",
 				"yaml-language-server",
