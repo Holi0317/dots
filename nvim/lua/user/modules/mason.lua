@@ -21,7 +21,7 @@ return {
 				"shfmt",
 
 				-- C and C++
-				"clangd",
+				-- "clangd",
 				-- Can't install on arch because python is too new...
 				-- "cmake-language-server",
 
