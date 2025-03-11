@@ -31,7 +31,11 @@ export-env {
 
     $env.HOMEBREW_PREFIX = $brew_prefix
     $env.HOMEBREW_CELLAR = $brew_prefix | path join "Cellar"
-    $env.HOMEBREW_REPOSITORY = $brew_prefix
+    $env.HOMEBREW_REPOSITORY = if $nu.os-info.name == 'linux' {
+      # For some reason on linux this is under Homebrew folder in prefix. Not
+      # the case on macos.
+      $brew_prefix | path join 'Homebrew'
+    } else { $brew_prefix }
     path add ($brew_prefix | path join 'bin')
     path add ($brew_prefix | path join 'sbin')
 
@@ -44,7 +48,7 @@ export-env {
   _conf brew (match $nu.os-info {
     { name: macos, arch: aarch64 } => "/opt/homebrew"
     { name: macos, arch: x86_64 } => "/usr/local"
-    { name: linux } if (not (os is-wsl)) => "/home/linuxbrew/.linuxbrew"
+    { name: linux } => "/home/linuxbrew/.linuxbrew"
     _ => ""
   })
 }
