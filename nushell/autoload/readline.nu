@@ -30,7 +30,9 @@ def _fzf_path [] {
   | commandline edit -i $in
 }
 
-$env.config.keybindings = [
+$env.config.keybindings = $env.config.keybindings?
+| default []
+| append [
   {
     name: clear_line
     modifier: control
@@ -64,7 +66,9 @@ $env.config.keybindings = [
   }
 ]
 
-$env.config.menus = [
+$env.config.menus = $env.config.menus?
+| default []
+| append [
   {
     name: completion_menu
     only_buffer_difference: false # Search is done on the text written after activating the menu
