@@ -41,18 +41,18 @@ $env.config.keybindings = $env.config.keybindings?
     event: { edit: Clear }
   }
 
-  # Search history with fzf
-  # See https://github.com/nushell/nushell/issues/1616#issuecomment-1902732666
-  {
-    name: fzf_history
-    modifier: control
-    keycode: char_r
-    mode: [emacs, vi_insert, vi_normal]
-    event: {
-      send: executehostcommand
-      cmd: "_fzf_history"
-    }
-  }
+  # # Search history with fzf
+  # # See https://github.com/nushell/nushell/issues/1616#issuecomment-1902732666
+  # {
+  #   name: fzf_history
+  #   modifier: control
+  #   keycode: char_r
+  #   mode: [emacs, vi_insert, vi_normal]
+  #   event: {
+  #     send: executehostcommand
+  #     cmd: "_fzf_history"
+  #   }
+  # }
 
   {
     name: fzf_path
