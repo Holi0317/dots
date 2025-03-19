@@ -1,17 +1,5 @@
 $env.config.edit_mode = 'vi'
 
-def _fzf_history [] {
-  history
-  | each { $in.command }
-  | uniq
-  | reverse
-  | str join (char -i 0)
-  | fzf --scheme=history --read0 --tiebreak=chunk --layout=reverse --height=70% -q (commandline)
-  | decode utf-8
-  | str trim
-  | commandline edit --replace $in
-}
-
 def _fzf_path [] {
   let line = commandline
   | str substring 0..(commandline get-cursor)
@@ -40,19 +28,6 @@ $env.config.keybindings = $env.config.keybindings?
     mode: [emacs, vi_insert, vi_normal]
     event: { edit: Clear }
   }
-
-  # # Search history with fzf
-  # # See https://github.com/nushell/nushell/issues/1616#issuecomment-1902732666
-  # {
-  #   name: fzf_history
-  #   modifier: control
-  #   keycode: char_r
-  #   mode: [emacs, vi_insert, vi_normal]
-  #   event: {
-  #     send: executehostcommand
-  #     cmd: "_fzf_history"
-  #   }
-  # }
 
   {
     name: fzf_path
