@@ -16,6 +16,7 @@ My dotfiles
 | /mpv             | `~/.config/mpv`                                                     | [mpv]: Video player              |
 | /kitty           | `~/.config/kitty`                                                   | [kitty]: Terminal emulator       |
 | /zellij          | `~/.config/zellij`                                                  | [zellij]: Tmux altarnative       |
+| /atuin           | `~/.config/atuin`                                                   | [atuin]: Shell history           |
 
 [rime]: https://rime.im/
 [git]: https://git-scm.com/
@@ -27,3 +28,4 @@ My dotfiles
 [mpv]: https://mpv.io/
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [zellij]: https://zellij.dev/
+[atuin]: https://atuin.sh/
