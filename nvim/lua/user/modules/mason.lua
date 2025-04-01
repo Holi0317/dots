@@ -49,6 +49,7 @@ return {
 				-- Terraform
 				"terraform-ls",
 				"tflint",
+				"hclfmt",
 
 				-- Ansible
 				"ansible-language-server",

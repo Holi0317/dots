@@ -52,6 +52,9 @@ return {
 					}),
 					null.builtins.formatting.shfmt,
 					null.builtins.formatting.stylua,
+					null.builtins.formatting.hclfmt.with({
+						extra_filetypes = { "terraform-vars" },
+					}),
 				},
 			})
 		end,
