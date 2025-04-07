@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local cmp_nvim = require("cmp_nvim_lsp")
+local blink = require("blink.cmp")
 local lspformat = require("lsp-format")
 local callbacks = require("user.lsp.callbacks")
 
@@ -17,7 +17,7 @@ local function buf_try_add(server)
 end
 
 function M.common_capabilities()
-	return cmp_nvim.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+	return blink.get_lsp_capabilities()
 end
 
 ---@class LspSetupConfig

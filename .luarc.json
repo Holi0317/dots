@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
   "workspace.checkThirdParty": false,
-  "runtime.version": "LuaJIT"
+  "runtime.version": "LuaJIT",
+  "diagnostics.disable": ["unused-local"]
 }
