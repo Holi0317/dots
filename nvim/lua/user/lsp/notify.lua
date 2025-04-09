@@ -7,7 +7,7 @@ local M = {}
 ---@param fname string Path to the file
 function M.didCreateFile(fname)
 	for _, client in ipairs(vim.lsp.get_clients()) do
-		client.notify("workspace/didCreateFiles", {
+		client:notify("workspace/didCreateFiles", {
 			files = {
 				{
 					uri = "file://" .. fname,
@@ -22,7 +22,7 @@ end
 ---@param newname string Path to the new file
 function M.didRenameFile(oldname, newname)
 	for _, client in ipairs(vim.lsp.get_clients()) do
-		client.notify("workspace/didRenameFiles", {
+		client:notify("workspace/didRenameFiles", {
 			files = {
 				{
 					oldUri = "file://" .. oldname,
