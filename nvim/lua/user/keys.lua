@@ -330,7 +330,7 @@ function M.setup()
 		},
 		{
 			";s",
-			"<cmd>Lspsaga lsp_finder<CR>",
+			"<cmd>Lspsaga finder<CR>",
 			desc = "Workspace Symbols",
 		},
 		{
