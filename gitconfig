@@ -8,7 +8,7 @@
   fsyncMethod = batch
 
 [init]
-  defaultBranch = master
+  defaultBranch = main
 
 [interactive]
   diffFilter = delta --color-only
