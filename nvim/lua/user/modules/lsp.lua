@@ -7,7 +7,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		requires = {
-			"williamboman/mason.nvim",
+			"mason-org/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 		},

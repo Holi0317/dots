@@ -1,12 +1,12 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		config = true,
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = {
-			"williamboman/mason.nvim",
+			"mason-org/mason.nvim",
 		},
 		opts = {
 			-- a list of all tools you want to ensure are installed upon
