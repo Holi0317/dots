@@ -74,8 +74,9 @@ end
 function M.setup_tsls()
 	-- Ref: https://github.com/vuejs/language-tools/issues/3925
 	local mason_registry = require("mason-registry")
-	local vls_path = mason_registry.get_package("vue-language-server"):get_install_path()
-	local ts_plugin_path = vls_path .. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
+	local ts_plugin_path = vim.fn.expand(
+		"$MASON/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
+	)
 
 	M.setup("ts_ls", {
 		override = {
