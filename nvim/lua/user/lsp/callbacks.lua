@@ -25,6 +25,10 @@ local mappings = {
 	},
 }
 
+local function setup_format(client, bufnr)
+	require("lsp-format").on_attach(client, bufnr)
+end
+
 local function setup_document_highlight(client, bufnr)
 	local status_ok, highlight_supported = pcall(function()
 		return client:supports_method("textDocument/documentHighlight")
@@ -88,13 +92,20 @@ local function setup_keymap(client, bufnr)
 end
 
 function M.on_attach(client, bufnr)
+	setup_format(client, bufnr)
 	setup_document_highlight(client, bufnr)
 	setup_codelens_refresh(client, bufnr)
 	setup_keymap(client, bufnr)
 end
 
-function M.on_init() end
+function M.setup()
+	vim.api.nvim_create_autocmd("LspAttach", {
+		callback = function(args)
+			local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-function M.on_exit() end
+			M.on_attach(client, args.buf)
+		end,
+	})
+end
 
 return M

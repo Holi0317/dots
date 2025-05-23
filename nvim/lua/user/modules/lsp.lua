@@ -11,6 +11,35 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 		},
+		config = function()
+			-- Ref: https://github.com/vuejs/language-tools/issues/3925
+			local ts_plugin_path = vim.fn.expand(
+				"$MASON/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
+			)
+
+			vim.lsp.config("ts_ls", {
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
+				},
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = ts_plugin_path,
+							languages = { "javascript", "typescript", "vue" },
+						},
+					},
+				},
+			})
+
+			require("user.lsp.callbacks").setup()
+		end,
 	},
 
 	{
@@ -32,17 +61,12 @@ return {
 		},
 		config = function()
 			local null = require("null-ls")
-			local lspformat = require("lsp-format")
 			local callbacks = require("user.lsp.callbacks")
 
 			null.setup({
 				on_attach = function(client, bufnr)
-					lspformat.on_attach(client)
-
 					callbacks.on_attach(client, bufnr)
 				end,
-				on_init = callbacks.on_init,
-				on_exit = callbacks.on_exit,
 				sources = {
 					null.builtins.diagnostics.golangci_lint,
 
@@ -64,5 +88,17 @@ return {
 	{
 		"b0o/schemastore.nvim",
 		ft = { "json", "jsonc", "yaml", "toml" },
+		config = function()
+			local schemastore = require("schemastore")
+
+			vim.lsp.config("jsonls", {
+				settings = {
+					json = {
+						schemas = schemastore.json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			})
+		end,
 	},
 }
