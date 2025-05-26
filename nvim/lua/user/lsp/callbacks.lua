@@ -92,6 +92,12 @@ local function setup_keymap(client, bufnr)
 end
 
 function M.on_attach(client, bufnr)
+	-- Disable semantic token highlighting for terraformls. Treesitter is doing
+	-- a better job.
+	if client.name == "terraformls" then
+		client.server_capabilities.semanticTokensProvider = nil
+	end
+
 	setup_format(client, bufnr)
 	setup_document_highlight(client, bufnr)
 	setup_codelens_refresh(client, bufnr)
