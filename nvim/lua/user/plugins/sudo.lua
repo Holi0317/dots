@@ -59,7 +59,7 @@ function M.sudo_write(tmpfile, filepath)
 	-- Both `bs=1M` and `bs=1m` are non-POSIX
 	local cmd = string.format("dd if=%s of=%s bs=1048576", vim.fn.shellescape(tmpfile), vim.fn.shellescape(filepath))
 	-- no need to check error as this fails the entire function
-	vim.api.nvim_exec(string.format("write! %s", tmpfile), true)
+	vim.api.nvim_exec2(string.format("write! %s", tmpfile), { output = true })
 
 	M.sudo_exec(cmd, function(succeed)
 		if succeed then
