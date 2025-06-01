@@ -4,6 +4,8 @@ vim.g.skip_ts_context_commentstring_module = true
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"windwp/nvim-ts-autotag",
@@ -16,98 +18,90 @@ return {
 		config = function()
 			vim.treesitter.language.register("markdown", "mdx")
 
-			require("nvim-treesitter.configs").setup({
-				-- A list of parser names, or "all"
-				ensure_installed = {
-					-- vim
-					"lua",
-					"luadoc",
-					"vim",
-					"vimdoc",
+			local ts = require("nvim-treesitter")
 
-					-- MD
-					"markdown",
-					"markdown_inline",
-					"mermaid",
+			ts.install({
+				-- vim
+				"lua",
+				"luadoc",
+				"vim",
+				"vimdoc",
 
-					-- Webs
-					"javascript",
-					"jsdoc",
-					"typescript",
-					"tsx",
-					"vue",
-					"html",
-					"css",
-					"scss",
-					"prisma",
-					"astro",
+				-- MD
+				"markdown",
+				"markdown_inline",
+				"mermaid",
 
-					-- Config languages
-					"json",
-					"json5",
-					"jsonc",
-					"yaml",
-					"toml",
-					"dockerfile",
-					"hcl",
-					"terraform",
-					"scheme",
-					"ini",
+				-- Webs
+				"javascript",
+				"jsdoc",
+				"typescript",
+				"tsx",
+				"vue",
+				"html",
+				"css",
+				"scss",
+				"prisma",
+				"astro",
 
-					-- C
-					"c",
-					"cpp",
-					"cmake",
-					"make",
+				-- Config languages
+				"json",
+				"json5",
+				"jsonc",
+				"yaml",
+				"toml",
+				"dockerfile",
+				"hcl",
+				"terraform",
+				"scheme",
+				"ini",
 
-					-- Go
-					"go",
-					"gomod",
+				-- C
+				"c",
+				"cpp",
+				"cmake",
+				"make",
 
-					-- PHP
-					"php",
-					-- "phpdoc",  -- This is causing problem with installing on aarch darwin
+				-- Go
+				"go",
+				"gomod",
 
-					-- Git
-					"git_config",
-					"git_rebase",
-					"gitattributes",
-					"gitcommit",
-					"gitignore",
+				-- PHP
+				"php",
+				-- "phpdoc",  -- This is causing problem with installing on aarch darwin
 
-					-- Rust
-					"rust",
+				-- Git
+				"git_config",
+				"git_rebase",
+				"gitattributes",
+				"gitcommit",
+				"gitignore",
 
-					"comment",
-					"c_sharp",
-					"python",
-					"regex",
-					"sql",
-					"bash",
-					"nu",
-					"typst",
-				},
+				-- Rust
+				"rust",
 
-				-- Install parsers synchronously (only applied to `ensure_installed`)
-				sync_install = false,
+				"comment",
+				"c_sharp",
+				"python",
+				"regex",
+				"sql",
+				"bash",
+				"nu",
+				"typst",
+			})
 
-				-- Automatically install missing parsers when entering buffer
-				auto_install = true,
+			-- Highlighting module
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					vim.treesitter.start()
+				end,
+			})
 
-				---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-				-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+			-- Enable indention
+			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
+			require("nvim-treesitter").install({
 				-- ==== Module settings ====
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
-				},
-
-				indent = {
-					enable = true,
-					disable = {},
-				},
-
 				textobjects = {
 					swap = {
 						enable = false,
