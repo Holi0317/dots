@@ -39,6 +39,12 @@ return {
 			})
 
 			require("user.lsp.callbacks").setup()
+
+			-- No need to call lsp.enable here. williamboman/mason-lspconfig.nvim will
+			-- do enable for us.
+			--
+			-- ... Except lsp not managed by mason
+			vim.lsp.enable("nushell")
 		end,
 	},
 
