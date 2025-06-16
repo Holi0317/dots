@@ -28,6 +28,7 @@ return {
 				-- Go
 				"gopls",
 				"golangci-lint",
+				"goimports",
 
 				-- Python
 				"pyright",
