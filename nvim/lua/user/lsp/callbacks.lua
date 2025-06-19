@@ -1,5 +1,15 @@
 local M = {}
 
+-- List of lsp that should not do formatting. Usually because formatting is done
+-- via other tools managed via null-ls.
+-- Use lspconfig name here (not binary/mason name).
+local DISABLE_FORMAT = {
+	"lua_ls",
+	"jsonls",
+	"html",
+	"cssls",
+}
+
 ---@type table<string,string[]>
 local mappings = {
 	["K"] = {
@@ -26,6 +36,10 @@ local mappings = {
 }
 
 local function setup_format(client, bufnr)
+	if vim.tbl_contains(DISABLE_FORMAT, client.name) then
+		return
+	end
+
 	require("lsp-format").on_attach(client, bufnr)
 end
 
