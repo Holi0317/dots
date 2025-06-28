@@ -1,6 +1,9 @@
 gui:
   nerdFontsVersion: "3"
 
+os:
+  openLink: "start {{link}}"
+
 git:
   overrideGpg: true # My gpg won't show a password prompt. lg disable some features if I am on gpg
   paging:
