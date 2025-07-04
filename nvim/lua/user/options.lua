@@ -132,6 +132,19 @@ elseif env.is_wsl() then
 	}
 end
 
+-- Make nushell shell integration works
+-- Ref: https://www.kiils.dk/en/blog/2024-06-22-using-nushell-in-neovim/
+if vim.endswith(vim.opt.shell:get(), "nu") then
+	vim.opt.shellcmdflag = "--stdin --no-newline -c"
+	vim.opt.shellredir = "out+err> %s"
+	vim.opt.shellpipe =
+		"| complete | update stderr { ansi strip } | tee { get stderr | save --force --raw %s } | into record"
+	vim.opt.shelltemp = false
+	vim.opt.shellxescape = ""
+	vim.opt.shellxquote = ""
+	vim.opt.shellquote = ""
+end
+
 vim.g.mapleader = " "
 
 -- ==== Relative numberline ====
