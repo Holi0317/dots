@@ -1,6 +1,6 @@
 return {
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		config = true,
 	},
 
@@ -8,7 +8,7 @@ return {
 		"neovim/nvim-lspconfig",
 		requires = {
 			"mason-org/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 		},
 		config = function()
