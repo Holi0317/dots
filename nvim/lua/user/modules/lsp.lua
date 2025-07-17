@@ -74,7 +74,19 @@ return {
 					callbacks.on_attach(client, bufnr)
 				end,
 				sources = {
-					null.builtins.diagnostics.golangci_lint,
+					null.builtins.diagnostics.golangci_lint.with({
+						runtime_condition = function(params)
+							-- Do not run under ~/go.
+							--
+							-- Had some issue with cloudflare go sdk and golangci-lint will do
+							-- a fork bomb for some reason. Maybe they got too many
+							-- files/symbols under the package.
+							--
+							-- Anyway we don't need any linting for third party library
+							-- anyway. So just don't do that.
+							return vim.fs.relpath("~/go", params.bufname) == nil
+						end,
+					}),
 
 					null.builtins.formatting.gofmt,
 					null.builtins.formatting.goimports,
