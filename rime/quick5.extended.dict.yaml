@@ -1,11 +1,3 @@
----
-name: quick5.extended
-version: "02.06.2019"
-sort: by_weight
-use_preset_vocabulary: true
-import_tables:
-  - quick5
-  - cangjie3
-  - jyut6ping3.phrase
-  - jyut6ping3.words
-...
+version https://git-lfs.github.com/spec/v1
+oid sha256:f6d4dcec66947044a268fc25dd32a7567a01269e5aacf92f850390dbe1668b03
+size 178
