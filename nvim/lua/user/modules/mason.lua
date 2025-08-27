@@ -65,7 +65,6 @@ return {
 				"vue-language-server",
 				"emmet-ls",
 				"astro-language-server",
-				"tailwindcss-language-server",
 
 				-- XML
 				"lemminx",
