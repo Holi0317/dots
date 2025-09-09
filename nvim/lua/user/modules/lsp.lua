@@ -45,6 +45,7 @@ return {
 			--
 			-- ... Except lsp not managed by mason
 			vim.lsp.enable("nushell")
+			vim.lsp.enable("dartls")
 		end,
 	},
 
