@@ -31,6 +31,9 @@ set smartcase
 nmap <silent> ]b :tabn<cr>
 nmap <silent> [b :tabN<cr>
 
+" Toggle terminal
+nmap <C-j> <Action>(ActivateTerminalToolWindow)
+
 " Key mapping
 nmap ;f <Action>(ReformatCode)
 nmap ;r <Action>(RenameElement)
@@ -46,3 +49,5 @@ nmap [i <Action>(GotoPreviousError)
 nmap <space>h :noh<cr>
 nmap <space>g <Action>(FindInPath)
 nmap <space>e <Action>(ActivateProjectToolWindow)
+nmap <space>bo <Action>(CloseAllEditorsButActive)
+nmap <space>bd <Action>(CloseContent)
