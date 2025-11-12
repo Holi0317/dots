@@ -6,6 +6,7 @@ os:
 
 git:
   overrideGpg: true # My gpg won't show a password prompt. lg disable some features if I am on gpg
-  paging:
-    colorArg: never
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: never
+      pager: delta --dark --paging=never
+    - externalDiffCommand: difft --color=always --display=inline --syntax-highlight=off
