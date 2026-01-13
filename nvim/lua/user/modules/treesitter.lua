@@ -32,7 +32,6 @@ return {
 				-- Config languages
 				"json",
 				"json5",
-				"jsonc",
 				"yaml",
 				"toml",
 				"dockerfile",
