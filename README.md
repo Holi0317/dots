@@ -14,6 +14,7 @@ My dotfiles
 | /nvim          | `~/.config/nvim`                                                    | [nvim]: Neovim configuration     |
 | /mpv           | `~/.config/mpv`                                                     | [mpv]: Video player              |
 | /kitty         | `~/.config/kitty`                                                   | [kitty]: Terminal emulator       |
+| /ghostty       | `~/.config/ghostty`                                                 | [ghostty]: Terminal emulator     |
 | /atuin         | `~/.config/atuin`                                                   | [atuin]: Shell history           |
 
 [rime]: https://rime.im/
@@ -24,4 +25,5 @@ My dotfiles
 [nvim]: https://neovim.io/
 [mpv]: https://mpv.io/
 [kitty]: https://sw.kovidgoyal.net/kitty/
+[ghostty]: https://ghostty.org/
 [atuin]: https://atuin.sh/

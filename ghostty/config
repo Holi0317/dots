@@ -1,0 +1,60 @@
+# vim:ft=config:
+
+theme = Gruvbox Dark
+font-size = 15
+copy-on-select = clipboard
+window-show-tab-bar = always
+window-inherit-working-directory = false
+
+window-width = 198
+window-height = 52
+
+# Keybindings - ported from kitty (tmux-keys.conf)
+
+# Reuse Ctrl+A leader key
+keybind = ctrl+a>ctrl+a=text:\x01
+
+# Browse scrollback buffer in pager
+#keybind = ctrl+a>enter=show_scrollback
+
+# Window management - launching new windows
+keybind = ctrl+a>shift+"=new_split:down
+# " Just to fix vim highlighting
+keybind = ctrl+a>shift+%=new_split:right
+
+# Switch focus to the neighboring window in the indicated direction
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>j=goto_split:down
+keybind = ctrl+a>k=goto_split:up
+keybind = ctrl+a>l=goto_split:right
+
+# Move window location
+# Turns out there's no such feature in ghostty yet
+#keybind = ctrl+a>shift+h:move_split:left
+#keybind = ctrl+a>shift+j:move_split:down
+#keybind = ctrl+a>shift+k:move_split:up
+#keybind = ctrl+a>shift+l:move_split:right
+
+# Start resizing window
+keybind = ctrl+a>==equalize_splits
+keybind = ctrl+shift+h=resize_split:left,10
+keybind = ctrl+shift+j=resize_split:down,10
+keybind = ctrl+shift+k=resize_split:up,10
+keybind = ctrl+shift+l=resize_split:right,10
+
+# Tab management - navigation
+keybind = ctrl+a>ctrl+l=next_tab
+keybind = ctrl+a>ctrl+h=previous_tab
+
+# New tab
+keybind = ctrl+a>c=new_tab
+
+# Close panel
+keybind = ctrl+a>x=close_surface
+
+# Set tab title
+keybind = ctrl+a>shift+$=prompt_surface_title
+
+# Local-specific override. Create this config file if needed, it's ignored by
+# git.
+config-file = ?local
