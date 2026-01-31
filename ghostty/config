@@ -2,6 +2,8 @@
 
 theme = Gruvbox Dark
 font-size = 15
+font-thicken = true
+font-thicken-strength = 64
 copy-on-select = clipboard
 window-show-tab-bar = always
 window-inherit-working-directory = false
