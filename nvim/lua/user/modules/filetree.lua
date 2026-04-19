@@ -38,10 +38,6 @@ return {
 					update_root = true,
 					ignore_list = {},
 				},
-				system_open = {
-					cmd = nil,
-					args = {},
-				},
 				git = {
 					enable = true,
 					ignore = false,
