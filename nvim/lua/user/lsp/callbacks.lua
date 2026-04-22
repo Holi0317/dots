@@ -72,26 +72,15 @@ local function setup_document_highlight(client, bufnr)
 	})
 end
 
-local function setup_codelens_refresh(client, bufnr)
+local function setup_codelens(client, bufnr)
 	local status_ok, codelens_supported = pcall(function()
 		return client:supports_method("textDocument/codeLens")
 	end)
 	if not status_ok or not codelens_supported then
 		return
 	end
-	local augroup_exist, _ = pcall(vim.api.nvim_get_autocmds, {
-		group = "lsp_code_lens_refresh",
-	})
-	if not augroup_exist then
-		vim.api.nvim_create_augroup("lsp_code_lens_refresh", {})
-	end
-	vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
-		group = "lsp_code_lens_refresh",
-		buffer = bufnr,
-		callback = function()
-			vim.lsp.codelens.refresh({ bufnr = bufnr })
-		end,
-	})
+
+	vim.lsp.codelens.enable(true, { bufnr = bufnr })
 end
 
 local function setup_keymap(client, bufnr)
@@ -114,7 +103,7 @@ function M.on_attach(client, bufnr)
 
 	setup_format(client, bufnr)
 	setup_document_highlight(client, bufnr)
-	setup_codelens_refresh(client, bufnr)
+	setup_codelens(client, bufnr)
 	setup_keymap(client, bufnr)
 end
 
