@@ -45,7 +45,7 @@ end
 
 local function setup_document_highlight(client, bufnr)
 	local status_ok, highlight_supported = pcall(function()
-		return client:supports_method("textDocument/documentHighlight")
+		return vim.lsp.Client.supports_method(client, "textDocument/documentHighlight", bufnr)
 	end)
 	if not status_ok or not highlight_supported then
 		return
@@ -74,7 +74,7 @@ end
 
 local function setup_codelens(client, bufnr)
 	local status_ok, codelens_supported = pcall(function()
-		return client:supports_method("textDocument/codeLens")
+		return vim.lsp.Client.supports_method(client, "textDocument/codeLens", bufnr)
 	end)
 	if not status_ok or not codelens_supported then
 		return
