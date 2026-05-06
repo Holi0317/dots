@@ -4,6 +4,10 @@
       {
         "language": "vue",
         "path": "./snippets/vue.json"
+      },
+      {
+        "language": "terraform",
+        "path": "./snippets/terraform.json"
       }
     ]
   }

@@ -1,0 +1,17 @@
+{
+  "AWS Locals": {
+    "prefix": "aws-locals",
+    "description": "Local variables for terraform",
+    "body": [
+      "data \"aws_region\" \"current\" {}",
+      "data \"aws_caller_identity\" \"current\" {}",
+      "data \"aws_partition\" \"current\" {}",
+      "",
+      "locals {",
+      "  region     = data.aws_region.current.region",
+      "  account_id = data.aws_caller_identity.current.account_id",
+      "  partition = data.aws_partition.current.partition",
+      "}"
+    ]
+  }
+}
