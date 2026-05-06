@@ -7,5 +7,7 @@ export-env {
     _ => ("~/.local/share/pnpm" | path expand)
   }
 
-  path add $env.PNPM_HOME
+  $env.PNPM_HOME
+  | path join "bin"
+  | path add $in
 }
