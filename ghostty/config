@@ -6,7 +6,10 @@ font-thicken = true
 font-thicken-strength = 64
 copy-on-select = clipboard
 window-show-tab-bar = always
+working-directory = home
+tab-inherit-working-directory = false
 window-inherit-working-directory = false
+split-inherit-working-directory = true
 
 window-width = 198
 window-height = 52
