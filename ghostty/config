@@ -6,6 +6,9 @@ font-thicken = true
 font-thicken-strength = 64
 copy-on-select = clipboard
 window-show-tab-bar = always
+# 10 bytes
+scrollback-limit = 10000000
+
 working-directory = home
 tab-inherit-working-directory = false
 window-inherit-working-directory = false
