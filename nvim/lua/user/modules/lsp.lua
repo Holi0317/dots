@@ -88,6 +88,7 @@ return {
 							return vim.fs.relpath("~/go", params.bufname) == nil
 						end,
 					}),
+					null.builtins.diagnostics.actionlint,
 
 					null.builtins.formatting.gofmt,
 					null.builtins.formatting.goimports,

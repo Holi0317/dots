@@ -123,13 +123,6 @@ function M.setup()
 			end,
 			desc = "Stage Hunk",
 		},
-		{
-			"<leader>gu",
-			function()
-				require("gitsigns").undo_stage_hunk()
-			end,
-			desc = "Undo Stage Hunk",
-		},
 		{ "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
 		{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
@@ -201,22 +194,14 @@ function M.setup()
 		{
 			"]t",
 			function()
-				require("trouble").next({
-					opts = {
-						jump = true,
-					},
-				})
+				require("trouble").next()
 			end,
 			desc = "Next trouble",
 		},
 		{
 			"[t",
 			function()
-				require("trouble").prev({
-					opts = {
-						jump = true,
-					},
-				})
+				require("trouble").prev()
 			end,
 			desc = "Next trouble",
 		},
@@ -224,11 +209,11 @@ function M.setup()
 		{ "<leader>t", group = "+Trouble", icon = "" },
 		{ "<leader>tr", "<cmd>Trouble lsp_references<cr>", desc = "References" },
 		{ "<leader>tf", "<cmd>Trouble lsp_definitions<cr>", desc = "Definitions" },
-		{ "<leader>td", "<cmd>Trouble lsp_document_diagnostics<cr>", desc = "Diagnostics" },
-		{ "<leader>tq", "<cmd>Trouble quickfix<cr>", desc = "QuickFix" },
-		{ "<leader>tl", "<cmd>Trouble loclist<cr>", desc = "LocationList" },
-		{ "<leader>tw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", desc = "Diagnostics" },
-		{ "<leader>tt", "<cmd>TodoTrouble<cr>", desc = "Todo" },
+		{ "<leader>td", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Diagnostics (buffer)" },
+		{ "<leader>tq", "<cmd>Trouble quickfix toggle<cr>", desc = "QuickFix" },
+		{ "<leader>tl", "<cmd>Trouble loclist toggle<cr>", desc = "LocationList" },
+		{ "<leader>tw", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (workspace)" },
+		{ "<leader>tt", "<cmd>Trouble todo toggle<cr>", desc = "Todo" },
 	})
 
 	-- Debugging
@@ -265,10 +250,10 @@ function M.setup()
 	wk.add({
 		{ ";", group = "LSP" },
 		{ ";a", "<cmd>Lspsaga code_action<CR>", desc = "Code Action" },
-		{ ";d", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics" },
+		{ ";d", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Document Diagnostics" },
 		{
 			";D",
-			"<cmd>TroubleToggle workspace_diagnostics<cr>",
+			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "Workspace Diagnostics",
 		},
 		{
@@ -276,19 +261,19 @@ function M.setup()
 			"<cmd>Format<cr>",
 			desc = "Format",
 		},
-		{ ";i", "<cmd>LspInfo<cr>", desc = "Info" },
+		{ ";i", "<cmd>checkhealth vim.lsp<cr>", desc = "Info" },
 		{ ";I", "<cmd>Mason<cr>", desc = "Installer Info" },
 		{
 			";j",
 			function()
-				vim.diagnostic.goto_next({ float = true })
+				vim.diagnostic.jump({ count = 1, float = true })
 			end,
 			desc = "Next Diagnostic",
 		},
 		{
 			";k",
 			function()
-				vim.diagnostic.goto_prev({ float = true })
+				vim.diagnostic.jump({ count = -1, float = true })
 			end,
 			desc = "Prev Diagnostic",
 		},
