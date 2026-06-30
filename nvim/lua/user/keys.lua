@@ -157,6 +157,7 @@ function M.setup()
 	-- Search (telescope)
 	wk.add({
 		{ "<leader>s", group = "+Search", icon = "" },
+		{ "<leader>ss", "<cmd>GrugFar<cr>", icon = "󰬲", desc = "Search and replace (GrugFar)" },
 		{ "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
 		{ "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find File" },
