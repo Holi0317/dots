@@ -57,7 +57,29 @@ export-env {
 # autoload/completions.nu
 export-env {
   $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-  mkdir ~/.cache/carapace
-  carapace _carapace nushell
-  | save --force ~/.cache/carapace/init.nu
+  def --env "_conf carapace" [] {
+    if (which ^carapace | is-empty) {
+      return
+    }
+
+    mkdir ~/.cache/nushell
+    carapace _carapace nushell
+    | save --force ~/.cache/nushell/carapace.nu
+  }
+
+  _conf carapace
+}
+
+export-env {
+  def --env "_conf mise" [] {
+    if (which ^mise | is-empty) {
+      return
+    }
+
+    mkdir ~/.cache/nushell
+    ^mise activate nu
+    | save --force ~/.cache/nushell/mise.nu
+  }
+
+  _conf mise
 }
