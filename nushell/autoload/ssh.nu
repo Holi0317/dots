@@ -1,7 +1,7 @@
 # Setup ssh agent socket to 1password
 # https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client
 export-env {
-  use std log
+  use std/log
   use os.nu
 
   # Setup 1password tunnel on wsl
