@@ -7,7 +7,6 @@ export-env {
 
   $env.ENV_CONVERSIONS.MANPATH = $col_paths
   $env.ENV_CONVERSIONS.INFOPATH = $col_paths
-  $env.ENV_CONVERSIONS.AQUA_GLOBAL_CONFIG = $col_paths
 }
 
 # Add our plugins to search path
