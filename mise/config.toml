@@ -1,0 +1,25 @@
+# global tool versions go here
+# you can set these with `mise use -g`
+[tools]
+actionlint = "latest"
+"github:swamp-club/swamp" = "latest"
+graphite = "latest"
+iam-policy-json-to-terraform = "latest"
+node = 'lts'
+"pipx:httpie" = "latest"
+pnpm = "latest"
+terraform = "latest"
+terraform-docs = "latest"
+tflint = "latest"
+
+[settings]
+# read version files used by other version managers, such as .nvmrc
+idiomatic_version_file_enable_tools = ['node', 'npm', 'pnpm', '.terraform-version']
+
+lockfile = true
+
+# env_file = '.env' # load env vars from a dotenv file, see `MISE_ENV_FILE`
+
+[settings.status]
+show_env = false
+show_tools = false
