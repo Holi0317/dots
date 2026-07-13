@@ -7,14 +7,21 @@ graphite = "latest"
 iam-policy-json-to-terraform = "latest"
 node = 'lts'
 "pipx:httpie" = "latest"
-pnpm = "latest"
+"pipx:pgcli" = "latest"
+pnpm = "11"
 terraform = "latest"
 terraform-docs = "latest"
 tflint = "latest"
+uv = "latest"
 
 [settings]
 # read version files used by other version managers, such as .nvmrc
-idiomatic_version_file_enable_tools = ['node', 'npm', 'pnpm', '.terraform-version']
+idiomatic_version_file_enable_tools = [
+  'node',
+  'npm',
+  'pnpm',
+  '.terraform-version',
+]
 
 lockfile = true
 
@@ -23,3 +30,6 @@ lockfile = true
 [settings.status]
 show_env = false
 show_tools = false
+
+[settings.npm]
+package_manager = "pnpm"
