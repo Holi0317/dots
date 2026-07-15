@@ -12,31 +12,29 @@ return {
 			"saghen/blink.cmp",
 		},
 		config = function()
-			-- Ref: https://github.com/vuejs/language-tools/issues/3925
-			local ts_plugin_path = vim.fn.expand(
-				"$MASON/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
-			)
+			-- Ref: https://github.com/vuejs/language-tools/wiki/Neovim
+			local vue_lsp_path = vim.fn.expand("$MASON/packages")
+				.. "/vue-language-server"
+				.. "/node_modules/@vue/language-server"
+			local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+
+			local vue_plugin = {
+				name = "@vue/typescript-plugin",
+				location = vue_lsp_path,
+				languages = { "vue" },
+				configNamespace = "typescript",
+			}
 
 			vim.lsp.config("ts_ls", {
-				filetypes = {
-					"javascript",
-					"javascriptreact",
-					"javascript.jsx",
-					"typescript",
-					"typescriptreact",
-					"typescript.tsx",
-					"vue",
-				},
+				filetypes = tsserver_filetypes,
 				init_options = {
 					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = ts_plugin_path,
-							languages = { "javascript", "typescript", "vue" },
-						},
+						vue_plugin,
 					},
 				},
 			})
+
+			vim.lsp.config("vue_ls", {})
 
 			require("user.lsp.callbacks").setup()
 
