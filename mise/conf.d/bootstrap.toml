@@ -1,0 +1,31 @@
+[bootstrap.packages]
+# Shell
+"brew:nushell" = "latest"
+"brew:starship" = "latest"
+"brew:fzf" = "latest"
+
+# Neovim
+"brew:neovim" = "latest"
+"brew:tree-sitter" = "latest"
+"brew:tree-sitter-cli" = "latest"
+
+"brew:bat" = "latest"
+"brew:coreutils" = "latest"
+"brew:eza" = "latest"
+"brew:fd" = "latest"
+"brew:doggo" = "latest"
+"brew:ripgrep" = "latest"
+
+# Git
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:git-delta" = "latest"
+"brew:git-lfs" = "latest"
+"brew:lazygit" = "latest"
+
+"brew:atool" = "latest"
+"brew:curl" = "latest"
+"brew:htop" = "latest"
+"brew:mise" = "latest"
+"brew:mpv" = "latest"
+"brew:ncdu" = "latest"

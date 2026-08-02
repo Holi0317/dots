@@ -1,0 +1,16 @@
+[settings]
+dotfiles.default_mode = "symlink"
+
+[bootstrap.repos]
+"~/dots" = { url = "https://github.com/Holi0317/dots.git", ref = "main" }
+
+[dotfiles]
+"~/.gitconfig" = { source = "~/dots/gitconfig" }
+"~/.config/nvim" = { source = "~/dots/nvim" }
+"~/Library/Application Support/nushell" = { source = "~/dots/nushell" }
+"~/.config/atuin" = { source = "~/dots/atuin" }
+"~/.config/starship.toml" = { source = "~/dots/starship.toml" }
+"~/.config/ghostty" = { source = "~/dots/ghostty" }
+"~/.config/mpv" = { source = "~/dots/mpv" }
+"~/.config/lazygit" = { source = "~/dots/lazygit" }
+"~/Library/Rime" = { source = "~/dots/rime" }
