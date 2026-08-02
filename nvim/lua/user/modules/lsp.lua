@@ -1,21 +1,17 @@
 return {
 	{
-		"mason-org/mason-lspconfig.nvim",
-		config = true,
-	},
-
-	{
 		"neovim/nvim-lspconfig",
 		requires = {
-			"mason-org/mason.nvim",
-			"mason-org/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 		},
 		config = function()
 			-- Ref: https://github.com/vuejs/language-tools/wiki/Neovim
-			local vue_lsp_path = vim.fn.expand("$MASON/packages")
-				.. "/vue-language-server"
-				.. "/node_modules/@vue/language-server"
+			-- Tool is managed by mise; @vue/typescript-plugin is co-installed via
+			-- pnpm_args. pnpm hoists each into its own v11/<hash>/node_modules/@vue/
+			-- dir, so they're NOT siblings. Pointing `location` at typescript-plugin
+			-- itself lets tsserver's require.resolve walk up and find it.
+			local lsp_paths = require("user.lsp.paths")
+			local vue_lsp_path = lsp_paths.find_module("npm:@vue/language-server", "@vue/typescript-plugin")
 			local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 
 			local vue_plugin = {
@@ -33,17 +29,45 @@ return {
 					},
 				},
 			})
-
 			vim.lsp.config("vue_ls", {})
 
-			require("user.lsp.callbacks").setup()
+			-- List of enabled lsp, via lspconfig name
+			local enabled = {
+				-- Managed via mise. Sync with mise.toml
+				"ansiblels",
+				"astro",
+				"bashls",
+				"cssls",
+				"dockerls",
+				"emmet_ls",
+				"eslint",
+				"gopls",
+				"html",
+				"jsonls",
+				"lemminx",
+				"lua_ls",
+				"marksman",
+				"pyright",
+				"ruff",
+				"stylua",
+				"taplo",
+				"terraformls",
+				"tflint",
+				"tinymist",
+				"ts_ls",
+				-- "vue_ls",
+				"yamlls",
 
-			-- No need to call lsp.enable here. williamboman/mason-lspconfig.nvim will
-			-- do enable for us.
-			--
-			-- ... Except lsp not managed by mason
-			vim.lsp.enable("nushell")
-			vim.lsp.enable("dartls")
+				-- Outside mise, or per-project
+				"nushell",
+				"dartls",
+			}
+
+			for _, lang in ipairs(enabled) do
+				vim.lsp.enable(lang)
+			end
+
+			require("user.lsp.callbacks").setup()
 		end,
 	},
 
