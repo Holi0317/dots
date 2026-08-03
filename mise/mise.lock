@@ -124,84 +124,6 @@ checksum = "sha256:7eaefaac68253b0ec8e0ad1f1c0f2d0755423d4e99e52497428b52f80df28
 url = "https://github.com/redhat-developer/vscode-xml/releases/download/0.29.3/lemminx-win32.zip"
 url_api = "https://api.github.com/repos/redhat-developer/vscode-xml/releases/assets/441754536"
 
-[[tools."github:swamp-club/swamp"]]
-version = "20260711.014414.0-sha.c3fd7b11"
-backend = "github:swamp-club/swamp"
-
-[tools."github:swamp-club/swamp"."platforms.linux-arm64"]
-checksum = "sha256:9201f943992b3c85b2d5e914391eec66d7afe62c90d59f32904e14afaef9e46e"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-linux-aarch64"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093729"
-provenance = "github-attestations"
-
-[tools."github:swamp-club/swamp"."platforms.linux-arm64-musl"]
-checksum = "sha256:9201f943992b3c85b2d5e914391eec66d7afe62c90d59f32904e14afaef9e46e"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-linux-aarch64"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093729"
-provenance = "github-attestations"
-
-[tools."github:swamp-club/swamp"."platforms.linux-x64"]
-checksum = "sha256:4049cc52c5487c454381649a656e959fd0a7ac7da7ba997edc8b8e1d4850bc91"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-linux-x86_64"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093728"
-provenance = "github-attestations"
-
-[tools."github:swamp-club/swamp"."platforms.linux-x64-musl"]
-checksum = "sha256:4049cc52c5487c454381649a656e959fd0a7ac7da7ba997edc8b8e1d4850bc91"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-linux-x86_64"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093728"
-provenance = "github-attestations"
-
-[tools."github:swamp-club/swamp"."platforms.macos-arm64"]
-checksum = "sha256:241f170342266b2912ad2da2113e32a19cb8d517bc04eb6d92189820a1e9a92a"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-darwin-aarch64"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093731"
-provenance = "github-attestations"
-
-[tools."github:swamp-club/swamp"."platforms.macos-x64"]
-checksum = "sha256:9922b57dd37d9b0f3c903352194248f949ec1fa9ba34d050af0aa149624e9c0e"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-darwin-x86_64"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093730"
-provenance = "github-attestations"
-
-[tools."github:swamp-club/swamp"."platforms.windows-x64"]
-checksum = "sha256:c80ee67e9735f58dc6993fadebafbf6e708daa96ee54e9a68a3b5a2cffe72129"
-url = "https://github.com/swamp-club/swamp/releases/download/v20260711.014414.0-sha.c3fd7b11/swamp-windows-x86_64.exe"
-url_api = "https://api.github.com/repos/swamp-club/swamp/releases/assets/473093726"
-provenance = "github-attestations"
-
-[[tools.go]]
-version = "1.26.5"
-backend = "core:go"
-
-[tools.go."platforms.linux-arm64"]
-checksum = "sha256:fe4789e92b1f33358680864bbe8704289e7bb5fc207d80623c308935bd696d49"
-url = "https://dl.google.com/go/go1.26.5.linux-arm64.tar.gz"
-
-[tools.go."platforms.linux-arm64-musl"]
-checksum = "sha256:fe4789e92b1f33358680864bbe8704289e7bb5fc207d80623c308935bd696d49"
-url = "https://dl.google.com/go/go1.26.5.linux-arm64.tar.gz"
-
-[tools.go."platforms.linux-x64"]
-checksum = "sha256:5c2c3b16caefa1d968a94c1daca04a7ca301a496d9b086e17ad77bb81393f053"
-url = "https://dl.google.com/go/go1.26.5.linux-amd64.tar.gz"
-
-[tools.go."platforms.linux-x64-musl"]
-checksum = "sha256:5c2c3b16caefa1d968a94c1daca04a7ca301a496d9b086e17ad77bb81393f053"
-url = "https://dl.google.com/go/go1.26.5.linux-amd64.tar.gz"
-
-[tools.go."platforms.macos-arm64"]
-checksum = "sha256:efb87ff28af9a188d0536ef5d42e63dd52ba8263cd7344a993cc48dd11dedb6a"
-url = "https://dl.google.com/go/go1.26.5.darwin-arm64.tar.gz"
-
-[tools.go."platforms.macos-x64"]
-checksum = "sha256:6231d8d3b8f5552ec6cbf6d685bdd5482e1e703214b120e89b3bf0d7bf1ef725"
-url = "https://dl.google.com/go/go1.26.5.darwin-amd64.tar.gz"
-
-[tools.go."platforms.windows-x64"]
-checksum = "sha256:97e6b2a833b6d89f9ff17d25419ac0a7e3b482a044e9ab18cdef834bd834fd38"
-url = "https://dl.google.com/go/go1.26.5.windows-amd64.zip"
-
 [[tools."go:github.com/hashicorp/hcl/v2/cmd/hclfmt"]]
 version = "2.24.0"
 backend = "go:github.com/hashicorp/hcl/v2/cmd/hclfmt"
@@ -259,69 +181,6 @@ checksum = "sha256:bd42e3ebc8cb4ececb86941983baaf1dc221bbb04d838e94ce63b49cc91e0
 url = "https://github.com/golangci/golangci-lint/releases/download/v2.12.2/golangci-lint-2.12.2-windows-amd64.zip"
 url_api = "https://api.github.com/repos/golangci/golangci-lint/releases/assets/413471017"
 provenance = "github-attestations"
-
-[[tools.graphite]]
-version = "1.8.6"
-backend = "github:withgraphite/homebrew-tap"
-
-[tools.graphite."platforms.linux-arm64"]
-checksum = "sha256:b994a1b9abfb3c0607d7d978ea222a8db662133c8ef3003df150bc7e6c8ee67c"
-url = "https://github.com/withgraphite/homebrew-tap/releases/download/v1.8.6/gt-linux-arm64"
-url_api = "https://api.github.com/repos/withgraphite/homebrew-tap/releases/assets/412840890"
-
-[tools.graphite."platforms.linux-arm64-musl"]
-checksum = "sha256:b994a1b9abfb3c0607d7d978ea222a8db662133c8ef3003df150bc7e6c8ee67c"
-url = "https://github.com/withgraphite/homebrew-tap/releases/download/v1.8.6/gt-linux-arm64"
-url_api = "https://api.github.com/repos/withgraphite/homebrew-tap/releases/assets/412840890"
-
-[tools.graphite."platforms.linux-x64"]
-checksum = "sha256:0e2e0f0160ebe258ec160ba011d6321d0346fcbd7f662d87158623afbc4427a2"
-url = "https://github.com/withgraphite/homebrew-tap/releases/download/v1.8.6/gt-linux"
-url_api = "https://api.github.com/repos/withgraphite/homebrew-tap/releases/assets/412840810"
-
-[tools.graphite."platforms.linux-x64-musl"]
-checksum = "sha256:0e2e0f0160ebe258ec160ba011d6321d0346fcbd7f662d87158623afbc4427a2"
-url = "https://github.com/withgraphite/homebrew-tap/releases/download/v1.8.6/gt-linux"
-url_api = "https://api.github.com/repos/withgraphite/homebrew-tap/releases/assets/412840810"
-
-[tools.graphite."platforms.macos-arm64"]
-checksum = "sha256:9153b4b6d9ad8084ec700a1fb80dd8a4b35c08c3116bf41f1fcdd792b326781f"
-url = "https://github.com/withgraphite/homebrew-tap/releases/download/v1.8.6/gt-macos-arm64"
-url_api = "https://api.github.com/repos/withgraphite/homebrew-tap/releases/assets/412840767"
-
-[tools.graphite."platforms.macos-x64"]
-checksum = "sha256:a7623f7c545487f69aa593d2bb3dae76b06fce544116a3e0f6eeb34291371678"
-url = "https://github.com/withgraphite/homebrew-tap/releases/download/v1.8.6/gt-macos-x64"
-url_api = "https://api.github.com/repos/withgraphite/homebrew-tap/releases/assets/412840730"
-
-[[tools.iam-policy-json-to-terraform]]
-version = "1.9.2"
-backend = "aqua:flosell/iam-policy-json-to-terraform"
-
-[tools.iam-policy-json-to-terraform."platforms.linux-x64"]
-checksum = "sha256:38db59de1a89308bd297e008393d92cb2b9a29e75401d5fc554115697ca83066"
-url = "https://github.com/flosell/iam-policy-json-to-terraform/releases/download/1.9.2/iam-policy-json-to-terraform_amd64"
-url_api = "https://api.github.com/repos/flosell/iam-policy-json-to-terraform/releases/assets/306135816"
-
-[tools.iam-policy-json-to-terraform."platforms.linux-x64-musl"]
-checksum = "sha256:38db59de1a89308bd297e008393d92cb2b9a29e75401d5fc554115697ca83066"
-url = "https://github.com/flosell/iam-policy-json-to-terraform/releases/download/1.9.2/iam-policy-json-to-terraform_amd64"
-url_api = "https://api.github.com/repos/flosell/iam-policy-json-to-terraform/releases/assets/306135816"
-
-[tools.iam-policy-json-to-terraform."platforms.macos-arm64"]
-checksum = "sha256:80e9cb7ed2dbcf4c82f3a6ae71715e7d9196cdbfe17984bb2d1a8a7270007d99"
-url = "https://github.com/flosell/iam-policy-json-to-terraform/releases/download/1.9.2/iam-policy-json-to-terraform_darwin_arm"
-url_api = "https://api.github.com/repos/flosell/iam-policy-json-to-terraform/releases/assets/306135820"
-
-[tools.iam-policy-json-to-terraform."platforms.macos-x64"]
-checksum = "sha256:8dba665ced17bea2e47d6a4b8e5fe34d3f2a4ef80780a9902c186700ed5685d8"
-url = "https://github.com/flosell/iam-policy-json-to-terraform/releases/download/1.9.2/iam-policy-json-to-terraform_darwin"
-url_api = "https://api.github.com/repos/flosell/iam-policy-json-to-terraform/releases/assets/306135819"
-
-[tools.iam-policy-json-to-terraform."platforms.windows-x64"]
-checksum = "sha256:b207f962497d9d92c25b39e36ad00f3d10d29d79e2450d80407e071c1c4d7c99"
-url = "https://github.com/flosell/iam-policy-json-to-terraform/releases/download/1.9.2/iam-policy-json-to-terraform.exe"
-url_api = "https://api.github.com/repos/flosell/iam-policy-json-to-terraform/releases/assets/306135807"
 
 [[tools.lua-language-server]]
 version = "3.18.2"
@@ -401,38 +260,6 @@ checksum = "sha256:a6d05beb08ebe41b0a9f09c98a438540421436fa5531424c22e0bb1d22529
 url = "https://github.com/artempyanykh/marksman/releases/download/2026-02-08/marksman.exe"
 url_api = "https://api.github.com/repos/artempyanykh/marksman/releases/assets/352747911"
 
-[[tools.node]]
-version = "24.18.0"
-backend = "core:node"
-
-[tools.node."platforms.linux-arm64"]
-checksum = "sha256:6b4484c2190274175df9aa8f28e2d758a819cb1c1fe6ab481e2f95b463ab8508"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.gz"
-
-[tools.node."platforms.linux-arm64-musl"]
-checksum = "sha256:b1c6c2dc31b46dd8fb2322f4fe75b07e775c5120bc37251deeea28f529d4567b"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-arm64-musl.tar.gz"
-
-[tools.node."platforms.linux-x64"]
-checksum = "sha256:783130984963db7ba9cbd01089eaf2c2efb055c7c1693c943174b967b3050cb8"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.gz"
-
-[tools.node."platforms.linux-x64-musl"]
-checksum = "sha256:ea58409911e141ec6b19d9178efa2d9185a13295005b1cbf5521b3157eed1d95"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64-musl.tar.gz"
-
-[tools.node."platforms.macos-arm64"]
-checksum = "sha256:e1a97e14c99c803e96c7339403282ea05a499c32f8d83defe9ef5ec66f979ed1"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-arm64.tar.gz"
-
-[tools.node."platforms.macos-x64"]
-checksum = "sha256:dfd0dbd3e721503434df7b7205e719f61b3a3a31b2bcf9729b8b91fea240f080"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-x64.tar.gz"
-
-[tools.node."platforms.windows-x64"]
-checksum = "sha256:0ae68406b42d7725661da979b1403ec9926da205c6770827f33aac9d8f26e821"
-url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip"
-
 [[tools."npm:@ansible/ansible-language-server"]]
 version = "26.6.0"
 backend = "npm:@ansible/ansible-language-server"
@@ -486,54 +313,6 @@ backend = "npm:yaml-language-server"
 [[tools."pipx:ansible-lint"]]
 version = "26.6.0"
 backend = "pipx:ansible-lint"
-
-[[tools."pipx:httpie"]]
-version = "3.2.4"
-backend = "pipx:httpie"
-
-[[tools."pipx:pgcli"]]
-version = "4.5.0"
-backend = "pipx:pgcli"
-
-[[tools.pnpm]]
-version = "11.13.0"
-backend = "aqua:pnpm/pnpm"
-
-[tools.pnpm."platforms.linux-arm64"]
-checksum = "sha256:73582350f34afc329b55681d328ce5d04dbb0ccea9152c38aaf3929dcf3d987b"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.13.0/pnpm-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/475928564"
-provenance = "github-attestations"
-
-[tools.pnpm."platforms.linux-arm64-musl"]
-checksum = "sha256:52e830bedd7744c85c23e4206cb9088195dea73d0fb1df55abcf470b588582a9"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.13.0/pnpm-linux-arm64-musl.tar.gz"
-url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/475928563"
-provenance = "github-attestations"
-
-[tools.pnpm."platforms.linux-x64"]
-checksum = "sha256:2c15f7b6ab256642f4d01687a2b01e07714d835d05d29ba045bdbde59b17bb4f"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.13.0/pnpm-linux-x64.tar.gz"
-url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/475928558"
-provenance = "github-attestations"
-
-[tools.pnpm."platforms.linux-x64-musl"]
-checksum = "sha256:92d4b3e7d8d4a9213d440e3610dd3748e537105f60944e529b22ccbbd398e957"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.13.0/pnpm-linux-x64-musl.tar.gz"
-url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/475928559"
-provenance = "github-attestations"
-
-[tools.pnpm."platforms.macos-arm64"]
-checksum = "sha256:01af2f0e57108a4f82193a14618c57104c1426137ce62b95e0199852a542880f"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.13.0/pnpm-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/475928565"
-provenance = "github-attestations"
-
-[tools.pnpm."platforms.windows-x64"]
-checksum = "sha256:9cc0e38046bc2867b7e92ddc2345fc7a5347531b402fabbacf84d541ac094234"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.13.0/pnpm-win32-x64.zip"
-url_api = "https://api.github.com/repos/pnpm/pnpm/releases/assets/475928561"
-provenance = "github-attestations"
 
 [[tools.ruff]]
 version = "0.16.1"
@@ -719,7 +498,6 @@ url = "https://github.com/tamasfe/taplo/releases/download/0.10.0/taplo-linux-x86
 url_api = "https://api.github.com/repos/tamasfe/taplo/releases/assets/257322600"
 
 [tools.taplo."platforms.macos-arm64"]
-checksum = "blake3:353ecb1ed7d279dec5e2fd388d292ef97db08a651405fa664ffec1b2896c05f0"
 url = "https://github.com/tamasfe/taplo/releases/download/0.10.0/taplo-darwin-aarch64.gz"
 url_api = "https://api.github.com/repos/tamasfe/taplo/releases/assets/257323110"
 
@@ -730,77 +508,6 @@ url_api = "https://api.github.com/repos/tamasfe/taplo/releases/assets/257323116"
 [tools.taplo."platforms.windows-x64"]
 url = "https://github.com/tamasfe/taplo/releases/download/0.10.0/taplo-windows-x86_64.zip"
 url_api = "https://api.github.com/repos/tamasfe/taplo/releases/assets/257323062"
-
-[[tools.terraform]]
-version = "1.15.8"
-backend = "aqua:hashicorp/terraform"
-
-[tools.terraform."platforms.linux-arm64"]
-checksum = "sha256:8891e9dcedc9e3b8950bc6af9d4d8af1f4cfade3062f53b9dc403a89f6ce8c9c"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_arm64.zip"
-
-[tools.terraform."platforms.linux-arm64-musl"]
-checksum = "sha256:8891e9dcedc9e3b8950bc6af9d4d8af1f4cfade3062f53b9dc403a89f6ce8c9c"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_arm64.zip"
-
-[tools.terraform."platforms.linux-x64"]
-checksum = "sha256:d25ce7b6902013ad905db3d2eab0be4cd905887fe88b81a6171b8d5503c31f3d"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_amd64.zip"
-
-[tools.terraform."platforms.linux-x64-musl"]
-checksum = "sha256:d25ce7b6902013ad905db3d2eab0be4cd905887fe88b81a6171b8d5503c31f3d"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_amd64.zip"
-
-[tools.terraform."platforms.macos-arm64"]
-checksum = "sha256:f210110c5698b94d803a7a63cdb0251b5455c150841478808e2bbb343f95ed68"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_darwin_arm64.zip"
-
-[tools.terraform."platforms.macos-x64"]
-checksum = "sha256:e2e812e783771159bf758fd4e55d6dc9bb08f63e2af2c63d212721807a02c5dc"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_darwin_amd64.zip"
-
-[tools.terraform."platforms.windows-x64"]
-checksum = "sha256:2ff41d2129afb1982733c132c61a8d6ef038f879f3aeede7fc28b8b8b24acf02"
-url = "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_windows_amd64.zip"
-
-[[tools.terraform-docs]]
-version = "0.24.0"
-backend = "aqua:terraform-docs/terraform-docs"
-
-[tools.terraform-docs."platforms.linux-arm64"]
-checksum = "sha256:d12bd7b73c1fc9c64efc79f8157dd713dabd559f1ecf3cfc0f42e32279a155fd"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956212"
-
-[tools.terraform-docs."platforms.linux-arm64-musl"]
-checksum = "sha256:d12bd7b73c1fc9c64efc79f8157dd713dabd559f1ecf3cfc0f42e32279a155fd"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-linux-arm64.tar.gz"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956212"
-
-[tools.terraform-docs."platforms.linux-x64"]
-checksum = "sha256:9005daf969de0b50134493a2c00078b49f5f5b39d021cda7c89bf4d4f3d776d3"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-linux-amd64.tar.gz"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956208"
-
-[tools.terraform-docs."platforms.linux-x64-musl"]
-checksum = "sha256:9005daf969de0b50134493a2c00078b49f5f5b39d021cda7c89bf4d4f3d776d3"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-linux-amd64.tar.gz"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956208"
-
-[tools.terraform-docs."platforms.macos-arm64"]
-checksum = "sha256:f6b114f4b032f3f9202ab6c23bfd28c3c8e68aeeb8a8f12fc118bf2073081d71"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956237"
-
-[tools.terraform-docs."platforms.macos-x64"]
-checksum = "sha256:3c3f7f18f908457fd1209cbe341418f7f6bae78c08126cfbe8de0d1b06aa8781"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-darwin-amd64.tar.gz"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956256"
-
-[tools.terraform-docs."platforms.windows-x64"]
-checksum = "sha256:afc02cbdf63726d3e5fb26a077ca1f24acd4820d7e44c21b03a3e030f9266490"
-url = "https://github.com/terraform-docs/terraform-docs/releases/download/v0.24.0/terraform-docs-v0.24.0-windows-amd64.zip"
-url_api = "https://api.github.com/repos/terraform-docs/terraform-docs/releases/assets/416956245"
 
 [[tools.terraform-ls]]
 version = "0.39.0"
@@ -835,49 +542,49 @@ checksum = "sha256:6edc885fe113f6a7fd049622ed0bd255141e68c84acc2fce1bb6a54c1f47b
 url = "https://releases.hashicorp.com/terraform-ls/0.39.0/terraform-ls_0.39.0_windows_amd64.zip"
 
 [[tools.tflint]]
-version = "0.63.1"
+version = "0.64.0"
 backend = "aqua:terraform-linters/tflint"
 
 [tools.tflint."platforms.linux-arm64"]
-checksum = "sha256:6d858ca7f11858c3fe3c5e29cc746823abccb55e2d2e2da130fa7ad7ea4eecb8"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_linux_arm64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446187"
+checksum = "sha256:560da89aacf59389d4eb029730dd5b109b7288096c32f2726a0d9e783a5ea8eb"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_linux_arm64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528325"
 provenance = "github-attestations"
 
 [tools.tflint."platforms.linux-arm64-musl"]
-checksum = "sha256:6d858ca7f11858c3fe3c5e29cc746823abccb55e2d2e2da130fa7ad7ea4eecb8"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_linux_arm64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446187"
+checksum = "sha256:560da89aacf59389d4eb029730dd5b109b7288096c32f2726a0d9e783a5ea8eb"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_linux_arm64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528325"
 provenance = "github-attestations"
 
 [tools.tflint."platforms.linux-x64"]
-checksum = "sha256:8441a7d97df20431f19c9b9d27ff4c63e308c964e86660bc7cc0cf7bbe0725e8"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_linux_amd64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446150"
+checksum = "sha256:cca9d13e2e1d7a2c627af60ff899a3c9b74212899416aeb96ec764d2ef954537"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_linux_amd64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528344"
 provenance = "github-attestations"
 
 [tools.tflint."platforms.linux-x64-musl"]
-checksum = "sha256:8441a7d97df20431f19c9b9d27ff4c63e308c964e86660bc7cc0cf7bbe0725e8"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_linux_amd64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446150"
+checksum = "sha256:cca9d13e2e1d7a2c627af60ff899a3c9b74212899416aeb96ec764d2ef954537"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_linux_amd64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528344"
 provenance = "github-attestations"
 
 [tools.tflint."platforms.macos-arm64"]
-checksum = "sha256:6aab157b22367dcab1635b370e98d6e791d9b40b021d4f9baef010d88f53e16b"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_darwin_arm64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446148"
+checksum = "sha256:2496e9cb3d24992d553b45e7c87a0fdc9449ca975233876247a9bfeda857e6c0"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_darwin_arm64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528349"
 provenance = "github-attestations"
 
 [tools.tflint."platforms.macos-x64"]
-checksum = "sha256:1a22782473e4a01f0dd23edc649bed4420655a9e3459ffc06951e698eed7ad01"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_darwin_amd64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446152"
+checksum = "sha256:0f3a9fd17526014646a2dfc3f9122f7b4161abe3d6b0f0f03f9014483ddf4d19"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_darwin_amd64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528324"
 provenance = "github-attestations"
 
 [tools.tflint."platforms.windows-x64"]
-checksum = "sha256:5fbfb643b83c4ad489bde15a0e0d46e53dc9aa8dfa76d25da3c4bd2698a41a19"
-url = "https://github.com/terraform-linters/tflint/releases/download/v0.63.1/tflint_windows_amd64.zip"
-url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/437446181"
+checksum = "sha256:fb42fb859d844b156a8ea9d3363078c4d8b85ca78782e60876b08c9b8e59f303"
+url = "https://github.com/terraform-linters/tflint/releases/download/v0.64.0/tflint_windows_amd64.zip"
+url_api = "https://api.github.com/repos/terraform-linters/tflint/releases/assets/480528323"
 provenance = "github-attestations"
 
 [[tools.tinymist]]
@@ -918,49 +625,3 @@ url_api = "https://api.github.com/repos/Myriad-Dreamin/tinymist/releases/assets/
 checksum = "sha256:8780ed5076135f5afb11a03e6215d43659c193bc649634aff9b9dc91d77200a8"
 url = "https://github.com/Myriad-Dreamin/tinymist/releases/download/v0.15.2/tinymist-win32-x64.exe"
 url_api = "https://api.github.com/repos/Myriad-Dreamin/tinymist/releases/assets/454537125"
-
-[[tools.uv]]
-version = "0.11.28"
-backend = "aqua:astral-sh/uv"
-
-[tools.uv."platforms.linux-arm64"]
-checksum = "sha256:da10cdfa7d92212b7acb62021a0fd61bcf8580c58c3632ec915d10c3a1a7906b"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655715"
-provenance = "github-attestations"
-
-[tools.uv."platforms.linux-arm64-musl"]
-checksum = "sha256:da10cdfa7d92212b7acb62021a0fd61bcf8580c58c3632ec915d10c3a1a7906b"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655715"
-provenance = "github-attestations"
-
-[tools.uv."platforms.linux-x64"]
-checksum = "sha256:f02146b371c35c287d860f003ece7345c86e358a3fd70a9b63700cd141ee7fb4"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655835"
-provenance = "github-attestations"
-
-[tools.uv."platforms.linux-x64-musl"]
-checksum = "sha256:f02146b371c35c287d860f003ece7345c86e358a3fd70a9b63700cd141ee7fb4"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655835"
-provenance = "github-attestations"
-
-[tools.uv."platforms.macos-arm64"]
-checksum = "sha256:33540eb7c883ab857eff79bd5ac2aa31fe27b595abecb4a9c003a2c998447232"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655699"
-provenance = "github-attestations"
-
-[tools.uv."platforms.macos-x64"]
-checksum = "sha256:2ad79983127ffca7d77b77ce6a24278d7e4f7b817a1acf72fea5f8124b4aac5e"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655811"
-provenance = "github-attestations"
-
-[tools.uv."platforms.windows-x64"]
-checksum = "sha256:0a23463216d09c6a72ff80ef5dc5a795f07dc1575cb84d24596c2f124a441b7b"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.28/uv-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/469655815"
-provenance = "github-attestations"
