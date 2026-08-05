@@ -36,3 +36,6 @@ show_tools = false
 
 [settings.npm]
 package_manager = "pnpm"
+
+[settings.github]
+credential_command = "gh auth token"
