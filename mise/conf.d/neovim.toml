@@ -27,7 +27,7 @@ taplo = "latest"
 terraform-ls = "latest"
 tflint = "latest"
 tinymist = "latest"
-"npm:yaml-language-server" = "latest"
+"npm:yaml-language-server" = { version = "latest", pnpm_args = "--config.node-linker=hoisted" }
 "npm:typescript-language-server" = "latest"
 
 [tools."npm:@vue/language-server"]

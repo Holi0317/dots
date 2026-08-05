@@ -310,6 +310,9 @@ pnpm_args = "--config.node-linker=hoisted"
 version = "1.24.0"
 backend = "npm:yaml-language-server"
 
+[tools."npm:yaml-language-server".options]
+pnpm_args = "--config.node-linker=hoisted"
+
 [[tools."pipx:ansible-lint"]]
 version = "26.6.0"
 backend = "pipx:ansible-lint"
