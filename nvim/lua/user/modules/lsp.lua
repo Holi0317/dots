@@ -38,6 +38,7 @@ return {
 				"astro",
 				"bashls",
 				"cssls",
+				"denols",
 				"dockerls",
 				"emmet_ls",
 				"eslint",
