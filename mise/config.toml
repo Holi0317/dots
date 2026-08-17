@@ -5,16 +5,17 @@
 go = "latest"
 node = 'lts'
 pnpm = "11"
+bun = "latest"
 uv = "latest"
 
 # Tools
-"github:swamp-club/swamp" = "latest"
 graphite = "latest"
 iam-policy-json-to-terraform = "latest"
 "pipx:httpie" = "latest"
 "pipx:pgcli" = "latest"
 terraform = "latest"
 terraform-docs = "latest"
+"github:can1357/oh-my-pi" = "latest"
 
 [settings]
 # read version files used by other version managers, such as .nvmrc
