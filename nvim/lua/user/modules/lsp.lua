@@ -10,6 +10,8 @@ return {
 			-- pnpm_args. pnpm hoists each into its own v11/<hash>/node_modules/@vue/
 			-- dir, so they're NOT siblings. Pointing `location` at typescript-plugin
 			-- itself lets tsserver's require.resolve walk up and find it.
+			local deno = require("user.lsp.deno")
+
 			local lsp_paths = require("user.lsp.paths")
 			local vue_lsp_path = lsp_paths.find_module("npm:@vue/language-server", "@vue/typescript-plugin")
 			local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
@@ -30,6 +32,18 @@ return {
 				},
 			})
 			vim.lsp.config("vue_ls", {})
+			local eslint_root_dir = vim.lsp.config.eslint.root_dir
+			vim.lsp.config("eslint", {
+				root_dir = function(bufnr, on_dir)
+					if deno.is_workspace(bufnr) then
+						return
+					end
+
+					if eslint_root_dir then
+						eslint_root_dir(bufnr, on_dir)
+					end
+				end,
+			})
 
 			-- List of enabled lsp, via lspconfig name
 			local enabled = {
@@ -91,6 +105,7 @@ return {
 		},
 		config = function()
 			local null = require("null-ls")
+			local deno = require("user.lsp.deno")
 			local callbacks = require("user.lsp.callbacks")
 
 			null.setup({
@@ -117,6 +132,9 @@ return {
 					null.builtins.formatting.goimports,
 					null.builtins.formatting.prettierd.with({
 						extra_filetypes = { "mdx" },
+						runtime_condition = function(params)
+							return not deno.is_workspace(params.bufnr)
+						end,
 					}),
 					null.builtins.formatting.shfmt,
 					null.builtins.formatting.stylua,
