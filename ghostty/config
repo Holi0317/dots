@@ -3,6 +3,7 @@
 theme = Gruvbox Dark
 font-size = 15
 font-thicken = true
+macos-option-as-alt = true
 font-thicken-strength = 64
 copy-on-select = clipboard
 window-show-tab-bar = always
