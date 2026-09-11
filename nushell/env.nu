@@ -69,6 +69,8 @@ export-env {
   _conf carapace
 }
 
+# Mise snapshots $env.PATH on `mise activate nu`. This must run after all
+# $env.PATH modification.
 export-env {
   def --env "_conf mise" [] {
     if (which ^mise | is-empty) {
