@@ -8,6 +8,7 @@ local DISABLE_FORMAT = {
 	"jsonls",
 	"html",
 	"cssls",
+	"yamlls",
 }
 
 ---@type table<string,string[]>
