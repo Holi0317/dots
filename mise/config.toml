@@ -3,6 +3,7 @@
 [tools]
 # Languages
 go = "latest"
+python = "latest"
 node = 'lts'
 pnpm = "11"
 bun = "latest"
@@ -16,6 +17,7 @@ iam-policy-json-to-terraform = "latest"
 terraform = "latest"
 terraform-docs = "latest"
 "github:can1357/oh-my-pi" = "latest"
+"github:temporalio/cli" = "1.7.2"
 
 [settings]
 # read version files used by other version managers, such as .nvmrc
