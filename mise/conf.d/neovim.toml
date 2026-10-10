@@ -4,7 +4,7 @@
 actionlint = "latest"
 "npm:@ansible/ansible-language-server" = "latest"
 "npm:@astrojs/language-server" = "latest"
-"pipx:ansible-lint" = "latest"
+# "pypi:ansible-lint" = "latest"
 "npm:bash-language-server" = "latest"
 
 "npm:dockerfile-language-server-nodejs" = "latest"

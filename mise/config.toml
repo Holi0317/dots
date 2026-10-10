@@ -12,8 +12,8 @@ uv = "latest"
 # Tools
 graphite = "latest"
 iam-policy-json-to-terraform = "latest"
-"pipx:httpie" = "latest"
-"pipx:pgcli" = "latest"
+"pypi:httpie" = "latest"
+"pypi:pgcli" = "latest"
 terraform = "latest"
 terraform-docs = "latest"
 "github:can1357/oh-my-pi" = "latest"
@@ -29,7 +29,7 @@ idiomatic_version_file_enable_tools = [
   'terraform',
 ]
 
-lockfile = true
+# lockfile = true
 
 # env_file = '.env' # load env vars from a dotenv file, see `MISE_ENV_FILE`
 
