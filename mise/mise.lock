@@ -904,13 +904,13 @@ specifiers = [
     "3.2.4",
     "latest",
 ]
-uv = { path = ".mise/locks/pypi-httpie/3.2.4", digest = "sha256:0f919d861d3be6503c4f2cfe4549368cee1621d1019115208a3b46b4f169a7ee" }
+uv = { path = "locks/pypi-httpie/3.2.4", digest = "sha256:0f919d861d3be6503c4f2cfe4549368cee1621d1019115208a3b46b4f169a7ee" }
 
 [[tools."pypi:pgcli"]]
 version = "4.7.1"
 backend = "pypi:pgcli"
 specifiers = ["latest"]
-uv = { path = ".mise/locks/pypi-pgcli/4.7.1", digest = "sha256:9b3da5c141723a2ec29139860a1c85e3212a696352e41e4c0d112b239d95597a" }
+uv = { path = "locks/pypi-pgcli/4.7.1", digest = "sha256:9b3da5c141723a2ec29139860a1c85e3212a696352e41e4c0d112b239d95597a" }
 
 [[tools.python]]
 version = "3.15.0"
