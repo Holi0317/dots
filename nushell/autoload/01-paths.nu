@@ -13,4 +13,7 @@ export-env {
   path add "~/go/bin"
   path add "~/.carbo/bin"
   path add "~/.dotnet/tools"
+
+  # gcloud additional components in MacOS homebrew
+  path add "/opt/homebrew/share/google-cloud-sdk/bin/"
 }
