@@ -62,7 +62,6 @@ return {
 				"lemminx",
 				"lua_ls",
 				"marksman",
-				"pyright",
 				"ruff",
 				"stylua",
 				"taplo",
@@ -70,6 +69,7 @@ return {
 				"tflint",
 				"tinymist",
 				"ts_ls",
+				"ty",
 				-- "vue_ls",
 				"yamlls",
 
